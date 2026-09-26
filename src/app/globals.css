@@ -19,13 +19,6 @@
   --font-cooper-hewitt-medium: var(--font-cooper-hewitt-medium);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --cream: #0a0a0a;
-    --darkGreen: #ededed;
-  }
-}
-
 body {
   background: var(--cream);
   color: var(--darkGreen);

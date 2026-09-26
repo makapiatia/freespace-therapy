@@ -5,7 +5,7 @@ export default function Home() {
     <div
       className={classNames(
         "flex flex-1 flex-col items-center justify-center",
-        "bg-cream px-8 py-24 text-center dark:bg-black",
+        "bg-cream px-8 py-24 text-center",
       )}
     >
       <blockquote

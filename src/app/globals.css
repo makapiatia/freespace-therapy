@@ -12,6 +12,7 @@
   --font-mono: var(--font-geist-mono);
   --font-diamond: var(--font-diamond-grotesk);
   --font-work-sans: var(--font-work-sans);
+  --font-victor-mono: var(--font-victor-mono);
 }
 
 @media (prefers-color-scheme: dark) {

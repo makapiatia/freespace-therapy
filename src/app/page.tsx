@@ -11,7 +11,7 @@ export default function Home() {
       <blockquote
         className={classNames(
           "font-cooper-hewitt-medium max-w-2xl text-xl text-darkGreen",
-          "md:text-3xl max-[500px]:max-w-80 max-[500px]:text-2xl",
+          "md:text-3xl max-[500px]:max-w-60",
         )}
       >
         &ldquo;Not everything that is faced can be changed,

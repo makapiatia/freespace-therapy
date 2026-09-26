@@ -33,13 +33,13 @@ const victorMono = localFont({
 });
 
 const cooperHewitt = localFont({
-  src: "../../public/fonts/cooper-hewitt-fixed-for-windows-master/CooperHewitt-Book.ttf",
+  src: "../../public/fonts/cooper-hewitt/CooperHewitt-Book.ttf",
   variable: "--font-cooper-hewitt",
   display: "swap",
 });
 
 const cooperHewittMedium = localFont({
-  src: "../../public/fonts/cooper-hewitt-fixed-for-windows-master/CooperHewitt-Medium.ttf",
+  src: "../../public/fonts/cooper-hewitt/CooperHewitt-Medium.ttf",
   variable: "--font-cooper-hewitt-medium",
   display: "swap",
 });

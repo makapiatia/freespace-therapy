@@ -13,6 +13,7 @@
   --font-diamond: var(--font-diamond-grotesk);
   --font-work-sans: var(--font-work-sans);
   --font-victor-mono: var(--font-victor-mono);
+  --font-cooper-hewitt: var(--font-cooper-hewitt);
 }
 
 @media (prefers-color-scheme: dark) {

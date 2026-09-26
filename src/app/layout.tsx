@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
+import classNames from "classnames";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -46,7 +47,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${diamondGrotesk.variable} ${workSans.variable} ${victorMono.variable} ${cooperHewitt.variable} h-full antialiased`}
+      className={classNames(
+        geistSans.variable,
+        geistMono.variable,
+        diamondGrotesk.variable,
+        workSans.variable,
+        victorMono.variable,
+        cooperHewitt.variable,
+        "h-full antialiased",
+      )}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

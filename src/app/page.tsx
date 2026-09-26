@@ -10,8 +10,8 @@ export default function Home() {
     >
       <blockquote
         className={classNames(
-          "font-cooper-hewitt-medium max-w-2xl text-xl leading-relaxed text-darkGreen",
-          "md:text-3xl",
+          "font-cooper-hewitt-medium max-w-2xl text-xl text-darkGreen",
+          "md:text-3xl max-[500px]:max-w-80 max-[500px]:text-2xl",
         )}
       >
         &ldquo;Not everything that is faced can be changed,
@@ -20,7 +20,7 @@ export default function Home() {
       </blockquote>
       <cite
         className={classNames(
-          "font-cooper-hewitt mt-2 block text-base text-mediumGreen not-italic",
+          "font-cooper-hewitt mt-2 block text-sm text-mediumGreen not-italic",
           "md:text-lg",
         )}
       >

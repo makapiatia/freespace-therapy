@@ -10,12 +10,13 @@ export default function Home() {
     >
       <blockquote
         className={classNames(
-          "font-cooper-hewitt-semibold max-w-2xl text-2xl leading-relaxed text-darkGreen",
+          "font-cooper-hewitt-medium max-w-2xl text-2xl leading-relaxed text-darkGreen",
           "sm:text-3xl",
         )}
       >
-        &ldquo;Not everything that is faced can be changed, but nothing can be
-        changed until it is faced.&rdquo;
+        &ldquo;Not everything that is faced can be changed,
+        <br />
+        but nothing can be changed until it is faced.&rdquo;
       </blockquote>
       <cite
         className={classNames(

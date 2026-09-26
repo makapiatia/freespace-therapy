@@ -38,9 +38,9 @@ const cooperHewitt = localFont({
   display: "swap",
 });
 
-const cooperHewittSemibold = localFont({
-  src: "../../public/fonts/cooper-hewitt-fixed-for-windows-master/CooperHewitt-Semibold.ttf",
-  variable: "--font-cooper-hewitt-semibold",
+const cooperHewittMedium = localFont({
+  src: "../../public/fonts/cooper-hewitt-fixed-for-windows-master/CooperHewitt-Medium.ttf",
+  variable: "--font-cooper-hewitt-medium",
   display: "swap",
 });
 
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         workSans.variable,
         victorMono.variable,
         cooperHewitt.variable,
-        cooperHewittSemibold.variable,
+        cooperHewittMedium.variable,
         "h-full antialiased",
       )}
     >

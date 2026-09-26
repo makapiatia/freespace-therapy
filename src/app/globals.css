@@ -2,12 +2,14 @@
 
 :root {
   --background: #fdf6ed;
-  --foreground: #306d29;
+  --foreground: #0D4715;
+  --attribution: #0d530e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-attribution: var(--attribution);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-diamond: var(--font-diamond-grotesk);

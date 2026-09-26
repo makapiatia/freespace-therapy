@@ -19,7 +19,7 @@ export default function Home() {
       </blockquote>
       <cite
         className={classNames(
-          "font-cooper-hewitt mt-6 block text-lg text-foreground not-italic",
+          "font-cooper-hewitt mt-6 block text-lg text-attribution not-italic",
         )}
       >
         ― James Baldwin

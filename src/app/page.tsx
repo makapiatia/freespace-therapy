@@ -21,9 +21,7 @@ export default function Home() {
           <HoursLocation />
         </div>
         <div className="mt-16 border-t border-cream/15 pt-8">
-          <div className="px-8">
-            <SiteFooter />
-          </div>
+          <SiteFooter />
         </div>
       </footer>
     </div>

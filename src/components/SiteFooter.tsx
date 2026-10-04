@@ -5,14 +5,15 @@ export default function SiteFooter() {
   return (
     <div
       className={classNames(
-        "mx-auto flex max-w-5xl flex-col items-center gap-3",
-        "text-center sm:flex-row sm:justify-between sm:text-left",
+        "flex flex-col items-center justify-center gap-3 px-8",
+        "text-center sm:flex-row sm:justify-end sm:gap-6 sm:px-8",
+        "sm:text-left",
       )}
     >
       <p className="font-work-sans text-xs text-cream/70">
         &copy; 2026 Freespace Therapy. All rights reserved.
       </p>
-      <span className="relative block h-16 w-16 overflow-hidden rounded-full">
+      <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full">
         <Image
           src="/logos/4x/Asset 1@4x.png"
           alt="Freespace Therapy"

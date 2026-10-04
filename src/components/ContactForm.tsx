@@ -21,7 +21,7 @@ export default function ContactForm() {
     return (
       <div
         className={classNames(
-          "mx-auto max-w-md rounded-2xl border border-logoGreen/30",
+          "max-w-md rounded-2xl border border-logoGreen/30",
           "bg-white/40 p-8 text-center",
         )}
       >
@@ -38,7 +38,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto flex max-w-md flex-col gap-4"
+      className="flex max-w-md flex-col gap-4"
     >
       <div>
         <label

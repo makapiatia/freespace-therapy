@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-darkGreen">
+    <footer className="border-t-4 border-logoLime bg-darkGreen">
       <div
         className={classNames(
           "mx-auto flex max-w-5xl flex-col items-center gap-3",

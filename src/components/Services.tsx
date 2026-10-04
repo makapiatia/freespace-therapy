@@ -1,72 +1,129 @@
 import classNames from "classnames";
 
-const specialties = [
-  {
-    title: "Individual Therapy",
-    body:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer " +
-      "nec odio praesent libero sed cursus ante dapibus diam.",
-  },
-  {
-    title: "Anxiety & Stress",
-    body:
-      "Sed cursus ante dapibus diam sacelus nec, pulvinar eget, " +
-      "sollicitudin venenatis cum sociis natoque penatibus magnis.",
-  },
-  {
-    title: "Relationships & Connection",
-    body:
-      "Nulla consequat massa quis enim donec pede justo fringilla vel " +
-      "aliquet nec vulputate eget arcu in enim justo rhoncus.",
-  },
-  {
-    title: "Life Transitions",
-    body:
-      "Aenean commodo ligula eget dolor aenean massa cum sociis natoque " +
-      "penatibus et magnis dis parturient montes nascetur.",
-  },
+const topSpecialties = ["Anxiety", "Family Issues", "Grief or Loss"];
+
+const moreSpecialties = [
+  "Bipolar Disorder",
+  "Depression",
+  "OCD",
+  "Sleep Disorder",
+  "Stress Management",
+  "Anger Management",
+  "Cultural & Ethnic Issues",
+  "Men's Issues",
+  "Relationship Issues",
+  "Women's Issues",
+  "Identity Issues",
+  "Trauma",
+  "PTSD",
+  "Transgender Issues",
 ];
+
+const therapyMethods = [
+  "Strength-Based",
+  "Motivational Interviewing",
+  "Interpersonal Psychotherapy (IPT)",
+  "Cognitive Behavioral (CBT)",
+  "Humanistic",
+  "Psychodynamic",
+];
+
+function TagRow({
+  items,
+  tone,
+}: {
+  items: string[];
+  tone: "clay" | "outline";
+}) {
+  return (
+    <div className="flex flex-wrap justify-center gap-2">
+      {items.map((item) => (
+        <span
+          key={item}
+          className={classNames(
+            "font-work-sans rounded-full px-3 py-1 text-xs",
+            tone === "clay"
+              ? "bg-clay text-cream"
+              : "border border-logoLime bg-logoLime/10 text-darkGreen/80",
+          )}
+        >
+          {item}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function Services() {
   return (
-    <section id="services" className="bg-brown px-8 py-16 md:py-20">
+    <section id="services" className="px-8 py-16 md:py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="font-diamond text-3xl text-cream md:text-4xl">
+        <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
           Services &amp; Specialties
         </h2>
-        <p className="font-cooper-hewitt mt-4 text-base text-cream/80">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          libero quam, dignissim at posuere a, posuere at mi.
+        <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80 md:text-lg">
+          Individual therapy for adults and seniors navigating anxiety,
+          loss, uncertainty, or feeling stuck — offered virtually and in
+          person.
         </p>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2">
-        {specialties.map((item) => (
-          <div
-            key={item.title}
-            className={classNames(
-              "rounded-2xl border border-cream/25 bg-cream/10 p-6",
-            )}
-          >
-            <h3 className="font-cooper-hewitt-medium text-lg text-cream">
-              {item.title}
-            </h3>
-            <p className="font-cooper-hewitt mt-2 text-sm text-cream/80">
-              {item.body}
-            </p>
-          </div>
-        ))}
+      <div className="mx-auto mt-10 max-w-3xl">
+        <TagRow items={topSpecialties} tone="clay" />
+        <div className="mt-4">
+          <TagRow items={moreSpecialties} tone="outline" />
+        </div>
       </div>
 
-      <div className="mx-auto mt-14 max-w-2xl text-center">
-        <h3 className="font-cooper-hewitt-medium text-xl text-cream">
-          What to Expect
+      <div className="mx-auto mt-10 max-w-2xl text-center">
+        <h3 className="font-cooper-hewitt-medium text-sm tracking-wide text-mediumGreen uppercase">
+          Therapy Methods
         </h3>
-        <p className="font-cooper-hewitt mt-3 text-base text-cream/80">
-          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-          posuere cubilia curae mauris viverra diam vitae quam suscipit, ut
-          aliquam dolor tristique.
-        </p>
+        <div className="mt-3">
+          <TagRow items={therapyMethods} tone="outline" />
+        </div>
+      </div>
+
+      <div
+        className={classNames(
+          "mx-auto mt-16 grid max-w-5xl gap-10 border-t border-logoGreen/20",
+          "pt-12 md:grid-cols-2",
+        )}
+      >
+        <div>
+          <h3 className="font-cooper-hewitt-medium text-xl text-darkGreen">
+            My Approach to Therapy
+          </h3>
+          <p className="font-cooper-hewitt mt-3 text-base text-darkGreen/80">
+            My approach to therapy is individualized, blending humanistic,
+            psychodynamic, and strengths-based approaches with tools from
+            CBT, DBT, and somatic work. I believe much of what shows up as
+            stresses in people can be understood in terms of deep roots and
+            old relational patterns; we may explore those together at your
+            own pace. I welcome journaling, dreamwork, and other forms of
+            creative expression as a part of our process.
+          </p>
+          <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80">
+            In all cases, the most successful therapy arises from a solid,
+            trust-based, mutually respectful relationship, so building and
+            maintaining that foundation will be an important part of our
+            work together.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-cooper-hewitt-medium text-xl text-darkGreen">
+            What to Expect
+          </h3>
+          <p className="font-cooper-hewitt mt-3 text-base text-darkGreen/80">
+            At the first session you can expect some more information
+            about therapy, a few initial assessment questions, and a lot
+            of space to share what you are bringing. I will also answer
+            any questions or concerns that you may have. Then, together,
+            we will start to identify next steps toward the changes that
+            you are looking to see.
+          </p>
+        </div>
       </div>
     </section>
   );

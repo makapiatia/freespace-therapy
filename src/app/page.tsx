@@ -15,8 +15,12 @@ export default function Home() {
       <Services />
       <Community />
       <About />
-      <Contact />
-      <HoursLocation />
+      <section className="bg-clay/5 px-8 py-16 md:py-20">
+        <div className="mx-auto grid max-w-5xl gap-14 md:grid-cols-2 md:gap-10">
+          <Contact />
+          <HoursLocation />
+        </div>
+      </section>
       <SiteFooter />
     </div>
   );

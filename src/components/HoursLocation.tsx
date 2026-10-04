@@ -10,21 +10,21 @@ const hours = [
 export default function HoursLocation() {
   return (
     <div>
-      <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
+      <h2 className="font-diamond text-4xl text-cream md:text-5xl">
         Hours &amp; Location
       </h2>
 
       <div className="mt-8 space-y-8">
         <div>
-          <h3 className="font-cooper-hewitt-medium text-lg text-darkGreen">
+          <h3 className="font-cooper-hewitt-medium text-lg text-cream">
             Visit or Reach Us
           </h3>
-          <p className="font-cooper-hewitt mt-3 text-base text-darkGreen/80">
+          <p className="font-cooper-hewitt mt-3 text-base text-cream/80">
             123 Placeholder Lane, Suite 2
             <br />
             Faketown, CA 00000
           </p>
-          <p className="font-cooper-hewitt mt-3 text-base text-darkGreen/80">
+          <p className="font-cooper-hewitt mt-3 text-base text-cream/80">
             <a href="tel:+15555550182" className="hover:text-clay">
               (555) 555-0182
             </a>
@@ -39,13 +39,13 @@ export default function HoursLocation() {
         </div>
 
         <div>
-          <h3 className="font-cooper-hewitt-medium text-lg text-darkGreen">
+          <h3 className="font-cooper-hewitt-medium text-lg text-cream">
             Office Hours
           </h3>
           <dl
             className={classNames(
               "font-work-sans mt-3 grid max-w-xs grid-cols-[auto_1fr]",
-              "gap-x-6 gap-y-2 text-sm text-darkGreen/80",
+              "gap-x-6 gap-y-2 text-sm text-cream/80",
             )}
           >
             {hours.map((item) => (

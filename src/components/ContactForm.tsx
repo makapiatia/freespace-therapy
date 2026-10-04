@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import classNames from "classnames";
 
 const inputClasses = classNames(
-  "w-full rounded-lg border border-logoGreen/40 bg-white/60 px-4 py-2.5",
+  "w-full rounded-lg border border-cream/30 bg-cream/90 px-4 py-2.5",
   "font-work-sans text-sm text-darkGreen placeholder:text-darkGreen/40",
   "outline-none transition-colors focus:border-clay",
 );
@@ -21,14 +21,14 @@ export default function ContactForm() {
     return (
       <div
         className={classNames(
-          "max-w-md rounded-2xl border border-logoGreen/30",
-          "bg-white/40 p-8 text-center",
+          "max-w-md rounded-2xl border border-cream/25",
+          "bg-cream/10 p-8 text-center",
         )}
       >
-        <p className="font-cooper-hewitt-medium text-lg text-darkGreen">
+        <p className="font-cooper-hewitt-medium text-lg text-cream">
           Thank you for reaching out.
         </p>
-        <p className="font-cooper-hewitt mt-2 text-sm text-darkGreen/80">
+        <p className="font-cooper-hewitt mt-2 text-sm text-cream/80">
           We&rsquo;ll be in touch within one business day.
         </p>
       </div>
@@ -43,7 +43,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="font-work-sans mb-1 block text-xs text-darkGreen/70"
+          className="font-work-sans mb-1 block text-xs text-cream/70"
         >
           Name
         </label>
@@ -60,7 +60,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="font-work-sans mb-1 block text-xs text-darkGreen/70"
+          className="font-work-sans mb-1 block text-xs text-cream/70"
         >
           Email
         </label>
@@ -77,7 +77,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="phone"
-          className="font-work-sans mb-1 block text-xs text-darkGreen/70"
+          className="font-work-sans mb-1 block text-xs text-cream/70"
         >
           Phone (optional)
         </label>
@@ -93,7 +93,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="font-work-sans mb-1 block text-xs text-darkGreen/70"
+          className="font-work-sans mb-1 block text-xs text-cream/70"
         >
           Message
         </label>

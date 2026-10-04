@@ -31,10 +31,10 @@ export default function Hero() {
             <p
               className={classNames(
                 "font-victor-mono text-sm font-semibold tracking-wide",
-                "text-logoLime uppercase md:text-base",
+                "text-logoLime md:text-base",
               )}
             >
-              A free space to feel, heal, and be yourself
+              a free space to feel, heal, and be yourself
             </p>
             <h1
               className={classNames(

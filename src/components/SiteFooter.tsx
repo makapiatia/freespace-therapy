@@ -6,8 +6,7 @@ export default function SiteFooter() {
     <div
       className={classNames(
         "mx-auto flex max-w-5xl flex-col items-center gap-3",
-        "border-t border-cream/15 pt-8 text-center sm:flex-row",
-        "sm:justify-between sm:text-left",
+        "text-center sm:flex-row sm:justify-between sm:text-left",
       )}
     >
       <span className="relative block h-16 w-16 overflow-hidden rounded-full">

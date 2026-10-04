@@ -110,8 +110,8 @@ export default function ContactForm() {
       <button
         type="submit"
         className={classNames(
-          "mt-2 rounded-full bg-clay px-8 py-3 font-work-sans text-sm",
-          "text-cream transition-colors hover:bg-darkGreen",
+          "mt-2 rounded-full bg-cream px-8 py-3 font-work-sans text-sm",
+          "text-darkGreen transition-colors hover:bg-logoLime",
         )}
       >
         Send Message

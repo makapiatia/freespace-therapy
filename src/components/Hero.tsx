@@ -68,7 +68,7 @@ export default function Hero() {
             "hover:bg-logoLime",
           )}
         >
-          Book a free consultation
+          Get in Touch
         </a>
       </div>
     </section>

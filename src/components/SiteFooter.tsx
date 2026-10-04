@@ -9,6 +9,9 @@ export default function SiteFooter() {
         "text-center sm:flex-row sm:justify-between sm:text-left",
       )}
     >
+      <p className="font-work-sans text-xs text-cream/70">
+        &copy; 2026 Freespace Therapy. All rights reserved.
+      </p>
       <span className="relative block h-16 w-16 overflow-hidden rounded-full">
         <Image
           src="/logos/4x/Asset 1@4x.png"
@@ -18,9 +21,6 @@ export default function SiteFooter() {
           className="object-cover"
         />
       </span>
-      <p className="font-work-sans text-xs text-cream/70">
-        &copy; 2026 Freespace Therapy. All rights reserved.
-      </p>
     </div>
   );
 }

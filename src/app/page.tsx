@@ -1,31 +1,23 @@
-import classNames from "classnames";
+import SiteHeader from "@/components/SiteHeader";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import Community from "@/components/Community";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import HoursLocation from "@/components/HoursLocation";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
   return (
-    <div
-      className={classNames(
-        "flex flex-1 flex-col items-center justify-center",
-        "bg-cream px-8 py-24 text-center",
-      )}
-    >
-      <blockquote
-        className={classNames(
-          "font-cooper-hewitt-medium max-w-2xl text-xl text-darkGreen",
-          "md:text-3xl max-[500px]:max-w-60",
-        )}
-      >
-        &ldquo;Not everything that is faced can be changed,
-        <br />
-        but nothing can be changed until it is faced.&rdquo;
-      </blockquote>
-      <cite
-        className={classNames(
-          "font-cooper-hewitt mt-2 block text-sm text-mediumGreen not-italic",
-          "md:text-lg",
-        )}
-      >
-        ― James Baldwin
-      </cite>
+    <div className="flex flex-1 flex-col bg-cream">
+      <SiteHeader />
+      <Hero />
+      <Services />
+      <Community />
+      <About />
+      <Contact />
+      <HoursLocation />
+      <SiteFooter />
     </div>
   );
 }

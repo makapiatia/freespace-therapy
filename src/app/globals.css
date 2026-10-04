@@ -4,12 +4,20 @@
   --cream: #fdf6ed;
   --darkGreen: #0D4715;
   --mediumGreen: #0d530e;
+  --logoGreen: #8cc63f;
+  --logoLime: #add35d;
+  --navy: #003d50;
+  --clay: #c2703d;
 }
 
 @theme inline {
   --color-cream: var(--cream);
   --color-darkGreen: var(--darkGreen);
   --color-mediumGreen: var(--mediumGreen);
+  --color-logoGreen: var(--logoGreen);
+  --color-logoLime: var(--logoLime);
+  --color-navy: var(--navy);
+  --color-clay: var(--clay);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-diamond: var(--font-diamond-grotesk);

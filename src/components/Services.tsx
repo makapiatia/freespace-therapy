@@ -66,7 +66,7 @@ export default function Services() {
         </h2>
         <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80 md:text-lg">
           Individual therapy for adults and seniors navigating anxiety,
-          loss, uncertainty, or feeling stuck — offered virtually and in
+          loss, uncertainty, or feeling stuck, offered virtually and in
           person.
         </p>
       </div>

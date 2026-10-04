@@ -2,19 +2,19 @@ import classNames from "classnames";
 
 const resources = [
   {
-    title: "Monthly Client Support Circle",
+    title: "Lorem ipsum dolor sit amet",
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
       "eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    title: "Therapist Peer Consultation Group",
+    title: "Consectetur adipiscing elit",
     detail:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco " +
       "laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    title: "Medicaid & Medicare Enrollment Office Hours",
+    title: "Sed do eiusmod tempor incididunt",
     detail:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse " +
       "cillum dolore eu fugiat nulla pariatur.",
@@ -46,6 +46,10 @@ export default function Community() {
           <p className="font-cooper-hewitt mt-2 text-sm text-darkGreen/80">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Praesent libero quam, dignissim at posuere a, posuere at mi.
+            Suspendisse potenti, nulla eget cursus sagittis, nunc elit
+            laoreet justo, vitae sollicitudin mi ipsum nec dolor. Integer
+            nec odio praesent libero sed cursus ante dapibus diam, sed
+            nisi nulla quis sem at nibh elementum imperdiet.
           </p>
         </div>
 

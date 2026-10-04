@@ -2,7 +2,7 @@ import Image from "next/image";
 import classNames from "classnames";
 
 const credentials = [
-  "LCSW — Licensed Clinical Social Worker, New Jersey",
+  "LCSW, Licensed Clinical Social Worker, New Jersey",
   "MSW, Rutgers University College, New Brunswick",
   "4 Years of Experience",
   "Virtual & In-Person Sessions",

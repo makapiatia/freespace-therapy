@@ -52,7 +52,7 @@ export default function Hero() {
             >
               Freespace Therapy offers a compassionate, non-judgmental
               space to slow down and explore what&rsquo;s really going on
-              beneath the surface — for adults and seniors navigating
+              beneath the surface, for adults and seniors navigating
               anxiety, loss, uncertainty, or feeling stuck.
             </p>
           </div>

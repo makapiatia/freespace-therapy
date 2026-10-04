@@ -31,9 +31,11 @@ const therapyMethods = [
 function TagRow({
   items,
   tone,
+  mono = false,
 }: {
   items: string[];
   tone: "clay" | "outline";
+  mono?: boolean;
 }) {
   return (
     <div className="flex flex-wrap justify-center gap-2">
@@ -41,7 +43,8 @@ function TagRow({
         <span
           key={item}
           className={classNames(
-            "font-work-sans rounded-full px-3 py-1 text-xs",
+            "rounded-full px-3 py-1 text-xs",
+            mono ? "font-victor-mono" : "font-work-sans",
             tone === "clay"
               ? "bg-clay text-cream"
               : "border border-logoLime bg-logoLime/10 text-darkGreen/80",
@@ -69,18 +72,18 @@ export default function Services() {
       </div>
 
       <div className="mx-auto mt-10 max-w-3xl">
-        <TagRow items={topSpecialties} tone="clay" />
+        <TagRow items={topSpecialties} tone="clay" mono />
         <div className="mt-4">
           <TagRow items={moreSpecialties} tone="outline" />
         </div>
       </div>
 
       <div className="mx-auto mt-10 max-w-2xl text-center">
-        <h3 className="font-cooper-hewitt-medium text-sm tracking-wide text-mediumGreen uppercase">
+        <h3 className="font-victor-mono text-sm tracking-wide text-mediumGreen uppercase">
           Therapy Methods
         </h3>
         <div className="mt-3">
-          <TagRow items={therapyMethods} tone="outline" />
+          <TagRow items={therapyMethods} tone="outline" mono />
         </div>
       </div>
 

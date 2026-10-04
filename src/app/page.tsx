@@ -1,5 +1,5 @@
-import SiteHeader from "@/components/SiteHeader";
 import Hero from "@/components/Hero";
+import Quote from "@/components/Quote";
 import Services from "@/components/Services";
 import Community from "@/components/Community";
 import About from "@/components/About";
@@ -10,8 +10,8 @@ import SiteFooter from "@/components/SiteFooter";
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-cream">
-      <SiteHeader />
       <Hero />
+      <Quote />
       <Services />
       <Community />
       <About />

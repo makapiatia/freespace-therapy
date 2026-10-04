@@ -1,78 +1,76 @@
+import Image from "next/image";
 import classNames from "classnames";
 
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className={classNames(
-        "mx-auto max-w-4xl px-8 pt-10 pb-20 text-center",
-        "md:pt-14 md:pb-28",
-      )}
-    >
-      <p
-        className={classNames(
-          "font-work-sans text-sm font-semibold tracking-wide",
-          "text-logoGreen uppercase md:text-base",
-        )}
-      >
-        A free space to feel, heal, and be yourself
-      </p>
-      <h1
-        className={classNames(
-          "font-diamond mt-5 text-5xl leading-[1.05] text-darkGreen",
-          "sm:text-6xl md:text-7xl",
-        )}
-      >
-        Welcome to <span className="text-clay">Freespace</span> Therapy
-      </h1>
-      <p
-        className={classNames(
-          "font-cooper-hewitt mx-auto mt-7 max-w-2xl text-lg text-darkGreen/80",
-          "md:text-xl",
-        )}
-      >
-        Freespace Therapy offers a compassionate, non-judgmental space to
-        slow down and explore what&rsquo;s really going on beneath the
-        surface — for adults and seniors navigating anxiety, loss,
-        uncertainty, or feeling stuck.
-      </p>
-
-      <div
-        className={classNames(
-          "relative mx-auto mt-14 max-w-2xl rounded-3xl bg-clay",
-          "px-8 py-14 md:px-16",
-        )}
-      >
-        <span
-          aria-hidden
-          className="font-diamond absolute top-4 left-8 text-8xl text-cream/25 md:text-9xl"
-        >
-          &ldquo;
-        </span>
-        <blockquote
+    <section id="top" className="bg-darkGreen">
+      <div className="mx-auto max-w-5xl px-8 pt-10 md:pt-14">
+        <div
           className={classNames(
-            "font-cooper-hewitt-medium text-2xl leading-snug text-cream",
-            "md:text-3xl",
+            "grid gap-8 text-center md:grid-cols-[auto_1fr]",
+            "md:items-start md:gap-12 md:text-left",
           )}
         >
-          Not everything that is faced can be changed, but nothing can be
-          changed until it is faced.
-        </blockquote>
-        <cite className="font-cooper-hewitt mt-5 block text-base text-darkGreen not-italic">
-          ― James Baldwin
-        </cite>
+          <span
+            className={classNames(
+              "relative mx-auto block h-40 w-40 shrink-0 overflow-hidden",
+              "rounded-full ring-4 ring-logoLime md:mx-0 md:h-48 md:w-48",
+            )}
+          >
+            <Image
+              src="/logos/4x/Asset 1@4x.png"
+              alt="Freespace Therapy"
+              fill
+              sizes="192px"
+              priority
+              className="object-cover"
+            />
+          </span>
+
+          <div>
+            <p
+              className={classNames(
+                "font-victor-mono text-sm font-semibold tracking-wide",
+                "text-logoLime uppercase md:text-base",
+              )}
+            >
+              A free space to feel, heal, and be yourself
+            </p>
+            <h1
+              className={classNames(
+                "font-diamond mt-5 text-5xl leading-[1.05] text-cream",
+                "sm:text-6xl md:text-6xl lg:text-7xl",
+              )}
+            >
+              Welcome to Freespace Therapy
+            </h1>
+            <p
+              className={classNames(
+                "font-cooper-hewitt mx-auto mt-7 max-w-2xl text-lg",
+                "text-cream/80 md:mx-0 md:text-xl",
+              )}
+            >
+              Freespace Therapy offers a compassionate, non-judgmental
+              space to slow down and explore what&rsquo;s really going on
+              beneath the surface — for adults and seniors navigating
+              anxiety, loss, uncertainty, or feeling stuck.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <a
-        href="#contact"
-        className={classNames(
-          "mt-12 inline-block rounded-full bg-darkGreen px-10 py-4",
-          "font-work-sans text-base text-cream transition-colors",
-          "hover:bg-logoGreen hover:text-navy",
-        )}
-      >
-        Book a free consultation
-      </a>
+      <div className="mx-auto max-w-4xl px-8 pt-10 pb-20 text-center md:pb-28">
+        <a
+          href="#contact"
+          className={classNames(
+            "inline-block rounded-full bg-cream px-10 py-4",
+            "font-work-sans text-base text-darkGreen transition-colors",
+            "hover:bg-logoLime",
+          )}
+        >
+          Book a free consultation
+        </a>
+      </div>
     </section>
   );
 }

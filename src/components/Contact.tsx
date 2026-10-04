@@ -1,15 +1,8 @@
-import classNames from "classnames";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className={classNames(
-        "mx-auto max-w-5xl px-8 py-16 md:py-20",
-        "border-t border-logoGreen/20",
-      )}
-    >
+    <section id="contact" className="mx-auto max-w-5xl px-8 py-16 md:py-20">
       <div className="mx-auto max-w-md text-center">
         <h2 className="font-diamond text-3xl text-darkGreen md:text-4xl">
           Get in Touch

@@ -9,14 +9,13 @@ const credentials = [
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className={classNames(
-        "mx-auto max-w-5xl px-8 py-16 md:py-20",
-        "border-t border-logoGreen/20",
-      )}
-    >
-      <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-start">
+    <section id="about" className="bg-brown px-8 py-16 md:py-20">
+      <div
+        className={classNames(
+          "mx-auto grid max-w-5xl gap-10 md:grid-cols-[auto_1fr]",
+          "md:items-start",
+        )}
+      >
         <div
           className={classNames(
             "mx-auto h-32 w-32 rounded-full bg-logoLime",
@@ -27,18 +26,18 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="font-diamond text-3xl text-darkGreen md:text-4xl">
+          <h2 className="font-diamond text-3xl text-cream md:text-4xl">
             About &amp; Credentials
           </h2>
-          <p className="font-cooper-hewitt-medium mt-2 text-lg text-darkGreen">
+          <p className="font-cooper-hewitt-medium mt-2 text-lg text-logoLime">
             Jordan Hale, LMFT
           </p>
-          <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80">
+          <p className="font-cooper-hewitt mt-4 text-base text-cream/80">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             ullamcorper nulla non metus auctor fringilla. Cras mattis
             consectetur purus sit amet fermentum.
           </p>
-          <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80">
+          <p className="font-cooper-hewitt mt-4 text-base text-cream/80">
             Vestibulum id ligula porta felis euismod semper. Maecenas sed
             diam eget risus varius blandit sit amet non magna curabitur
             blandit tempus porttitor.
@@ -48,7 +47,7 @@ export default function About() {
             {credentials.map((item) => (
               <li
                 key={item}
-                className="font-work-sans flex items-start gap-2 text-sm text-darkGreen/80"
+                className="font-work-sans flex items-start gap-2 text-sm text-cream/80"
               >
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-clay" />
                 {item}

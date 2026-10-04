@@ -17,13 +17,7 @@ const resources = [
 
 export default function Community() {
   return (
-    <section
-      id="community"
-      className={classNames(
-        "mx-auto max-w-5xl px-8 py-16 md:py-20",
-        "border-t border-logoGreen/20",
-      )}
-    >
+    <section id="community" className="mx-auto max-w-5xl px-8 py-16 md:py-20">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="font-diamond text-3xl text-darkGreen md:text-4xl">
           Community &amp; Resources

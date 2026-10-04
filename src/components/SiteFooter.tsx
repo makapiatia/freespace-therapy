@@ -11,20 +11,15 @@ export default function SiteFooter() {
           "sm:text-left",
         )}
       >
-        <div className="flex items-center gap-3">
-          <span className="relative block h-8 w-8 overflow-hidden rounded-full">
-            <Image
-              src="/logos/4x/Asset 1@4x.png"
-              alt="Freespace Therapy logo"
-              fill
-              sizes="32px"
-              className="object-cover"
-            />
-          </span>
-          <span className="font-cooper-hewitt-medium text-sm text-cream">
-            freespace therapy
-          </span>
-        </div>
+        <span className="relative block h-20 w-20 overflow-hidden rounded-full">
+          <Image
+            src="/logos/4x/Asset 1@4x.png"
+            alt="Freespace Therapy"
+            fill
+            sizes="80px"
+            className="object-cover"
+          />
+        </span>
         <p className="font-work-sans text-xs text-cream/70">
           &copy; 2026 Freespace Therapy. All rights reserved.
         </p>

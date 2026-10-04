@@ -29,35 +29,29 @@ const specialties = [
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className={classNames(
-        "mx-auto max-w-5xl px-8 py-16 md:py-20",
-        "border-t border-logoGreen/20",
-      )}
-    >
+    <section id="services" className="bg-brown px-8 py-16 md:py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="font-diamond text-3xl text-darkGreen md:text-4xl">
+        <h2 className="font-diamond text-3xl text-cream md:text-4xl">
           Services &amp; Specialties
         </h2>
-        <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80">
+        <p className="font-cooper-hewitt mt-4 text-base text-cream/80">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
           libero quam, dignissim at posuere a, posuere at mi.
         </p>
       </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2">
+      <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2">
         {specialties.map((item) => (
           <div
             key={item.title}
             className={classNames(
-              "rounded-2xl border border-logoGreen/30 bg-white/40 p-6",
+              "rounded-2xl border border-cream/25 bg-cream/10 p-6",
             )}
           >
-            <h3 className="font-cooper-hewitt-medium text-lg text-darkGreen">
+            <h3 className="font-cooper-hewitt-medium text-lg text-cream">
               {item.title}
             </h3>
-            <p className="font-cooper-hewitt mt-2 text-sm text-darkGreen/80">
+            <p className="font-cooper-hewitt mt-2 text-sm text-cream/80">
               {item.body}
             </p>
           </div>
@@ -65,10 +59,10 @@ export default function Services() {
       </div>
 
       <div className="mx-auto mt-14 max-w-2xl text-center">
-        <h3 className="font-cooper-hewitt-medium text-xl text-darkGreen">
+        <h3 className="font-cooper-hewitt-medium text-xl text-cream">
           What to Expect
         </h3>
-        <p className="font-cooper-hewitt mt-3 text-base text-darkGreen/80">
+        <p className="font-cooper-hewitt mt-3 text-base text-cream/80">
           Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
           posuere cubilia curae mauris viverra diam vitae quam suscipit, ut
           aliquam dolor tristique.

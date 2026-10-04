@@ -5,8 +5,8 @@ export default function Hero() {
     <section
       id="top"
       className={classNames(
-        "mx-auto max-w-3xl px-8 pt-16 pb-20 text-center",
-        "md:pt-24 md:pb-28",
+        "mx-auto max-w-3xl px-8 pt-10 pb-20 text-center",
+        "md:pt-12 md:pb-28",
       )}
     >
       <p className="font-work-sans text-sm tracking-wide text-mediumGreen uppercase">
@@ -30,19 +30,33 @@ export default function Hero() {
         libero quam, dignissim at posuere a, posuere at mi. Suspendisse
         potenti, nulla eget cursus sagittis, nunc elit laoreet justo.
       </p>
-      <blockquote
+
+      <div
         className={classNames(
-          "font-cooper-hewitt-medium mx-auto mt-10 max-w-md text-xl",
-          "text-darkGreen md:text-2xl",
+          "relative mx-auto mt-12 max-w-xl rounded-3xl bg-brown",
+          "px-8 py-12 md:px-14",
         )}
       >
-        &ldquo;Not everything that is faced can be changed,
-        <br />
-        but nothing can be changed until it is faced.&rdquo;
-      </blockquote>
-      <cite className="font-cooper-hewitt mt-2 block text-sm text-mediumGreen not-italic">
-        ― James Baldwin
-      </cite>
+        <span
+          aria-hidden
+          className="font-diamond absolute top-2 left-6 text-7xl text-clay/70 md:text-8xl"
+        >
+          &ldquo;
+        </span>
+        <blockquote
+          className={classNames(
+            "font-cooper-hewitt-medium text-xl leading-snug text-cream",
+            "md:text-2xl",
+          )}
+        >
+          Not everything that is faced can be changed, but nothing can be
+          changed until it is faced.
+        </blockquote>
+        <cite className="font-cooper-hewitt mt-4 block text-sm text-logoLime not-italic">
+          ― James Baldwin
+        </cite>
+      </div>
+
       <a
         href="#contact"
         className={classNames(

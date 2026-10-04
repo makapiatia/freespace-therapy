@@ -3,15 +3,21 @@ import classNames from "classnames";
 const resources = [
   {
     title: "Monthly Client Support Circle",
-    detail: "First Tuesday of every month, 6:00pm — open to current clients.",
+    detail:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
+      "eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     title: "Therapist Peer Consultation Group",
-    detail: "Biweekly, open to local clinicians building their own practice.",
+    detail:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco " +
+      "laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
     title: "Medicaid & Medicare Enrollment Office Hours",
-    detail: "Drop-in support, no appointment needed, every other Friday.",
+    detail:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse " +
+      "cillum dolore eu fugiat nulla pariatur.",
   },
 ];
 
@@ -38,9 +44,8 @@ export default function Community() {
             On Medicaid &amp; Medicare
           </h3>
           <p className="font-cooper-hewitt mt-2 text-sm text-darkGreen/80">
-            We believe care should be accessible, and we set aside time
-            each month to talk openly with clients and clinicians about
-            navigating coverage together.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Praesent libero quam, dignissim at posuere a, posuere at mi.
           </p>
         </div>
 

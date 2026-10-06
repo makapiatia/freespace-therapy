@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import WorkingTogether from "./WorkingTogether";
 
 const topSpecialties = ["Anxiety", "Family Issues", "Grief or Loss"];
 
@@ -33,8 +34,7 @@ function TagRow({
   tone,
 }: {
   items: string[];
-  tone: "clay" | "outline";
-  mono?: boolean;
+  tone: "accent" | "outline";
 }) {
   return (
     <div className="flex flex-wrap justify-center gap-2">
@@ -43,9 +43,9 @@ function TagRow({
           key={item}
           className={classNames(
             "rounded-full px-3 py-1 text-sm font-work-sans",
-            tone === "clay"
-              ? "bg-clay text-cream"
-              : "border border-logoLime bg-logoLime/10 text-darkGreen/80",
+            tone === "accent"
+              ? "bg-mediumIndigo text-cream font-bold"
+              : "border border-logoLime bg-logoLime/10 text-darkTeal/80",
           )}
         >
           {item}
@@ -59,10 +59,10 @@ export default function Services() {
   return (
     <section id="services" className="pt-10 md:pt-12">
       <div className="mx-auto max-w-2xl px-8 text-center">
-        <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
+        <h2 className="font-diamond text-4xl text-darkTeal md:text-5xl">
           Services & Methods
         </h2>
-        <p className="font-aileron mt-4 text-base text-darkGreen/80 md:text-lg">
+        <p className="font-aileron mt-4 text-base text-darkTeal/80 md:text-lg">
           Individual therapy for adults navigating anxiety,
           loss, uncertainty, or feeling stuck, offered virtually and in
           person.
@@ -70,60 +70,22 @@ export default function Services() {
       </div>
 
       <div className="mx-auto mt-6 md:mt-10 max-w-6xl px-8">
-        <TagRow items={topSpecialties} tone="clay" mono />
+        <TagRow items={topSpecialties} tone="accent"/>
         <div className="mt-4">
           <TagRow items={moreSpecialties} tone="outline" />
         </div>
       </div>
 
       <div className="mx-auto mt-10 max-w-6xl px-8 text-center">
-        <h3 className="font-diamond text-lg tracking-wide text-mediumGreen">
+        <h3 className="font-diamond text-lg tracking-wide text-darkTeal">
           Therapy Methods
         </h3>
         <div className="mt-3">
-          <TagRow items={therapyMethods} tone="outline" mono />
+          <TagRow items={therapyMethods} tone="outline" />
         </div>
       </div>
 
-      <div className="mt-10 bg-brown py-10 md:py-12">
-        <div className="mx-auto grid max-w-5xl gap-8 md:gap-10 px-8 md:grid-cols-2">
-          <div>
-            <h3 className="font-aileron-semibold text-lg md:text-xl text-cream">
-              Working Together
-            </h3>
-            <p className="font-aileron mt-3 text-sm md:text-base text-cream/80">
-              My approach to therapy is individualized, blending
-              humanistic, psychodynamic, and strengths-based approaches
-              with tools from CBT, DBT, and somatic work. I believe much
-              of what shows up as stresses in people can be understood in
-              terms of deep roots and old relational patterns; we may
-              explore those together at your own pace. I welcome
-              journaling, dreamwork, and other forms of creative
-              expression as a part of our process.
-            </p>
-            <p className="font-aileron mt-4 text-sm md:text-base text-cream/80">
-              In all cases, the most successful therapy arises from a
-              solid, trust-based, mutually respectful relationship, so
-              building and maintaining that foundation will be an
-              important part of our work together.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-aileron-semibold text-lg md:text-xl text-cream">
-              What to Expect
-            </h3>
-            <p className="font-aileron mt-3 text-sm md:text-base text-cream/80">
-              At the first session you can expect some more information
-              about therapy, a few initial assessment questions, and a
-              lot of space to share what you are bringing. I will also
-              answer any questions or concerns that you may have. Then,
-              together, we will start to identify next steps toward the
-              changes that you are looking to see.
-            </p>
-          </div>
-        </div>
-      </div>
+      <WorkingTogether />
     </section>
   );
 }

@@ -13,7 +13,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="border-y-2 border-logoGreen/30 bg-logoLime/10 px-8 py-10 md:py-12"
+      className="border-y-2 border-logoLime/30 bg-logoLime/10 px-8 py-10 md:py-12"
     >
       <div
         className={classNames(
@@ -44,16 +44,16 @@ export default function About() {
             "justify-end md:col-start-2",
           )}
         >
-          <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
+          <h2 className="font-diamond text-4xl text-darkTeal md:text-5xl">
             Meet Megan
           </h2>
-          <p className="font-aileron-semibold mt-2 text-xl text-mediumGreen">
+          <p className="font-aileron-semibold mt-2 text-xl text-darkTeal">
             Megan Miller, LCSW
           </p>
         </div>
 
         <div className="col-span-2 row-start-2 md:col-span-1 md:col-start-2">
-          <p className="font-aileron text-sm text-darkGreen/80 md:text-md">
+          <p className="font-aileron text-sm text-darkTeal/80 md:text-md">
             I am a Licensed Clinical Social Worker with a passion for
             supporting adults of all ages and backgrounds who are navigating
             anxiety, loss, uncertainty, or feeling &lsquo;stuck&rsquo;. I see
@@ -63,7 +63,7 @@ export default function About() {
             space away from the pressures of everyday life to slow down and
             effectively explore your deepest concerns.
           </p>
-          <p className="font-aileron mt-4 text-sm text-darkGreen/80 md:text-md">
+          <p className="font-aileron mt-4 text-sm text-darkTeal/80 md:text-md">
             Before returning to school for an MSW, I worked in a creative
             professional field. I believe that living itself is a creative
             act, worthy of ongoing examination and the application of
@@ -81,7 +81,7 @@ export default function About() {
                 key={item}
                 className={classNames(
                   "flex items-center gap-2 rounded-xl bg-logoLime/75 max-w-[320px]",
-                  "px-4 py-2 font-work-sans text-sm text-navy",
+                  "px-4 py-2 font-work-sans text-sm text-darkTeal",
                 )}
               >
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-cream" />

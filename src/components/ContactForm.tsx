@@ -5,8 +5,8 @@ import classNames from "classnames";
 
 const inputClasses = classNames(
   "w-full rounded-lg border border-cream/30 bg-cream/90 px-4 py-2.5",
-  "font-work-sans text-sm text-darkGreen placeholder:text-darkGreen/40",
-  "outline-none transition-colors focus:border-clay",
+  "font-work-sans text-sm text-darkTeal placeholder:text-darkTeal/40",
+  "outline-none transition-colors focus:border-logoLime",
 );
 
 export default function ContactForm() {
@@ -111,7 +111,7 @@ export default function ContactForm() {
         type="submit"
         className={classNames(
           "mt-2 rounded-full bg-cream px-8 py-3 font-work-sans text-sm",
-          "text-darkGreen transition-colors hover:bg-logoLime",
+          "text-darkTeal transition-colors hover:bg-logoLime",
         )}
       >
         Send Message

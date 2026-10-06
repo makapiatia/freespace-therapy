@@ -9,7 +9,7 @@ export default function DesktopHero() {
         "hero:gap-x-12",
       )}
     >
-      <span className="relative row-span-3 block h-52 w-52 shrink-0 overflow-hidden rounded-full ring-4 ring-logoLime">
+      <span className="relative row-span-3 block h-52 w-52 shrink-0 overflow-hidden rounded-full">
         <Image
           src="/logos/4x/Asset 1@4x.png"
           alt="Freespace Therapy"

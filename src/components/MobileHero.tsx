@@ -16,8 +16,7 @@ export default function MobileHero() {
       <div className="mt-3 flex max-w-112.5 items-center gap-5 self-start">
         <span
           className={classNames(
-            "relative block aspect-square shrink-0 overflow-hidden",
-            "rounded-full ring-4 ring-logoLime",
+            "relative block aspect-square shrink-0 overflow-hidden rounded-full",
             "w-[clamp(3.5rem,22vw,11rem)] min-[570px]:w-[125.4px]",
           )}
         >

@@ -10,7 +10,7 @@ export default function Hero() {
         <DesktopHero />
       </div>
 
-      <div className="mx-auto max-w-4xl px-8 pt-8 pb-8 text-center md:pb-10">
+      <div className="mx-auto max-w-4xl px-8 pt-6 pb-8 text-center md:pb-10">
         <a
           href="#contact"
           className={classNames(

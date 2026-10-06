@@ -23,7 +23,7 @@ export default function About() {
       >
         <span
           className={classNames(
-            "relative col-start-2 row-start-1 block h-28 w-28 shrink-0",
+            "relative col-start-2 row-start-1 block h-22 w-22 shrink-0",
             "justify-self-center overflow-hidden rounded-full ring-4",
             "ring-logoLime md:col-start-1 md:row-span-2 md:row-start-1",
             "md:h-36 md:w-36 md:justify-self-start",

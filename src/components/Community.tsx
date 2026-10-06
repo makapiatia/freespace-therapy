@@ -28,7 +28,7 @@ export default function Community() {
         <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
           Community &amp; Resources
         </h2>
-        <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80 md:text-lg">
+        <p className="font-aileron mt-4 text-base text-darkGreen/80 md:text-lg">
           A few ways we stay connected with clients and fellow therapists
           outside of individual sessions.
         </p>
@@ -43,7 +43,7 @@ export default function Community() {
           <h3 className="font-cooper-hewitt-medium text-lg text-darkGreen">
             On Medicaid &amp; Medicare
           </h3>
-          <p className="font-cooper-hewitt mt-2 text-sm text-darkGreen/80">
+          <p className="font-aileron mt-2 text-sm text-darkGreen/80">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Praesent libero quam, dignissim at posuere a, posuere at mi.
             Suspendisse potenti, nulla eget cursus sagittis, nunc elit
@@ -66,7 +66,7 @@ export default function Community() {
                 <p className="font-cooper-hewitt-medium text-sm text-darkGreen">
                   {item.title}
                 </p>
-                <p className="font-cooper-hewitt mt-1 text-sm text-darkGreen/80">
+                <p className="font-aileron mt-1 text-sm text-darkGreen/80">
                   {item.detail}
                 </p>
               </li>

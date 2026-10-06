@@ -28,7 +28,7 @@ export default function ContactForm() {
         <p className="font-cooper-hewitt-medium text-lg text-cream">
           Thank you for reaching out.
         </p>
-        <p className="font-cooper-hewitt mt-2 text-sm text-cream/80">
+        <p className="font-aileron mt-2 text-sm text-cream/80">
           We&rsquo;ll be in touch within one business day.
         </p>
       </div>

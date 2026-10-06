@@ -19,12 +19,12 @@ export default function HoursLocation() {
           <h3 className="font-cooper-hewitt-medium text-lg text-cream">
             Visit or Reach Us
           </h3>
-          <p className="font-cooper-hewitt mt-3 text-base text-cream/80">
+          <p className="font-aileron mt-3 text-base text-cream/80">
             123 Placeholder Lane, Suite 2
             <br />
             Faketown, CA 00000
           </p>
-          <p className="font-cooper-hewitt mt-3 text-base text-cream/80">
+          <p className="font-aileron mt-3 text-base text-cream/80">
             <a href="tel:+15555550182" className="hover:text-clay">
               (555) 555-0182
             </a>

@@ -46,7 +46,7 @@ export default function Hero() {
             </h1>
             <p
               className={classNames(
-                "font-cooper-hewitt mx-auto mt-7 max-w-2xl text-lg",
+                "font-aileron mx-auto mt-7 max-w-2xl text-lg",
                 "text-cream/80 md:mx-0 md:text-xl",
               )}
             >

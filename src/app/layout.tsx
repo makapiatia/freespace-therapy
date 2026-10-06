@@ -32,9 +32,9 @@ const victorMono = localFont({
   display: "swap",
 });
 
-const cooperHewitt = localFont({
-  src: "../../public/fonts/cooper-hewitt/CooperHewitt-Book.ttf",
-  variable: "--font-cooper-hewitt",
+const aileron = localFont({
+  src: "../../public/fonts/Aileron/Aileron-Regular.otf",
+  variable: "--font-aileron",
   display: "swap",
 });
 
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         diamondGrotesk.variable,
         workSans.variable,
         victorMono.variable,
-        cooperHewitt.variable,
+        aileron.variable,
         cooperHewittMedium.variable,
         "h-full antialiased",
       )}

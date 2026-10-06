@@ -12,7 +12,7 @@ export default function Quote() {
           Not everything that is faced can be changed, but nothing can be
           changed until it is faced.
         </blockquote>
-        <cite className="font-cooper-hewitt mt-6 block text-base text-mediumGreen not-italic">
+        <cite className="font-aileron mt-6 block text-base text-mediumGreen not-italic">
           ― James Baldwin
         </cite>
       </div>

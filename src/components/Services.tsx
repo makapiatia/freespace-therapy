@@ -64,7 +64,7 @@ export default function Services() {
         <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
           Services &amp; Specialties
         </h2>
-        <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80 md:text-lg">
+        <p className="font-aileron mt-4 text-base text-darkGreen/80 md:text-lg">
           Individual therapy for adults and seniors navigating anxiety,
           loss, uncertainty, or feeling stuck, offered virtually and in
           person.
@@ -93,7 +93,7 @@ export default function Services() {
             <h3 className="font-cooper-hewitt-medium text-xl text-darkGreen">
               My Approach to Therapy
             </h3>
-            <p className="font-cooper-hewitt mt-3 text-base text-darkGreen/80">
+            <p className="font-aileron mt-3 text-base text-darkGreen/80">
               My approach to therapy is individualized, blending
               humanistic, psychodynamic, and strengths-based approaches
               with tools from CBT, DBT, and somatic work. I believe much
@@ -103,7 +103,7 @@ export default function Services() {
               journaling, dreamwork, and other forms of creative
               expression as a part of our process.
             </p>
-            <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80">
+            <p className="font-aileron mt-4 text-base text-darkGreen/80">
               In all cases, the most successful therapy arises from a
               solid, trust-based, mutually respectful relationship, so
               building and maintaining that foundation will be an
@@ -115,7 +115,7 @@ export default function Services() {
             <h3 className="font-cooper-hewitt-medium text-xl text-darkGreen">
               What to Expect
             </h3>
-            <p className="font-cooper-hewitt mt-3 text-base text-darkGreen/80">
+            <p className="font-aileron mt-3 text-base text-darkGreen/80">
               At the first session you can expect some more information
               about therapy, a few initial assessment questions, and a
               lot of space to share what you are bringing. I will also

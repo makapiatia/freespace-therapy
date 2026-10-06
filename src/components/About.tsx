@@ -53,7 +53,7 @@ export default function About() {
             ))}
           </div>
 
-          <p className="font-cooper-hewitt mt-5 text-base text-cream/80 md:text-lg">
+          <p className="font-aileron mt-5 text-base text-cream/80 md:text-lg">
             I am a Licensed Clinical Social Worker with a passion for
             supporting adults of all ages and backgrounds who are navigating
             anxiety, loss, uncertainty, or feeling &lsquo;stuck&rsquo;. I see
@@ -63,7 +63,7 @@ export default function About() {
             space away from the pressures of everyday life to slow down and
             effectively explore your deepest concerns.
           </p>
-          <p className="font-cooper-hewitt mt-4 text-base text-cream/80 md:text-lg">
+          <p className="font-aileron mt-4 text-base text-cream/80 md:text-lg">
             Before returning to school for an MSW, I worked in a creative
             professional field. I believe that living itself is a creative
             act, worthy of ongoing examination and the application of

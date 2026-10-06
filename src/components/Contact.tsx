@@ -6,7 +6,7 @@ export default function Contact() {
       <h2 className="font-diamond text-4xl text-cream md:text-5xl">
         Get in Touch
       </h2>
-      <p className="font-cooper-hewitt mt-4 text-base text-cream/80 md:text-lg">
+      <p className="font-aileron mt-4 text-base text-cream/80 md:text-lg">
         Have questions or ready to schedule? Send a message below and
         we&rsquo;ll follow up soon.
       </p>

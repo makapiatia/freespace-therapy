@@ -1,10 +1,10 @@
 export default function Quote() {
   return (
-    <section className="border-y-2 border-logoLime/30 bg-logoLime/5 px-8 py-6 text-center md:py-8">
+    <section className="border-b-2 border-logoLime/50 bg-logoLime/20 px-8 py-6 text-center md:py-8">
       <div className="relative mx-auto max-w-3xl">
         <span
           aria-hidden
-          className="font-diamond block text-4xl text-logoLime/80 md:text-6xl mb-4"
+          className="font-diamond block text-4xl text-logoLime md:text-6xl mb-4"
         >
           &ldquo;
         </span>

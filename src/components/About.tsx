@@ -13,7 +13,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="border-y-2 border-logoLime/30 bg-logoLime/10 px-8 py-10 md:py-12"
+      className="border-t-2 border-logoLime/50 bg-logoLime/20 px-8 py-10 md:py-12"
     >
       <div
         className={classNames(

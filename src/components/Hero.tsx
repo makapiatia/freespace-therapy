@@ -7,16 +7,43 @@ export default function Hero() {
       <div className="mx-auto max-w-4xl px-8 pt-10 md:pt-14">
         <div
           className={classNames(
-            "grid grid-cols-[auto_1fr] items-start gap-x-8 text-left",
-            "min-[540px]:gap-x-12",
+            "grid grid-cols-[auto_auto] items-start hero:gap-x-8",
+            "text-left",
+            "hero:grid-cols-[auto_1fr] hero:gap-x-12",
           )}
         >
+          <p
+            className={classNames(
+              "hero-tagline col-span-2 row-start-1 font-diamond text-sm",
+              "font-semibold tracking-widest text-logoLime",
+              "whitespace-nowrap hero:col-span-1 hero:col-start-2",
+              "hero:text-base hero:whitespace-normal",
+            )}
+          >
+            a free space to feel, heal, and be yourself
+          </p>
+          <h1
+            className={classNames(
+              "hero-heading col-start-1 row-start-2 mt-3 mr-1.5 w-fit",
+              "max-w-137.5 self-center font-diamond whitespace-nowrap",
+              "text-[clamp(2rem,11vw,3.25rem)] leading-[1.05]",
+              "text-cream tracking-wide hero:col-start-2",
+              "hero:mr-0 hero:self-start",
+              "hero:text-6xl lg:text-7xl",
+            )}
+          >
+            welcome to
+            <br />
+            free space
+          </h1>
           <span
             className={classNames(
-              "relative col-start-2 row-start-1 block h-20 w-20 shrink-0",
-              "self-center overflow-hidden rounded-full ring-4",
-              "ring-logoLime min-[540px]:col-start-1 min-[540px]:row-span-2",
-              "min-[540px]:self-start md:h-52 md:w-52",
+              "relative col-start-2 row-start-2 block aspect-square",
+              "w-[clamp(3.5rem,18vw,5rem)] shrink-0 self-center",
+              "overflow-hidden rounded-full ring-4 ring-logoLime",
+              "hero:col-start-1 hero:row-start-1",
+              "hero:row-span-3 hero:w-20",
+              "hero:self-start md:h-52 md:w-52",
             )}
           >
             <Image
@@ -30,31 +57,10 @@ export default function Hero() {
           </span>
           <p
             className={classNames(
-              "hero-tagline col-start-1 row-start-1 self-center",
-              "font-diamond text-sm font-semibold tracking-widest",
-              "text-logoLime min-[540px]:col-start-2 min-[540px]:text-base",
-            )}
-          >
-            a free space to feel, heal, and be yourself
-          </p>
-          <h1
-            className={classNames(
-              "hero-heading col-span-2 row-start-2 mt-3 max-w-137.5",
-              "font-diamond text-5xl leading-[1.05] text-cream",
-              "tracking-wide min-[540px]:col-span-1 min-[540px]:col-start-2",
-              "min-[540px]:text-6xl lg:text-7xl",
-            )}
-          >
-            welcome to
-            <br />
-            free space
-          </h1>
-          <p
-            className={classNames(
               "hero-body col-span-2 row-start-3 mt-4 font-aileron text-md",
-              "text-cream/80 min-[540px]:mt-0 min-[540px]:col-span-1",
-              "min-[540px]:col-start-2 min-[540px]:max-w-137.5",
-              "min-[540px]:text-lg lg:mt-4",
+              "text-cream/80 hero:mt-0 hero:col-span-1",
+              "hero:col-start-2 hero:max-w-137.5",
+              "hero:text-lg lg:mt-4",
             )}
           >
             We offer a compassionate, non-judgmental space to slow down

@@ -9,6 +9,7 @@
 }
 
 @theme inline {
+  --breakpoint-hero: 540px;
   --color-cream: var(--cream);
   --color-logoLime: var(--logoLime);
   --color-darkTeal: var(--darkTeal);

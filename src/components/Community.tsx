@@ -23,7 +23,7 @@ const resources = [
 
 export default function Community() {
   return (
-    <section id="community" className="bg-logoLime/10 px-8 py-16 md:py-20">
+    <section id="community" className="bg-cream px-8 py-10 md:py-12">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
           Community &amp; Resources
@@ -40,7 +40,7 @@ export default function Community() {
             "rounded-2xl border border-clay/30 bg-clay/10 p-6",
           )}
         >
-          <h3 className="font-aileron-semibold-italic text-lg text-darkGreen">
+          <h3 className="font-aileron-semibold text-lg text-darkGreen">
             On Medicaid &amp; Medicare
           </h3>
           <p className="font-aileron mt-2 text-sm text-darkGreen/80">
@@ -54,16 +54,16 @@ export default function Community() {
         </div>
 
         <div>
-          <h3 className="font-aileron-semibold-italic text-lg text-darkGreen">
+          <h3 className="font-aileron-semibold text-lg text-darkGreen">
             Resources for Clients &amp; Therapists
           </h3>
           <ul className="mt-4 space-y-3">
             {resources.map((item) => (
               <li
                 key={item.title}
-                className="rounded-xl border border-logoGreen/40 bg-cream p-4"
+                className="rounded-xl border border-logoGreen/40 bg-logoLime/10 p-4"
               >
-                <p className="font-aileron-semibold-italic text-sm text-darkGreen">
+                <p className="font-aileron-semibold text-sm text-darkGreen">
                   {item.title}
                 </p>
                 <p className="font-aileron mt-1 text-sm text-darkGreen/80">

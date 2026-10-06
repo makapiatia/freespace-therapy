@@ -25,7 +25,7 @@ export default function ContactForm() {
           "bg-cream/10 p-8 text-center",
         )}
       >
-        <p className="font-aileron-semibold-italic text-lg text-cream">
+        <p className="font-aileron-semibold text-lg text-cream">
           Thank you for reaching out.
         </p>
         <p className="font-aileron mt-2 text-sm text-cream/80">

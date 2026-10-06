@@ -38,9 +38,9 @@ const aileron = localFont({
   display: "swap",
 });
 
-const aileronSemiBoldItalic = localFont({
-  src: "../../public/fonts/Aileron/Aileron-SemiBoldItalic.otf",
-  variable: "--font-aileron-semibold-italic",
+const aileronSemiBold = localFont({
+  src: "../../public/fonts/Aileron/Aileron-SemiBold.otf",
+  variable: "--font-aileron-semibold",
   display: "swap",
 });
 
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         workSans.variable,
         victorMono.variable,
         aileron.variable,
-        aileronSemiBoldItalic.variable,
+        aileronSemiBold.variable,
         "h-full antialiased",
       )}
     >

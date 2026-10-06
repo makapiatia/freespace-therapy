@@ -14,9 +14,9 @@ export default function HoursLocation() {
         Hours &amp; Location
       </h2>
 
-      <div className="mt-8 space-y-8">
+      <div className="mt-6 space-y-8">
         <div>
-          <h3 className="font-aileron-semibold-italic text-lg text-cream">
+          <h3 className="font-aileron-semibold text-lg text-cream">
             Visit or Reach Us
           </h3>
           <p className="font-aileron mt-3 text-base text-cream/80">
@@ -39,7 +39,7 @@ export default function HoursLocation() {
         </div>
 
         <div>
-          <h3 className="font-aileron-semibold-italic text-lg text-cream">
+          <h3 className="font-aileron-semibold text-lg text-cream">
             Office Hours
           </h3>
           <dl

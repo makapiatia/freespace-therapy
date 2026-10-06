@@ -15,12 +15,12 @@ export default function Home() {
       <Services />
       <About />
       <Community />
-      <footer className="bg-brown pt-16 pb-10 md:pt-20 md:pb-10">
+      <footer className="bg-brown pt-10 pb-6 md:pt-12 md:pb-6">
         <div className="mx-auto grid max-w-5xl gap-14 px-8 md:grid-cols-2 md:gap-10">
           <Contact />
           <HoursLocation />
         </div>
-        <div className="mt-16 border-t border-cream/15 pt-8">
+        <div>
           <SiteFooter />
         </div>
       </footer>

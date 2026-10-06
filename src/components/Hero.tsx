@@ -63,7 +63,7 @@ export default function Hero() {
               "hero:text-lg lg:mt-4",
             )}
           >
-            We offer a compassionate, non-judgmental space to slow down
+            Offering a compassionate, non-judgmental space to slow down
             and explore what&rsquo;s really going on beneath the
             surface, for adults navigating anxiety, loss,
             uncertainty, or feeling stuck.

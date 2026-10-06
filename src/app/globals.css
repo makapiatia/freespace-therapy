@@ -26,7 +26,7 @@
   --font-work-sans: var(--font-work-sans);
   --font-victor-mono: var(--font-victor-mono);
   --font-aileron: var(--font-aileron);
-  --font-cooper-hewitt-medium: var(--font-cooper-hewitt-medium);
+  --font-aileron-semibold-italic: var(--font-aileron-semibold-italic);
 }
 
 body {
@@ -36,6 +36,6 @@ body {
 }
 
 .font-aileron,
-.font-cooper-hewitt-medium {
+.font-aileron-semibold-italic {
   letter-spacing: 0.025em;
 }

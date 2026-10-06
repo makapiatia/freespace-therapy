@@ -40,7 +40,7 @@ export default function Community() {
             "rounded-2xl border border-clay/30 bg-clay/10 p-6",
           )}
         >
-          <h3 className="font-cooper-hewitt-medium text-lg text-darkGreen">
+          <h3 className="font-aileron-semibold-italic text-lg text-darkGreen">
             On Medicaid &amp; Medicare
           </h3>
           <p className="font-aileron mt-2 text-sm text-darkGreen/80">
@@ -54,7 +54,7 @@ export default function Community() {
         </div>
 
         <div>
-          <h3 className="font-cooper-hewitt-medium text-lg text-darkGreen">
+          <h3 className="font-aileron-semibold-italic text-lg text-darkGreen">
             Resources for Clients &amp; Therapists
           </h3>
           <ul className="mt-4 space-y-3">
@@ -63,7 +63,7 @@ export default function Community() {
                 key={item.title}
                 className="rounded-xl border border-logoGreen/40 bg-cream p-4"
               >
-                <p className="font-cooper-hewitt-medium text-sm text-darkGreen">
+                <p className="font-aileron-semibold-italic text-sm text-darkGreen">
                   {item.title}
                 </p>
                 <p className="font-aileron mt-1 text-sm text-darkGreen/80">

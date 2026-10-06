@@ -8,7 +8,7 @@ export default function Quote() {
         >
           &ldquo;
         </span>
-        <blockquote className="font-cooper-hewitt-medium -mt-6 text-2xl leading-snug text-darkGreen md:text-4xl">
+        <blockquote className="font-aileron-semibold-italic -mt-6 text-2xl leading-snug text-darkGreen md:text-4xl">
           Not everything that is faced can be changed, but nothing can be
           changed until it is faced.
         </blockquote>

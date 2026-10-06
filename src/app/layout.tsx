@@ -38,9 +38,9 @@ const aileron = localFont({
   display: "swap",
 });
 
-const cooperHewittMedium = localFont({
-  src: "../../public/fonts/cooper-hewitt/CooperHewitt-Medium.ttf",
-  variable: "--font-cooper-hewitt-medium",
+const aileronSemiBoldItalic = localFont({
+  src: "../../public/fonts/Aileron/Aileron-SemiBoldItalic.otf",
+  variable: "--font-aileron-semibold-italic",
   display: "swap",
 });
 
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         workSans.variable,
         victorMono.variable,
         aileron.variable,
-        cooperHewittMedium.variable,
+        aileronSemiBoldItalic.variable,
         "h-full antialiased",
       )}
     >

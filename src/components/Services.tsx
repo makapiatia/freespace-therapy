@@ -90,7 +90,7 @@ export default function Services() {
       <div className="mt-16 border-t border-logoGreen/20 pt-12">
         <div className="mx-auto grid max-w-5xl gap-10 px-8 md:grid-cols-2">
           <div>
-            <h3 className="font-cooper-hewitt-medium text-xl text-darkGreen">
+            <h3 className="font-aileron-semibold-italic text-xl text-darkGreen">
               My Approach to Therapy
             </h3>
             <p className="font-aileron mt-3 text-base text-darkGreen/80">
@@ -112,7 +112,7 @@ export default function Services() {
           </div>
 
           <div>
-            <h3 className="font-cooper-hewitt-medium text-xl text-darkGreen">
+            <h3 className="font-aileron-semibold-italic text-xl text-darkGreen">
               What to Expect
             </h3>
             <p className="font-aileron mt-3 text-base text-darkGreen/80">

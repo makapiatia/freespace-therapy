@@ -38,7 +38,7 @@ export default function About() {
           <h2 className="font-diamond text-4xl text-cream md:text-5xl">
             About &amp; Credentials
           </h2>
-          <p className="font-cooper-hewitt-medium mt-2 text-xl text-logoLime">
+          <p className="font-aileron-semibold-italic mt-2 text-xl text-logoLime">
             Megan Miller, LCSW
           </p>
 

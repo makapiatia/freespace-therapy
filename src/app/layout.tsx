@@ -32,15 +32,15 @@ const victorMono = localFont({
   display: "swap",
 });
 
-const cooperHewitt = localFont({
-  src: "../../public/fonts/cooper-hewitt/CooperHewitt-Book.ttf",
-  variable: "--font-cooper-hewitt",
+const aileron = localFont({
+  src: "../../public/fonts/Aileron/Aileron-Regular.otf",
+  variable: "--font-aileron",
   display: "swap",
 });
 
-const cooperHewittMedium = localFont({
-  src: "../../public/fonts/cooper-hewitt/CooperHewitt-Medium.ttf",
-  variable: "--font-cooper-hewitt-medium",
+const aileronSemiBold = localFont({
+  src: "../../public/fonts/Aileron/Aileron-SemiBold.otf",
+  variable: "--font-aileron-semibold",
   display: "swap",
 });
 
@@ -59,8 +59,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         diamondGrotesk.variable,
         workSans.variable,
         victorMono.variable,
-        cooperHewitt.variable,
-        cooperHewittMedium.variable,
+        aileron.variable,
+        aileronSemiBold.variable,
         "h-full antialiased",
       )}
     >

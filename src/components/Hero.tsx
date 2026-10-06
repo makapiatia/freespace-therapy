@@ -4,7 +4,7 @@ import classNames from "classnames";
 export default function Hero() {
   return (
     <section id="top" className="bg-darkGreen">
-      <div className="mx-auto max-w-5xl px-8 pt-10 md:pt-14">
+      <div className="mx-auto max-w-4xl px-8 pt-10 md:pt-14">
         <div
           className={classNames(
             "grid gap-8 text-center md:grid-cols-[auto_1fr]",
@@ -27,10 +27,10 @@ export default function Hero() {
             />
           </span>
 
-          <div>
+          <div className="max-w-137.5">
             <p
               className={classNames(
-                "font-victor-mono text-sm font-semibold tracking-wide",
+                "font-diamond text-sm font-semibold tracking-widest",
                 "text-logoLime md:text-base",
               )}
             >
@@ -39,27 +39,29 @@ export default function Hero() {
             <h1
               className={classNames(
                 "font-diamond mt-5 text-5xl leading-[1.05] text-cream",
-                "sm:text-6xl md:text-6xl lg:text-7xl",
+                "sm:text-6xl md:text-6xl lg:text-7xl tracking-wide",
               )}
             >
-              Welcome to Freespace Therapy
+              welcome to
+              <br />
+              free space
             </h1>
             <p
               className={classNames(
-                "font-cooper-hewitt mx-auto mt-7 max-w-2xl text-lg",
-                "text-cream/80 md:mx-0 md:text-xl",
+                "font-aileron mx-auto mt-5 text-md",
+                "text-cream/80 md:mx-0 md:text-lg",
               )}
             >
-              Freespace Therapy offers a compassionate, non-judgmental
-              space to slow down and explore what&rsquo;s really going on
-              beneath the surface, for adults and seniors navigating
-              anxiety, loss, uncertainty, or feeling stuck.
+              We offer a compassionate, non-judgmental space to slow down
+              and explore what&rsquo;s really going on beneath the
+              surface, for adults navigating anxiety, loss,
+              uncertainty, or feeling stuck.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto max-w-4xl px-8 pt-10 pb-20 text-center md:pb-28">
+      <div className="mx-auto max-w-4xl px-8 pt-10 pb-12 text-center md:pb-14">
         <a
           href="#contact"
           className={classNames(

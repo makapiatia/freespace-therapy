@@ -43,8 +43,7 @@ function TagRow({
         <span
           key={item}
           className={classNames(
-            "rounded-full px-3 py-1 text-xs",
-            mono ? "font-victor-mono" : "font-work-sans",
+            "rounded-full px-3 py-1 text-sm font-work-sans",
             tone === "clay"
               ? "bg-clay text-cream"
               : "border border-logoLime bg-logoLime/10 text-darkGreen/80",
@@ -59,27 +58,27 @@ function TagRow({
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 md:py-20">
+    <section id="services" className="pt-10 md:pt-12">
       <div className="mx-auto max-w-2xl px-8 text-center">
         <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
           Services &amp; Specialties
         </h2>
-        <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80 md:text-lg">
+        <p className="font-aileron mt-4 text-base text-darkGreen/80 md:text-lg">
           Individual therapy for adults and seniors navigating anxiety,
           loss, uncertainty, or feeling stuck, offered virtually and in
           person.
         </p>
       </div>
 
-      <div className="mx-auto mt-10 max-w-3xl px-8">
+      <div className="mx-auto mt-10 max-w-6xl px-8">
         <TagRow items={topSpecialties} tone="clay" mono />
         <div className="mt-4">
           <TagRow items={moreSpecialties} tone="outline" />
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-2xl px-8 text-center">
-        <h3 className="font-victor-mono text-sm tracking-wide text-mediumGreen uppercase">
+      <div className="mx-auto mt-10 max-w-6xl px-8 text-center">
+        <h3 className="font-diamond text-md tracking-wide text-mediumGreen uppercase">
           Therapy Methods
         </h3>
         <div className="mt-3">
@@ -87,13 +86,13 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="mt-16 border-t border-logoGreen/20 pt-12">
+      <div className="mt-16 bg-brown py-12">
         <div className="mx-auto grid max-w-5xl gap-10 px-8 md:grid-cols-2">
           <div>
-            <h3 className="font-cooper-hewitt-medium text-xl text-darkGreen">
-              My Approach to Therapy
+            <h3 className="font-aileron-semibold text-xl text-cream">
+              Working Together
             </h3>
-            <p className="font-cooper-hewitt mt-3 text-base text-darkGreen/80">
+            <p className="font-aileron mt-3 text-base text-cream/80">
               My approach to therapy is individualized, blending
               humanistic, psychodynamic, and strengths-based approaches
               with tools from CBT, DBT, and somatic work. I believe much
@@ -103,7 +102,7 @@ export default function Services() {
               journaling, dreamwork, and other forms of creative
               expression as a part of our process.
             </p>
-            <p className="font-cooper-hewitt mt-4 text-base text-darkGreen/80">
+            <p className="font-aileron mt-4 text-base text-cream/80">
               In all cases, the most successful therapy arises from a
               solid, trust-based, mutually respectful relationship, so
               building and maintaining that foundation will be an
@@ -112,10 +111,10 @@ export default function Services() {
           </div>
 
           <div>
-            <h3 className="font-cooper-hewitt-medium text-xl text-darkGreen">
+            <h3 className="font-aileron-semibold text-xl text-cream">
               What to Expect
             </h3>
-            <p className="font-cooper-hewitt mt-3 text-base text-darkGreen/80">
+            <p className="font-aileron mt-3 text-base text-cream/80">
               At the first session you can expect some more information
               about therapy, a few initial assessment questions, and a
               lot of space to share what you are bringing. I will also

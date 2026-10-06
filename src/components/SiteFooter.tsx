@@ -6,8 +6,7 @@ export default function SiteFooter() {
     <div
       className={classNames(
         "flex flex-col items-center justify-center gap-3 px-8",
-        "text-center sm:flex-row sm:justify-end sm:gap-6 sm:px-8",
-        "sm:text-left",
+        "flex-row justify-end gap-6 pt-8 sm:pt-0 text-left",
       )}
     >
       <p className="font-work-sans text-xs text-cream/70">

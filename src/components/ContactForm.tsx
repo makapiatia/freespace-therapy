@@ -25,10 +25,10 @@ export default function ContactForm() {
           "bg-cream/10 p-8 text-center",
         )}
       >
-        <p className="font-cooper-hewitt-medium text-lg text-cream">
+        <p className="font-aileron-semibold text-lg text-cream">
           Thank you for reaching out.
         </p>
-        <p className="font-cooper-hewitt mt-2 text-sm text-cream/80">
+        <p className="font-aileron mt-2 text-sm text-cream/80">
           We&rsquo;ll be in touch within one business day.
         </p>
       </div>

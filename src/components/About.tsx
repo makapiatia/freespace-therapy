@@ -12,7 +12,10 @@ const styleTags = ["Empowering", "Warm", "Challenging"];
 
 export default function About() {
   return (
-    <section id="about" className="bg-brown px-8 py-16 md:py-20">
+    <section
+      id="about"
+      className="border-y-2 border-logoGreen/30 bg-logoLime/10 px-8 py-10 md:py-12"
+    >
       <div
         className={classNames(
           "mx-auto grid max-w-5xl gap-10 md:grid-cols-[auto_1fr]",
@@ -35,25 +38,14 @@ export default function About() {
         </span>
 
         <div>
-          <h2 className="font-diamond text-4xl text-cream md:text-5xl">
-            About &amp; Credentials
+          <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
+            Meet Megan
           </h2>
-          <p className="font-cooper-hewitt-medium mt-2 text-xl text-logoLime">
+          <p className="font-aileron-semibold mt-2 text-xl text-mediumGreen">
             Megan Miller, LCSW
           </p>
 
-          <div className="mt-3 flex flex-wrap gap-2">
-            {styleTags.map((tag) => (
-              <span
-                key={tag}
-                className="font-work-sans rounded-full bg-logoLime px-3 py-1 text-xs text-navy"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <p className="font-cooper-hewitt mt-5 text-base text-cream/80 md:text-lg">
+          <p className="font-aileron mt-5 text-base text-darkGreen/80 md:text-md">
             I am a Licensed Clinical Social Worker with a passion for
             supporting adults of all ages and backgrounds who are navigating
             anxiety, loss, uncertainty, or feeling &lsquo;stuck&rsquo;. I see
@@ -63,7 +55,7 @@ export default function About() {
             space away from the pressures of everyday life to slow down and
             effectively explore your deepest concerns.
           </p>
-          <p className="font-cooper-hewitt mt-4 text-base text-cream/80 md:text-lg">
+          <p className="font-aileron mt-4 text-base text-darkGreen/80 md:text-md">
             Before returning to school for an MSW, I worked in a creative
             professional field. I believe that living itself is a creative
             act, worthy of ongoing examination and the application of
@@ -80,9 +72,9 @@ export default function About() {
             {credentials.map((item) => (
               <li
                 key={item}
-                className="font-work-sans flex items-start gap-2 text-sm text-cream/80"
+                className="font-work-sans flex items-center gap-2 text-sm text-darkGreen/80"
               >
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-logoLime" />
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-clay" />
                 {item}
               </li>
             ))}

@@ -14,17 +14,17 @@ export default function HoursLocation() {
         Hours &amp; Location
       </h2>
 
-      <div className="mt-8 space-y-8">
+      <div className="mt-6 space-y-8">
         <div>
-          <h3 className="font-cooper-hewitt-medium text-lg text-cream">
+          <h3 className="font-aileron-semibold text-lg text-cream">
             Visit or Reach Us
           </h3>
-          <p className="font-cooper-hewitt mt-3 text-base text-cream/80">
+          <p className="font-aileron mt-3 text-base text-cream/80">
             123 Placeholder Lane, Suite 2
             <br />
             Faketown, CA 00000
           </p>
-          <p className="font-cooper-hewitt mt-3 text-base text-cream/80">
+          <p className="font-aileron mt-3 text-base text-cream/80">
             <a href="tel:+15555550182" className="hover:text-clay">
               (555) 555-0182
             </a>
@@ -39,7 +39,7 @@ export default function HoursLocation() {
         </div>
 
         <div>
-          <h3 className="font-cooper-hewitt-medium text-lg text-cream">
+          <h3 className="font-aileron-semibold text-lg text-cream">
             Office Hours
           </h3>
           <dl

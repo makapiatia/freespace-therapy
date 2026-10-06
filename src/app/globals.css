@@ -25,8 +25,8 @@
   --font-diamond: var(--font-diamond-grotesk);
   --font-work-sans: var(--font-work-sans);
   --font-victor-mono: var(--font-victor-mono);
-  --font-cooper-hewitt: var(--font-cooper-hewitt);
-  --font-cooper-hewitt-medium: var(--font-cooper-hewitt-medium);
+  --font-aileron: var(--font-aileron);
+  --font-aileron-semibold: var(--font-aileron-semibold);
 }
 
 body {
@@ -35,7 +35,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.font-cooper-hewitt,
-.font-cooper-hewitt-medium {
+.font-aileron,
+.font-aileron-semibold {
   letter-spacing: 0.025em;
 }

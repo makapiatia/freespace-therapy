@@ -31,7 +31,6 @@ const therapyMethods = [
 function TagRow({
   items,
   tone,
-  mono = false,
 }: {
   items: string[];
   tone: "clay" | "outline";
@@ -61,16 +60,16 @@ export default function Services() {
     <section id="services" className="pt-10 md:pt-12">
       <div className="mx-auto max-w-2xl px-8 text-center">
         <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
-          Services &amp; Specialties
+          Services & Methods
         </h2>
         <p className="font-aileron mt-4 text-base text-darkGreen/80 md:text-lg">
-          Individual therapy for adults and seniors navigating anxiety,
+          Individual therapy for adults navigating anxiety,
           loss, uncertainty, or feeling stuck, offered virtually and in
           person.
         </p>
       </div>
 
-      <div className="mx-auto mt-10 max-w-6xl px-8">
+      <div className="mx-auto mt-6 md:mt-10 max-w-6xl px-8">
         <TagRow items={topSpecialties} tone="clay" mono />
         <div className="mt-4">
           <TagRow items={moreSpecialties} tone="outline" />
@@ -78,7 +77,7 @@ export default function Services() {
       </div>
 
       <div className="mx-auto mt-10 max-w-6xl px-8 text-center">
-        <h3 className="font-diamond text-md tracking-wide text-mediumGreen uppercase">
+        <h3 className="font-diamond text-lg tracking-wide text-mediumGreen">
           Therapy Methods
         </h3>
         <div className="mt-3">
@@ -86,13 +85,13 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="mt-16 bg-brown py-12">
-        <div className="mx-auto grid max-w-5xl gap-10 px-8 md:grid-cols-2">
+      <div className="mt-10 bg-brown py-10 md:py-12">
+        <div className="mx-auto grid max-w-5xl gap-8 md:gap-10 px-8 md:grid-cols-2">
           <div>
-            <h3 className="font-aileron-semibold text-xl text-cream">
+            <h3 className="font-aileron-semibold text-lg md:text-xl text-cream">
               Working Together
             </h3>
-            <p className="font-aileron mt-3 text-base text-cream/80">
+            <p className="font-aileron mt-3 text-sm md:text-base text-cream/80">
               My approach to therapy is individualized, blending
               humanistic, psychodynamic, and strengths-based approaches
               with tools from CBT, DBT, and somatic work. I believe much
@@ -102,7 +101,7 @@ export default function Services() {
               journaling, dreamwork, and other forms of creative
               expression as a part of our process.
             </p>
-            <p className="font-aileron mt-4 text-base text-cream/80">
+            <p className="font-aileron mt-4 text-sm md:text-base text-cream/80">
               In all cases, the most successful therapy arises from a
               solid, trust-based, mutually respectful relationship, so
               building and maintaining that foundation will be an
@@ -111,10 +110,10 @@ export default function Services() {
           </div>
 
           <div>
-            <h3 className="font-aileron-semibold text-xl text-cream">
+            <h3 className="font-aileron-semibold text-lg md:text-xl text-cream">
               What to Expect
             </h3>
-            <p className="font-aileron mt-3 text-base text-cream/80">
+            <p className="font-aileron mt-3 text-sm md:text-base text-cream/80">
               At the first session you can expect some more information
               about therapy, a few initial assessment questions, and a
               lot of space to share what you are bringing. I will also

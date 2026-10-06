@@ -8,7 +8,6 @@ const credentials = [
   "Virtual & In-Person Sessions",
 ];
 
-const styleTags = ["Empowering", "Warm", "Challenging"];
 
 export default function About() {
   return (
@@ -18,14 +17,16 @@ export default function About() {
     >
       <div
         className={classNames(
-          "mx-auto grid max-w-5xl gap-10 md:grid-cols-[auto_1fr]",
-          "md:items-start",
+          "mx-auto grid max-w-5xl grid-cols-[1fr_auto] gap-x-6 gap-y-6",
+          "md:grid-cols-[auto_1fr] md:items-start md:gap-10",
         )}
       >
         <span
           className={classNames(
-            "relative mx-auto block h-36 w-36 shrink-0 overflow-hidden",
-            "rounded-full ring-4 ring-logoLime md:mx-0",
+            "relative col-start-2 row-start-1 block h-28 w-28 shrink-0",
+            "justify-self-center overflow-hidden rounded-full ring-4",
+            "ring-logoLime md:col-start-1 md:row-span-2 md:row-start-1",
+            "md:h-36 md:w-36 md:justify-self-start",
           )}
         >
           <Image
@@ -37,15 +38,22 @@ export default function About() {
           />
         </span>
 
-        <div>
+        <div
+          className={classNames(
+            "about-header col-start-1 row-start-1 flex h-full flex-col",
+            "justify-end md:col-start-2",
+          )}
+        >
           <h2 className="font-diamond text-4xl text-darkGreen md:text-5xl">
             Meet Megan
           </h2>
           <p className="font-aileron-semibold mt-2 text-xl text-mediumGreen">
             Megan Miller, LCSW
           </p>
+        </div>
 
-          <p className="font-aileron mt-5 text-base text-darkGreen/80 md:text-md">
+        <div className="col-span-2 row-start-2 md:col-span-1 md:col-start-2">
+          <p className="font-aileron text-sm text-darkGreen/80 md:text-md">
             I am a Licensed Clinical Social Worker with a passion for
             supporting adults of all ages and backgrounds who are navigating
             anxiety, loss, uncertainty, or feeling &lsquo;stuck&rsquo;. I see
@@ -55,7 +63,7 @@ export default function About() {
             space away from the pressures of everyday life to slow down and
             effectively explore your deepest concerns.
           </p>
-          <p className="font-aileron mt-4 text-base text-darkGreen/80 md:text-md">
+          <p className="font-aileron mt-4 text-sm text-darkGreen/80 md:text-md">
             Before returning to school for an MSW, I worked in a creative
             professional field. I believe that living itself is a creative
             act, worthy of ongoing examination and the application of
@@ -67,14 +75,16 @@ export default function About() {
             effects of trauma, and impacts of interpersonal or systemic
             harm.
           </p>
-
           <ul className="mt-6 space-y-2">
             {credentials.map((item) => (
               <li
                 key={item}
-                className="font-work-sans flex items-center gap-2 text-sm text-darkGreen/80"
+                className={classNames(
+                  "flex items-center gap-2 rounded-xl bg-logoLime/75 max-w-[320px]",
+                  "px-4 py-2 font-work-sans text-sm text-navy",
+                )}
               >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-clay" />
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-cream" />
                 {item}
               </li>
             ))}

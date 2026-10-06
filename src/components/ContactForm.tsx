@@ -21,7 +21,7 @@ export default function ContactForm() {
     return (
       <div
         className={classNames(
-          "max-w-md rounded-2xl border border-cream/25",
+          "rounded-2xl border border-cream/25",
           "bg-cream/10 p-8 text-center",
         )}
       >
@@ -29,7 +29,7 @@ export default function ContactForm() {
           Thank you for reaching out.
         </p>
         <p className="font-aileron mt-2 text-sm text-cream/80">
-          We&rsquo;ll be in touch within one business day.
+          We&rsquo;ll be in touch soon.
         </p>
       </div>
     );
@@ -38,7 +38,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex max-w-md flex-col gap-4"
+      className="flex w-full flex-col gap-4"
     >
       <div>
         <label

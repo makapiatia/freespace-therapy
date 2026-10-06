@@ -24,7 +24,7 @@ export default function Hero() {
           </p>
           <h1
             className={classNames(
-              "hero-heading col-start-1 row-start-2 mt-3 mr-1.5 w-fit",
+              "hero-heading col-start-2 row-start-2 mt-3 ml-1.5 w-fit",
               "max-w-137.5 self-center font-diamond whitespace-nowrap",
               "text-[clamp(2rem,11vw,3.25rem)] leading-[1.05]",
               "text-cream tracking-wide hero:col-start-2",
@@ -38,7 +38,7 @@ export default function Hero() {
           </h1>
           <span
             className={classNames(
-              "relative col-start-2 row-start-2 block aspect-square",
+              "relative col-start-1 row-start-2 block aspect-square",
               "w-[clamp(3.5rem,18vw,5rem)] shrink-0 self-center",
               "overflow-hidden rounded-full ring-4 ring-logoLime",
               "hero:col-start-1 hero:row-start-1",

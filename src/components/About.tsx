@@ -18,7 +18,7 @@ export default function About() {
       <div
         className={classNames(
           "mx-auto grid max-w-5xl grid-cols-[1fr_auto] gap-x-6 gap-y-6",
-          "md:grid-cols-[auto_1fr] md:items-start md:gap-10",
+          "md:grid-cols-[auto_1fr] md:items-start md:gap-y-4 md:gap-x-10",
         )}
       >
         <span

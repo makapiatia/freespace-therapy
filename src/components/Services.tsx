@@ -59,12 +59,12 @@ export default function Services() {
   return (
     <section id="services" className="pt-10 md:pt-12">
       <div className="mx-auto max-w-2xl px-8 text-center">
-        <h2 className="font-diamond text-4xl text-darkTeal md:text-5xl">
-          Services & Methods
+        <h2 className="font-diamond text-3xl text-darkTeal md:text-5xl">
+          Individual Therapy
         </h2>
-        <p className="font-aileron mt-4 text-base text-darkTeal/80 md:text-lg">
-          Individual therapy for adults navigating anxiety,
-          loss, uncertainty, or feeling stuck, offered virtually and in
+        <p className="font-aileron mt-2 md:mt-4 text-base text-darkTeal/80 md:text-lg">
+          A space for adults navigating anxiety,
+          loss, uncertainty, or feeling stuck, sessions offered virtually and in
           person.
         </p>
       </div>

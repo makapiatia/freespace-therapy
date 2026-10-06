@@ -1,10 +1,10 @@
 export default function Contact() {
   return (
     <div id="contact">
-      <h2 className="font-diamond text-4xl text-cream md:text-5xl">
+      <h2 className="font-diamond text-3xl text-cream md:text-5xl">
         Contact
       </h2>
-      <p className="font-aileron mt-4 text-md text-cream/80 md:text-lg">
+      <p className="font-aileron mt-2 text-md text-cream/80 md:text-lg">
         Have questions or ready to schedule? Send a message and
         we&rsquo;ll follow up soon.
       </p>

@@ -44,10 +44,10 @@ export default function About() {
             "justify-end md:col-start-2",
           )}
         >
-          <h2 className="font-diamond text-4xl text-darkTeal md:text-5xl">
+          <h2 className="font-diamond text-3xl text-darkTeal md:text-5xl">
             Meet Megan
           </h2>
-          <p className="font-aileron-semibold mt-2 text-xl text-darkTeal">
+          <p className="font-aileron-semibold text-xl text-darkTeal">
             Megan Miller, LCSW
           </p>
         </div>

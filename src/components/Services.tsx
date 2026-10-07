@@ -57,7 +57,7 @@ function TagRow({
 
 export default function Services() {
   return (
-    <section id="services" className="pt-10 md:pt-12">
+    <section id="services" className="pt-8 md:pt-12">
       <div className="mx-auto max-w-2xl px-8 text-center">
         <h2 className="font-diamond text-3xl text-darkTeal md:text-5xl">
           Individual Therapy

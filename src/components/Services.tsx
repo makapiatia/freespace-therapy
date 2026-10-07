@@ -62,7 +62,7 @@ export default function Services() {
         <h2 className="font-diamond text-3xl text-darkTeal md:text-5xl">
           Individual Therapy
         </h2>
-        <p className="font-aileron mt-2 md:mt-4 text-base text-darkTeal/80 md:text-lg">
+        <p className="font-aileron mt-2 md:mt-4 text-sm text-darkTeal/80 md:text-lg">
           A space for adults navigating anxiety,
           loss, uncertainty, or feeling stuck, sessions offered virtually and in
           person.

@@ -8,11 +8,11 @@ export default function Quote() {
         >
           &ldquo;
         </span>
-        <blockquote className="font-aileron-semibold -mt-6 text-xl leading-snug text-darkTeal md:text-2xl">
+        <blockquote className="font-aileron-semibold -mt-6 text-lg leading-snug text-darkTeal md:text-2xl">
           Not everything that is faced can be changed, but nothing can be
           changed until it is faced.
         </blockquote>
-        <cite className="font-aileron mt-4 block text-base text-darkTeal not-italic">
+        <cite className="font-aileron mt-2 md:mt-4 block text-base text-darkTeal not-italic">
           ― James Baldwin
         </cite>
       </div>

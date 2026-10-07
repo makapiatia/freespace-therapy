@@ -13,7 +13,7 @@ export default function MobileHero() {
         a free space to feel, heal, and be yourself
       </p>
 
-      <div className="mt-3 flex max-w-112.5 items-center gap-5 self-start">
+      <div className="mt-5 flex max-w-112.5 items-center gap-5 self-start">
         <span
           className={classNames(
             "relative block aspect-square shrink-0 overflow-hidden rounded-full",
@@ -41,8 +41,7 @@ export default function MobileHero() {
           free space
         </h1>
       </div>
-
-      <p className="hero-body mt-6 font-aileron text-md text-cream/80">
+      <p className="hero-body mt-6 font-aileron text-sm text-cream/80">
         Offering a compassionate, non-judgmental space to slow down and
         explore what&rsquo;s really going on beneath the surface, for
         adults navigating anxiety, loss, uncertainty, or feeling stuck.

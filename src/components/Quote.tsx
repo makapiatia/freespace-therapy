@@ -4,8 +4,8 @@ export default function Quote() {
   return (
     <section
       className={classNames(
-        "flex flex-1 flex-col justify-center bg-navyBlue/90 px-8 py-10",
-        "text-center md:py-8",
+        "flex flex-1 flex-col justify-center bg-navyBlue px-8 py-10",
+        "text-center md:py-8 bg-canvas-texture",
       )}
     >
       <div className="relative mx-auto max-w-3xl">

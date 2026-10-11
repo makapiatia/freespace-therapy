@@ -77,7 +77,7 @@ export default function Services() {
       </div>
 
       <div className="mx-auto mt-10 max-w-6xl px-8 text-center">
-        <h3 className="font-diamond text-lg tracking-wide text-darkTeal">
+        <h3 className="font-diamond text-3xl text-darkTeal md:text-5xl">
           Therapy Methods
         </h3>
         <div className="mt-3">

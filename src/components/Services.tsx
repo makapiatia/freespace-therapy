@@ -45,7 +45,7 @@ function TagRow({
             "rounded-full px-3 py-1 text-sm font-work-sans",
             tone === "accent"
               ? "bg-mediumGreen/90 text-cream font-bold"
-              : "border border-logoLime bg-logoLime/10 text-darkTeal/80",
+              : "bg-logoLime/30 text-darkTeal/80",
           )}
         >
           {item}

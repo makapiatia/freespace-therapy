@@ -8,24 +8,23 @@ export default function Hero() {
       id="top"
       className="flex flex-1 flex-col justify-center bg-cream"
     >
-      <div className="hero:hidden mt-10 flex justify-center">
+      <div className="hero:hidden mt-6 flex justify-center">
         <p
           className={classNames(
-            "hero-tagline max-w-90 text-balance font-diamond text-sm",
-            "font-semibold tracking-widest text-darkGreen",
-            "rounded-full bg-logoLime/50 px-4 py-1",
+            "hero-tagline inline-block w-fit font-diamond text-base font-semibold",
+            "tracking-widest text-grassGreen",
           )}
         >
           a free space to feel, heal, and be yourself
         </p>
       </div>
 
-      <div className="mx-auto max-w-4xl px-8 pt-4 md:pt-14">
+      <div className="mx-auto max-w-4xl px-8 md:pt-14">
         <MobileHero />
         <DesktopHero />
       </div>
 
-      <div className="mx-auto max-w-4xl px-8 pt-6 pb-8 text-center md:pb-10">
+      <div className="mx-auto max-w-4xl px-8 pt-4 pb-8 text-center md:pt-6 md:pb-10">
         <a
           href="#contact"
           className={classNames(

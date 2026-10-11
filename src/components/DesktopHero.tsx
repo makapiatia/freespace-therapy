@@ -23,7 +23,7 @@ export default function DesktopHero() {
       <p
         className={classNames(
           "hero-tagline inline-block w-fit font-diamond text-base font-semibold",
-          "tracking-widest text-darkGreen rounded-full bg-logoLime/50 px-4 py-1",
+          "tracking-widest text-grassGreen",
         )}
       >
         a free space to feel, heal, and be yourself

@@ -21,7 +21,7 @@ export default function MobileHero() {
       </span>
       <h1
         className={classNames(
-          "hero-heading mt-2 font-diamond leading-[1.05] text-darkTeal",
+          "hero-heading font-diamond leading-[1.05] text-darkTeal",
           "tracking-wide whitespace-nowrap",
           "text-[clamp(2rem,10vw,4.5rem)] min-[570px]:text-[57px]",
         )}
@@ -31,7 +31,7 @@ export default function MobileHero() {
         free space
       </h1>
 
-      <p className="hero-body mt-4 font-aileron text-sm text-darkTeal/80">
+      <p className="hero-body mt-3 font-aileron text-sm text-darkTeal/80">
         Offering a compassionate, non-judgmental space to slow down and
         explore what&rsquo;s really going on beneath the surface, for
         adults navigating anxiety, loss, uncertainty, or feeling stuck.

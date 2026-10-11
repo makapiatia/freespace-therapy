@@ -12,7 +12,7 @@ export default function SiteFooter() {
       <p className="font-work-sans text-xs text-cream/70">
         &copy; 2026 Freespace Therapy. All rights reserved.
       </p>
-      <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full">
+      <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-logoLime">
         <Image
           src="/logos/1x/greenDragonflyLogo.png"
           alt="Freespace Therapy"

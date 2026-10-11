@@ -16,7 +16,7 @@ export default function Hero() {
           className={classNames(
             "inline-block rounded-full bg-logoLime px-10 py-4",
             "font-work-sans text-base text-darkGreen transition-colors",
-            "hover:bg-logoLime/90",
+            "hover:bg-logoLime/85",
           )}
         >
           Get in Touch

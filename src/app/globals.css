@@ -7,6 +7,8 @@
   --mediumGreen: #0d530e;
   --darkGreen: #0d4715;
   --logoGreen: #1b662a;
+  --navyBlue: #172a68;
+  --gold: #d8a02a;
 }
 
 @theme inline {
@@ -17,6 +19,8 @@
   --color-mediumGreen: var(--mediumGreen);
   --color-darkGreen: var(--darkGreen);
   --color-logoGreen: var(--logoGreen);
+  --color-navyBlue: var(--navyBlue);
+  --color-gold: var(--gold);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-diamond: var(--font-diamond-grotesk);

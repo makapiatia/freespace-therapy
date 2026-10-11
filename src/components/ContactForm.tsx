@@ -6,7 +6,7 @@ import classNames from "classnames";
 const inputClasses = classNames(
   "w-full rounded-lg border border-cream/30 bg-cream/90 px-4 py-2.5",
   "font-work-sans text-sm text-darkTeal placeholder:text-darkTeal/40",
-  "outline-none transition-colors focus:border-logoLime",
+  "outline-none transition-colors focus:border-gold",
 );
 
 export default function ContactForm() {

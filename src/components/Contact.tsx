@@ -4,19 +4,20 @@ export default function Contact() {
       <h2 className="font-diamond text-3xl text-cream md:text-5xl">
         Contact
       </h2>
-      <p className="font-aileron mt-2 text-md text-cream/80 md:text-lg">
+      <span className="mt-2 block h-1 w-12 rounded-full bg-logoLime" />
+      <p className="font-aileron mt-3 text-md text-cream/80 md:text-lg">
         Have questions or ready to schedule? Send a message and
         we&rsquo;ll follow up soon.
       </p>
       <div className="mt-4 text-start">
         <p className="font-aileron text-md md:text-lg text-cream/80">
-          <a href="tel:+10000000000" className="hover:text-logoLime">
+          <a href="tel:+10000000000" className="hover:text-gold">
             (000) 000-0000
           </a>
           <br />
           <a
             href="mailto:megan@freespace-therapy.com"
-            className="hover:text-logoLime"
+            className="hover:text-gold"
           >
             megan@freespace-therapy.com
           </a>

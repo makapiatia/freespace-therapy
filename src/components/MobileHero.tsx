@@ -4,26 +4,17 @@ import classNames from "classnames";
 export default function MobileHero() {
   return (
     <div className="hero:hidden max-w-112.5 mx-auto flex flex-col items-center justify-center text-center">
-      <p
-        className={classNames(
-          "hero-tagline font-diamond text-sm font-semibold",
-          "tracking-widest whitespace-nowrap text-darkGreen",
-          "rounded-full bg-logoLime/50 px-4 py-1",
-        )}
-      >
-        a free space to feel, heal, and be yourself
-      </p>
       <span
         className={classNames(
           "relative block aspect-square shrink-0 overflow-hidden rounded-full",
-          "w-[clamp(7rem,40vw,18rem)] min-[570px]:w-57 mt-4",
+          "w-[clamp(8rem,46vw,20rem)] min-[570px]:w-66",
         )}
       >
         <Image
           src="/logos/1x/greenDragonflyLogo.png"
           alt="Freespace Therapy"
           fill
-          sizes="288px"
+          sizes="320px"
           priority
           className="object-cover"
         />

@@ -8,7 +8,19 @@ export default function Hero() {
       id="top"
       className="flex flex-1 flex-col justify-center bg-cream"
     >
-      <div className="mx-auto max-w-4xl px-8 pt-10 md:pt-14">
+      <div className="hero:hidden mt-10 flex justify-center">
+        <p
+          className={classNames(
+            "hero-tagline max-w-90 text-balance font-diamond text-sm",
+            "font-semibold tracking-widest text-darkGreen",
+            "rounded-full bg-logoLime/50 px-4 py-1",
+          )}
+        >
+          a free space to feel, heal, and be yourself
+        </p>
+      </div>
+
+      <div className="mx-auto max-w-4xl px-8 pt-4 md:pt-14">
         <MobileHero />
         <DesktopHero />
       </div>
@@ -17,9 +29,9 @@ export default function Hero() {
         <a
           href="#contact"
           className={classNames(
-            "inline-block rounded-full bg-logoLime px-10 py-4",
+            "inline-block rounded-full bg-gold/90 px-6 py-3 font-bold",
             "font-work-sans text-base text-darkGreen transition-colors",
-            "hover:bg-logoLime/85",
+            "hover:bg-gold",
           )}
         >
           Get in Touch

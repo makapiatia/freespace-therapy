@@ -4,7 +4,7 @@ export default function Quote() {
   return (
     <section
       className={classNames(
-        "flex flex-1 flex-col justify-center bg-darkTeal/70 px-8 py-10",
+        "flex flex-1 flex-col justify-center bg-navyBlue/90 px-8 py-10",
         "text-center md:py-8",
       )}
     >
@@ -19,7 +19,7 @@ export default function Quote() {
           Not everything that is faced can be changed, but nothing can be
           changed until it is faced.
         </blockquote>
-        <cite className="font-aileron mt-2 md:mt-4 block text-base text-cream/80 not-italic">
+        <cite className="font-aileron mt-2 md:mt-4 block text-base text-cream/90 not-italic">
           ― James Baldwin
         </cite>
       </div>

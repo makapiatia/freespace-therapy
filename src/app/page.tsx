@@ -11,8 +11,10 @@ import SiteFooter from "@/components/SiteFooter";
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-cream">
-      <Hero />
-      <Quote />
+      <div className="flex min-h-dvh flex-col md:block md:min-h-0">
+        <Hero />
+        <Quote />
+      </div>
       <Services />
       <About />
       <footer className="bg-darkGreen pt-10 pb-6 md:pt-12 md:pb-6">

@@ -1,6 +1,13 @@
+import classNames from "classnames";
+
 export default function Quote() {
   return (
-    <section className="bg-darkGreen/90 px-8 py-6 text-center md:py-8">
+    <section
+      className={classNames(
+        "flex flex-1 flex-col justify-center bg-darkTeal/70 px-8 py-10",
+        "text-center md:py-8",
+      )}
+    >
       <div className="relative mx-auto max-w-3xl">
         <span
           aria-hidden

@@ -13,7 +13,7 @@ export default function WorkingTogether() {
       >
         <div
           className={classNames(
-            "rounded-2xl border border-cream/10 bg-darkGreen p-6 md:p-8",
+            "rounded-2xl border border-cream/10 bg-darkGreen/95 p-6 md:p-8",
           )}
         >
           <span className="block h-1 w-10 rounded-full bg-logoLime" />
@@ -40,7 +40,7 @@ export default function WorkingTogether() {
 
         <div
           className={classNames(
-            "rounded-2xl border border-cream/10 bg-darkGreen p-6 md:p-8",
+            "rounded-2xl border border-cream/10 bg-darkGreen/95 p-6 md:p-8",
           )}
         >
           <span className="block h-1 w-10 rounded-full bg-logoLime" />

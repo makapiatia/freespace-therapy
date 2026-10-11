@@ -44,7 +44,7 @@ function TagRow({
           className={classNames(
             "rounded-full px-3 py-1 text-sm font-work-sans",
             tone === "accent"
-              ? "bg-mediumGreen text-cream font-bold"
+              ? "bg-mediumGreen/90 text-cream font-bold"
               : "border border-logoLime bg-logoLime/10 text-darkTeal/80",
           )}
         >

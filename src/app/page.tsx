@@ -15,7 +15,7 @@ export default function Home() {
       <Quote />
       <Services />
       <About />
-      <footer className="bg-darkIndigo pt-10 pb-6 md:pt-12 md:pb-6">
+      <footer className="bg-darkGreen pt-10 pb-6 md:pt-12 md:pb-6">
         <div
           className={classNames(
             "mx-auto grid max-w-5xl gap-8 px-8",

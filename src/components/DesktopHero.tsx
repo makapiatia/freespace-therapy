@@ -11,7 +11,7 @@ export default function DesktopHero() {
     >
       <span className="relative row-span-3 block h-52 w-52 shrink-0 overflow-hidden rounded-full">
         <Image
-          src="/logos/4x/Asset 1@4x.png"
+          src="/logos/1x/greenDragonflyLogo.png"
           alt="Freespace Therapy"
           fill
           sizes="208px"
@@ -20,14 +20,19 @@ export default function DesktopHero() {
         />
       </span>
 
-      <p className="hero-tagline font-diamond text-base font-semibold tracking-widest text-logoLime">
+      <p
+        className={classNames(
+          "hero-tagline inline-block w-fit font-diamond text-base font-semibold",
+          "tracking-widest text-darkGreen rounded-full bg-logoLime/50 px-4 py-1",
+        )}
+      >
         a free space to feel, heal, and be yourself
       </p>
 
       <h1
         className={classNames(
           "hero-heading mt-3 max-w-137.5 font-diamond text-6xl",
-          "leading-[1.05] text-cream tracking-wide lg:text-7xl",
+          "leading-[1.05] text-darkTeal tracking-wide lg:text-7xl",
         )}
       >
         welcome to
@@ -35,7 +40,7 @@ export default function DesktopHero() {
         free space
       </h1>
 
-      <p className="hero-body mt-4 max-w-137.5 font-aileron text-lg text-cream/80 lg:mt-4">
+      <p className="hero-body mt-4 max-w-137.5 font-aileron text-lg text-darkTeal/80 lg:mt-4">
         Offering a compassionate, non-judgmental space to slow down and
         explore what&rsquo;s really going on beneath the surface, for
         adults navigating anxiety, loss, uncertainty, or feeling stuck.

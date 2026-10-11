@@ -14,7 +14,7 @@ export default function SiteFooter() {
       </p>
       <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full">
         <Image
-          src="/logos/4x/Asset 1@4x.png"
+          src="/logos/1x/greenDragonflyLogo.png"
           alt="Freespace Therapy"
           fill
           sizes="64px"

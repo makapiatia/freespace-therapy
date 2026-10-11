@@ -7,7 +7,8 @@ export default function MobileHero() {
       <p
         className={classNames(
           "hero-tagline font-diamond text-sm font-semibold self-end",
-          "tracking-widest whitespace-nowrap text-logoLime",
+          "tracking-widest whitespace-nowrap text-darkGreen",
+          "rounded-full bg-logoLime/50 px-4 py-1",
         )}
       >
         a free space to feel, heal, and be yourself
@@ -21,7 +22,7 @@ export default function MobileHero() {
           )}
         >
           <Image
-            src="/logos/4x/Asset 1@4x.png"
+            src="/logos/1x/greenDragonflyLogo.png"
             alt="Freespace Therapy"
             fill
             sizes="176px"
@@ -31,7 +32,7 @@ export default function MobileHero() {
         </span>
         <h1
           className={classNames(
-            "hero-heading font-diamond leading-[1.05] text-cream",
+            "hero-heading font-diamond leading-[1.05] text-darkTeal",
             "tracking-wide whitespace-nowrap",
             "text-[clamp(2rem,10vw,4.5rem)] min-[570px]:text-[57px]",
           )}
@@ -41,7 +42,7 @@ export default function MobileHero() {
           free space
         </h1>
       </div>
-      <p className="hero-body mt-6 font-aileron text-sm text-cream/80">
+      <p className="hero-body mt-6 font-aileron text-sm text-darkTeal/80">
         Offering a compassionate, non-judgmental space to slow down and
         explore what&rsquo;s really going on beneath the surface, for
         adults navigating anxiety, loss, uncertainty, or feeling stuck.

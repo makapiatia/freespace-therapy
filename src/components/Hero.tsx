@@ -4,7 +4,7 @@ import DesktopHero from "./DesktopHero";
 
 export default function Hero() {
   return (
-    <section id="top" className="bg-darkIndigo">
+    <section id="top" className="bg-cream">
       <div className="mx-auto max-w-4xl px-8 pt-10 md:pt-14">
         <MobileHero />
         <DesktopHero />
@@ -14,9 +14,9 @@ export default function Hero() {
         <a
           href="#contact"
           className={classNames(
-            "inline-block rounded-full bg-cream px-10 py-4",
-            "font-work-sans text-base text-darkTeal transition-colors",
-            "hover:bg-logoLime",
+            "inline-block rounded-full bg-logoLime px-10 py-4",
+            "font-work-sans text-base text-darkGreen transition-colors",
+            "hover:bg-logoLime/90",
           )}
         >
           Get in Touch

@@ -34,8 +34,9 @@ export default function Quote() {
       </div>
       <p
         className={classNames(
-          "absolute inset-x-0 bottom-3 px-4 font-work-sans text-[10px]",
-          "tracking-wide text-cream/60 md:text-xs",
+          "author-text absolute inset-x-0 bottom-3 px-4 font-work-sans text-[10px]",
+          "tracking-wide text-cream/60 md:inset-x-auto md:right-6 md:left-auto",
+          "md:w-auto md:px-0 md:text-right md:text-xs",
         )}
       >
         &ldquo;Sky&rsquo;s The Limit&rdquo; &mdash; Photography by Kareem W.

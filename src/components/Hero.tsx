@@ -12,7 +12,7 @@ export default function Hero() {
         <p
           className={classNames(
             "hero-tagline inline-block w-fit font-diamond text-base font-semibold",
-            "tracking-widest text-grassGreen",
+            "tracking-widest text-grassGreen max-[499px]:text-[13px]",
           )}
         >
           a free space to feel, heal, and be yourself

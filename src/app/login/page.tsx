@@ -41,12 +41,12 @@ export default async function LoginPage({
 
   return (
     <main className="flex min-h-dvh flex-col items-center justify-center bg-cream px-8 text-center">
-      <span className="relative block h-20 w-20 shrink-0 overflow-hidden rounded-full ring-4 ring-logoLime">
+      <span className="relative block h-28 w-28 shrink-0 overflow-hidden rounded-full">
         <Image
           src="/logos/1x/greenDragonflyLogo.png"
           alt="Freespace Therapy"
           fill
-          sizes="80px"
+          sizes="120px"
           priority
           className="object-cover"
         />
@@ -87,7 +87,7 @@ export default async function LoginPage({
         <button
           type="submit"
           className={classNames(
-            "rounded-full bg-gold px-6 py-3 font-work-sans text-sm font-bold",
+            "rounded-full bg-gold/90 px-6 py-3 font-work-sans text-sm font-bold",
             "text-darkGreen transition-colors hover:bg-gold/85",
           )}
         >

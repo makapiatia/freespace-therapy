@@ -15,11 +15,7 @@ export default async function FeaturedImageSection() {
         "relative overflow-hidden",
         "min-h-96 md:min-h-150 lg:min-h-200",
       )}
-      style={
-        content?.overlayColor
-          ? { backgroundColor: content.overlayColor }
-          : undefined
-      }
+      style={{ backgroundColor: content?.overlayColor ?? "#172a68" }}
     >
       <Image
         src={content?.imageUrl ?? "/photos/skysthelimit.jpg"}

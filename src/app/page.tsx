@@ -5,9 +5,9 @@ import FeaturedImageSection from "@/components/FeaturedImageSection";
 import Services from "@/components/Services";
 import Community from "@/components/Community";
 import About from "@/components/About";
-import Contact from "@/components/Contact";
-import ContactForm from "@/components/ContactForm";
-import SiteFooter from "@/components/SiteFooter";
+import Contact from "@/components/Footer/Contact";
+import ContactForm from "@/components/Footer/ContactForm";
+import SiteFooter from "@/components/Footer/SiteFooter";
 import { getFooterSection } from "@/lib/content/footer";
 
 export default async function Home() {

@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import Hero from "@/components/Hero";
 import Quote from "@/components/Quote";
+import FeaturedImageSection from "@/components/FeaturedImageSection";
 import Services from "@/components/Services";
 import Community from "@/components/Community";
 import About from "@/components/About";
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <Quote />
       </div>
+      <FeaturedImageSection />
       <Services />
       <About />
       <footer className="bg-navyBlue bg-canvas-texture pt-10 pb-6 md:pt-12 md:pb-6">

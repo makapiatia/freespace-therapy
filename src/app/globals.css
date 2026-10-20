@@ -10,6 +10,8 @@
   --navyBlue: #172a68;
   --gold: #d8a02a;
   --grassGreen: #2a8b23;
+  --skyBlue: #caccd9;
+  --darkNavy: #1c2133;
 }
 
 @theme inline {
@@ -23,11 +25,12 @@
   --color-navyBlue: var(--navyBlue);
   --color-gold: var(--gold);
   --color-grassGreen: var(--grassGreen);
+  --color-skyBlue: var(--skyBlue);
+  --color-darkNavy: var(--darkNavy);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-diamond: var(--font-diamond-grotesk);
   --font-work-sans: var(--font-work-sans);
-  --font-victor-mono: var(--font-victor-mono);
   --font-aileron: var(--font-aileron);
   --font-aileron-semibold: var(--font-aileron-semibold);
 }

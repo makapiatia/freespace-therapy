@@ -26,12 +26,6 @@ const workSans = localFont({
   display: "swap",
 });
 
-const victorMono = localFont({
-  src: "../../public/fonts/VictorMonoAll/TTF/VictorMono-Medium.ttf",
-  variable: "--font-victor-mono",
-  display: "swap",
-});
-
 const aileron = localFont({
   src: "../../public/fonts/Aileron/Aileron-Regular.otf",
   variable: "--font-aileron",
@@ -58,7 +52,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         geistMono.variable,
         diamondGrotesk.variable,
         workSans.variable,
-        victorMono.variable,
         aileron.variable,
         aileronSemiBold.variable,
         "h-full antialiased",

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import classNames from "classnames";
 
 export default function Quote() {
@@ -6,17 +5,10 @@ export default function Quote() {
     <section
       className={classNames(
         "relative flex flex-1 flex-col justify-center overflow-hidden",
-        "min-h-72 bg-navyBlue px-8 py-10 text-center md:min-h-96",
-        "lg:min-h-137.5 md:py-8 bg-canvas-texture",
+        "min-h-56 bg-navyBlue px-8 py-10 text-center md:min-h-72",
+        "lg:min-h-96 md:py-8 bg-canvas-texture",
       )}
     >
-      <Image
-        src="/photos/skysthelimit.jpg"
-        alt=""
-        aria-hidden
-        fill
-        className="object-cover object-[55%_15%] opacity-20"
-      />
       <div className="relative mx-auto max-w-3xl">
         <span
           aria-hidden
@@ -32,15 +24,6 @@ export default function Quote() {
           ― James Baldwin
         </cite>
       </div>
-      <p
-        className={classNames(
-          "author-text absolute inset-x-0 bottom-3 px-4 font-work-sans text-[10px]",
-          "tracking-wide text-cream/60 md:inset-x-auto md:right-6 md:left-auto",
-          "md:w-auto md:px-0 md:text-right md:text-xs",
-        )}
-      >
-        &ldquo;Sky&rsquo;s The Limit&rdquo; &mdash; Photography by Kareem W.
-      </p>
     </section>
   );
 }

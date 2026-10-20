@@ -14,6 +14,7 @@
   --darkNavy: #1c2133;
 }
 
+/* Tailwind CSS v4 theme definitions are processed by Tailwind/PostCSS. */
 @theme inline {
   --breakpoint-hero: 768px;
   --color-cream: var(--cream);

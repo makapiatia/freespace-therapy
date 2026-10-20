@@ -42,6 +42,50 @@ export interface QuoteSectionSkeleton extends EntrySkeletonType {
   };
 }
 
+export interface TextSectionSkeleton extends EntrySkeletonType {
+  contentTypeId: "textSection";
+  fields: {
+    internalTitle: EntryFieldTypes.Symbol;
+    headerText: EntryFieldTypes.RichText;
+    headerSubtext: EntryFieldTypes.RichText;
+    textBody: EntryFieldTypes.RichText;
+    textColor: EntryFieldTypes.Object;
+    backgroundColor: EntryFieldTypes.Object;
+    detailColor: EntryFieldTypes.Object;
+  };
+}
+
+export interface ServiceListSectionSkeleton extends EntrySkeletonType {
+  contentTypeId: "serviceListSection";
+  fields: {
+    internalTitle: EntryFieldTypes.Symbol;
+    listHeaderText: EntryFieldTypes.RichText;
+    listDescriptionText: EntryFieldTypes.RichText;
+    listHeaderTextColor: EntryFieldTypes.Object;
+    highlightedTextList: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+    highlightedListTextColor: EntryFieldTypes.Object;
+    highlightedListBackgroundColor: EntryFieldTypes.Object;
+    textList: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+    textListColor: EntryFieldTypes.Object;
+    textListBackgroundColor: EntryFieldTypes.Object;
+    showBulletPoints: EntryFieldTypes.Boolean;
+    bulletPointColor: EntryFieldTypes.Object;
+  };
+}
+
+export interface ServicesSectionSkeleton extends EntrySkeletonType {
+  contentTypeId: "servicesSection";
+  fields: {
+    internalTitle: EntryFieldTypes.Symbol;
+    textListSections: EntryFieldTypes.Array<
+      EntryFieldTypes.EntryLink<ServiceListSectionSkeleton>
+    >;
+    textSections: EntryFieldTypes.Array<
+      EntryFieldTypes.EntryLink<TextSectionSkeleton>
+    >;
+  };
+}
+
 export interface PageSkeleton extends EntrySkeletonType {
   contentTypeId: "page";
   fields: {

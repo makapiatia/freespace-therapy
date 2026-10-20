@@ -1,5 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import type { Options } from "@contentful/rich-text-react-renderer";
+import type { NodeRenderer, Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import type { Document } from "@contentful/rich-text-types";
 
@@ -25,13 +25,29 @@ export function renderRichTextInline(document: Document) {
   });
 }
 
-/** Renders a rich text document, dropping any empty trailing paragraphs the CMS editor adds. */
+/**
+ * Renders a heading-only rich text document (any heading level) as plain
+ * inline content, dropping any empty trailing paragraphs the CMS editor adds.
+ */
 export function renderRichTextHeading(document: Document) {
+  const unwrap: NodeRenderer = (_node, children) => children;
   return documentToReactComponents(document, {
     renderText,
     renderNode: {
-      [BLOCKS.HEADING_1]: (_node, children) => children,
+      [BLOCKS.HEADING_1]: unwrap,
+      [BLOCKS.HEADING_2]: unwrap,
+      [BLOCKS.HEADING_3]: unwrap,
+      [BLOCKS.HEADING_4]: unwrap,
       [BLOCKS.PARAGRAPH]: () => null,
     },
   });
+}
+
+/**
+ * Renders a multi-paragraph rich text document as separate <p> tags (no
+ * className — text styling is inherited from the parent), letting a
+ * `space-y-*` utility on the container handle spacing between paragraphs.
+ */
+export function renderRichTextBody(document: Document) {
+  return documentToReactComponents(document, { renderText });
 }

@@ -3,6 +3,9 @@ import classNames from "classnames";
 import { getFeaturedImageSection } from "@/lib/content/featuredImage";
 import { renderRichTextInline } from "@/lib/content/richText";
 
+const IMAGE_OPACITY_GRADIENT =
+  "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 85%, rgba(0,0,0,0.75) 100%)";
+
 export default async function FeaturedImageSection() {
   const content = await getFeaturedImageSection();
 
@@ -10,7 +13,7 @@ export default async function FeaturedImageSection() {
     <section
       className={classNames(
         "relative overflow-hidden",
-        "min-h-96 bg-navyBlue md:min-h-150 lg:min-h-200",
+        "min-h-96 md:min-h-150 lg:min-h-200",
       )}
       style={
         content?.overlayColor
@@ -23,8 +26,12 @@ export default async function FeaturedImageSection() {
         alt={content?.imageAlt ?? ""}
         aria-hidden
         fill
-        style={{ objectPosition: content?.objectPosition ?? "55% 15%" }}
-        className="object-cover opacity-75"
+        style={{
+          objectPosition: content?.objectPosition ?? "55% 15%",
+          maskImage: IMAGE_OPACITY_GRADIENT,
+          WebkitMaskImage: IMAGE_OPACITY_GRADIENT,
+        }}
+        className="object-cover"
       />
       <p
         className={classNames(

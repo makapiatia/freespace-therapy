@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Hero from "@/components/Hero/Hero";
 import Quote from "@/components/Quote";
 import FeaturedImageSection from "@/components/FeaturedImageSection";
-import Services from "@/components/Services";
+import Services from "@/components/Services/Services";
 import Community from "@/components/Footer/Community";
 import About from "@/components/About";
 import Contact from "@/components/Footer/Contact";

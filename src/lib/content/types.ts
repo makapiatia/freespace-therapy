@@ -22,7 +22,31 @@ export interface ImageSectionSkeleton extends EntrySkeletonType {
   fields: {
     internalTitle: EntryFieldTypes.Symbol;
     image: EntryFieldTypes.AssetLink;
+    imageFocalPoint: EntryFieldTypes.Object;
     imageAltText: EntryFieldTypes.Symbol;
+    imageDescriptionText: EntryFieldTypes.RichText;
+    imageDescriptionTextColor: EntryFieldTypes.Object;
+    imageOverlayColor: EntryFieldTypes.Object;
+  };
+}
+
+export interface QuoteSectionSkeleton extends EntrySkeletonType {
+  contentTypeId: "quoteSection";
+  fields: {
+    internalTitle: EntryFieldTypes.Symbol;
+    quoteText: EntryFieldTypes.RichText;
+    quoteTextColor: EntryFieldTypes.Object;
+    quoteAuthor: EntryFieldTypes.Symbol;
+    quoteMarkColor: EntryFieldTypes.Object;
+    quoteBackgroundColor: EntryFieldTypes.Object;
+  };
+}
+
+export interface PageSkeleton extends EntrySkeletonType {
+  contentTypeId: "page";
+  fields: {
+    internalTitle: EntryFieldTypes.Symbol;
+    imageSection: EntryFieldTypes.EntryLink<ImageSectionSkeleton>;
   };
 }
 

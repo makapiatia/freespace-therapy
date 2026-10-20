@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import WorkingTogether from "./WorkingTogether";
+import WorkingTogether from "./WorkingTogether/WorkingTogether";
 import { getServicesSection } from "@/lib/content/services";
 import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richText";
 

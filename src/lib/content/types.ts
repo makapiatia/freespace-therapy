@@ -86,6 +86,18 @@ export interface ServicesSectionSkeleton extends EntrySkeletonType {
   };
 }
 
+export interface AboutSectionSkeleton extends EntrySkeletonType {
+  contentTypeId: "aboutSection";
+  fields: {
+    internalTitle: EntryFieldTypes.Symbol;
+    image: EntryFieldTypes.EntryLink<ImageSectionSkeleton>;
+    textSection: EntryFieldTypes.EntryLink<TextSectionSkeleton>;
+    textList: EntryFieldTypes.EntryLink<ServiceListSectionSkeleton>;
+    backgroundColor: EntryFieldTypes.Object;
+    detailsColor: EntryFieldTypes.Object;
+  };
+}
+
 export interface PageSkeleton extends EntrySkeletonType {
   contentTypeId: "page";
   fields: {

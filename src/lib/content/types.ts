@@ -98,6 +98,45 @@ export interface AboutSectionSkeleton extends EntrySkeletonType {
   };
 }
 
+export interface ContactFormSkeleton extends EntrySkeletonType {
+  contentTypeId: "contactForm";
+  fields: {
+    internalTitle: EntryFieldTypes.Symbol;
+    nameInputLabel: EntryFieldTypes.Symbol;
+    nameInputPlaceholder: EntryFieldTypes.Symbol;
+    emailInputLabel: EntryFieldTypes.Symbol;
+    emailInputPlaceholder: EntryFieldTypes.Symbol;
+    phoneInputLabel: EntryFieldTypes.Symbol;
+    phoneInputPlaceholder: EntryFieldTypes.Symbol;
+    messageInputLabel: EntryFieldTypes.Symbol;
+    messageInputPlaceholder: EntryFieldTypes.Symbol;
+    submitButton: EntryFieldTypes.EntryLink<LinkButtonSkeleton>;
+  };
+}
+
+export interface ContactSectionSkeleton extends EntrySkeletonType {
+  contentTypeId: "contactSection";
+  fields: {
+    internalTitle: EntryFieldTypes.Symbol;
+    contactHeaderText: EntryFieldTypes.RichText;
+    contactTextBody: EntryFieldTypes.RichText;
+    referencesTextSection: EntryFieldTypes.EntryLink<TextSectionSkeleton>;
+    contactTextColor: EntryFieldTypes.Object;
+    contactBackgroundColor: EntryFieldTypes.Object;
+    contactForm: EntryFieldTypes.EntryLink<ContactFormSkeleton>;
+  };
+}
+
+export interface FooterSkeleton extends EntrySkeletonType {
+  contentTypeId: "footer";
+  fields: {
+    internalTitle: EntryFieldTypes.Symbol;
+    contactSection: EntryFieldTypes.EntryLink<ContactSectionSkeleton>;
+    footerCopyrightText: EntryFieldTypes.RichText;
+    footerLogoImage: EntryFieldTypes.EntryLink<ImageSectionSkeleton>;
+  };
+}
+
 export interface PageSkeleton extends EntrySkeletonType {
   contentTypeId: "page";
   fields: {

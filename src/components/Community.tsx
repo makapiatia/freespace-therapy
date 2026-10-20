@@ -1,6 +1,14 @@
 import classNames from "classnames";
+import type { Document } from "@contentful/rich-text-types";
+import { renderRichTextBody, renderRichTextHeading } from "@/lib/content/richText";
 
-export default function Community() {
+export default function Community({
+  header,
+  body,
+}: {
+  header?: Document;
+  body?: Document;
+}) {
   return (
     <div id="community">
       <div
@@ -11,12 +19,21 @@ export default function Community() {
       >
         <div className="p-4">
           <h3 className="font-aileron-semibold text-md md:text-lg text-cream">
-            Resources for Clients &amp; Therapists
+            {header
+              ? renderRichTextHeading(header)
+              : "Resources for Clients & Therapists"}
           </h3>
-          <p className="font-aileron text-sm md:text-base text-cream/80">
-            Community resources for clients and therapists are on the way,
-            hoping to include guidance on Medicaid and Medicare coverage.
-          </p>
+          <div className="font-aileron text-sm md:text-base text-cream/80">
+            {body ? (
+              renderRichTextBody(body)
+            ) : (
+              <p>
+                Community resources for clients and therapists are on the
+                way, hoping to include guidance on Medicaid and Medicare
+                coverage.
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -8,8 +8,11 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import ContactForm from "@/components/ContactForm";
 import SiteFooter from "@/components/SiteFooter";
+import { getFooterSection } from "@/lib/content/footer";
 
-export default function Home() {
+export default async function Home() {
+  const footer = await getFooterSection();
+
   return (
     <div className="flex flex-1 flex-col bg-cream">
       <div className="flex min-h-dvh flex-col md:block md:min-h-0">
@@ -19,7 +22,14 @@ export default function Home() {
       <FeaturedImageSection />
       <Services />
       <About />
-      <footer className="bg-navyBlue bg-canvas-texture pt-10 pb-6 md:pt-12 md:pb-6">
+      <footer
+        className="bg-navyBlue bg-canvas-texture pt-10 pb-6 md:pt-12 md:pb-6"
+        style={
+          footer?.contactBackgroundColor
+            ? { backgroundColor: footer.contactBackgroundColor }
+            : undefined
+        }
+      >
         <div
           className={classNames(
             "mx-auto grid max-w-5xl gap-8 px-8",
@@ -27,15 +37,26 @@ export default function Home() {
           )}
         >
           <div className="space-y-6">
-            <Contact />
-            <Community />
+            <Contact
+              header={footer?.contactHeader}
+              body={footer?.contactBody}
+              textColor={footer?.contactTextColor}
+            />
+            <Community
+              header={footer?.referencesHeader}
+              body={footer?.referencesBody}
+            />
           </div>
           <div>
-            <ContactForm />
+            <ContactForm form={footer?.form ?? undefined} />
           </div>
         </div>
         <div>
-          <SiteFooter />
+          <SiteFooter
+            copyrightText={footer?.copyrightText}
+            logoUrl={footer?.logoUrl}
+            logoAlt={footer?.logoAlt}
+          />
         </div>
       </footer>
     </div>

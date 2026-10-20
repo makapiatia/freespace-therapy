@@ -1,7 +1,17 @@
 import Image from "next/image";
 import classNames from "classnames";
+import type { Document } from "@contentful/rich-text-types";
+import { renderRichTextInline } from "@/lib/content/richText";
 
-export default function SiteFooter() {
+export default function SiteFooter({
+  copyrightText,
+  logoUrl,
+  logoAlt,
+}: {
+  copyrightText?: Document;
+  logoUrl?: string;
+  logoAlt?: string;
+}) {
   return (
     <div
       className={classNames(
@@ -10,12 +20,14 @@ export default function SiteFooter() {
       )}
     >
       <p className="font-work-sans text-xs text-cream/70">
-        &copy; 2026 Freespace Therapy. All rights reserved.
+        {copyrightText
+          ? renderRichTextInline(copyrightText)
+          : "© 2026 Freespace Therapy. All rights reserved."}
       </p>
       <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-logoLime/50">
         <Image
-          src="/logos/1x/greenDragonflyLogo.png"
-          alt="Freespace Therapy"
+          src={logoUrl ?? "/logos/1x/greenDragonflyLogo.png"}
+          alt={logoAlt ?? "Freespace Therapy"}
           fill
           sizes="64px"
           className="scale-125 object-cover"

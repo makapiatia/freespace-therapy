@@ -1,6 +1,6 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { NodeRenderer, Options } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import type { Document } from "@contentful/rich-text-types";
 
 /**
@@ -47,7 +47,28 @@ export function renderRichTextHeading(document: Document) {
  * Renders a multi-paragraph rich text document as separate <p> tags (no
  * className — text styling is inherited from the parent), letting a
  * `space-y-*` utility on the container handle spacing between paragraphs.
+ *
+ * Pass `linkClassName` to style any embedded hyperlinks (e.g. tel:/mailto:
+ * links), since the default renderer emits a plain, unstyled <a>.
  */
-export function renderRichTextBody(document: Document) {
-  return documentToReactComponents(document, { renderText });
+export function renderRichTextBody(
+  document: Document,
+  options?: { linkClassName?: string },
+) {
+  const linkClassName = options?.linkClassName;
+  return documentToReactComponents(document, {
+    renderText,
+    renderNode: linkClassName
+      ? {
+          [INLINES.HYPERLINK]: (node, children) => (
+            <a
+              href={(node.data as { uri: string }).uri}
+              className={linkClassName}
+            >
+              {children}
+            </a>
+          ),
+        }
+      : undefined,
+  });
 }

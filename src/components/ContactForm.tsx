@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import classNames from "classnames";
+import type { ContactFormContent } from "@/lib/content/footer";
 
 const inputClasses = classNames(
   "w-full rounded-lg border border-cream/30 bg-cream/90 px-4 py-2.5",
@@ -9,8 +10,26 @@ const inputClasses = classNames(
   "outline-none transition-colors focus:border-gold",
 );
 
-export default function ContactForm() {
+export default function ContactForm({
+  form,
+}: {
+  form?: ContactFormContent;
+}) {
   const [submitted, setSubmitted] = useState(false);
+
+  const fields = {
+    nameLabel: form?.nameLabel ?? "Name",
+    namePlaceholder: form?.namePlaceholder ?? "Jane Smith",
+    emailLabel: form?.emailLabel ?? "Email",
+    emailPlaceholder: form?.emailPlaceholder ?? "jane@example.com",
+    phoneLabel: form?.phoneLabel ?? "Phone (optional)",
+    phonePlaceholder: form?.phonePlaceholder ?? "(555) 555-0182",
+    messageLabel: form?.messageLabel ?? "Message",
+    messagePlaceholder:
+      form?.messagePlaceholder ??
+      "Tell us a little about what brings you here.",
+    submitLabel: form?.submitLabel ?? "Send Message",
+  };
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -45,14 +64,14 @@ export default function ContactForm() {
           htmlFor="name"
           className="font-work-sans mb-1 block text-xs text-cream/70"
         >
-          Name
+          {fields.nameLabel}
         </label>
         <input
           id="name"
           name="name"
           type="text"
           required
-          placeholder="Jane Smith"
+          placeholder={fields.namePlaceholder}
           className={inputClasses}
         />
       </div>
@@ -62,14 +81,14 @@ export default function ContactForm() {
           htmlFor="email"
           className="font-work-sans mb-1 block text-xs text-cream/70"
         >
-          Email
+          {fields.emailLabel}
         </label>
         <input
           id="email"
           name="email"
           type="email"
           required
-          placeholder="jane@example.com"
+          placeholder={fields.emailPlaceholder}
           className={inputClasses}
         />
       </div>
@@ -79,13 +98,13 @@ export default function ContactForm() {
           htmlFor="phone"
           className="font-work-sans mb-1 block text-xs text-cream/70"
         >
-          Phone (optional)
+          {fields.phoneLabel}
         </label>
         <input
           id="phone"
           name="phone"
           type="tel"
-          placeholder="(555) 555-0182"
+          placeholder={fields.phonePlaceholder}
           className={inputClasses}
         />
       </div>
@@ -95,14 +114,14 @@ export default function ContactForm() {
           htmlFor="message"
           className="font-work-sans mb-1 block text-xs text-cream/70"
         >
-          Message
+          {fields.messageLabel}
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
           required
-          placeholder="Tell us a little about what brings you here."
+          placeholder={fields.messagePlaceholder}
           className={inputClasses}
         />
       </div>
@@ -113,8 +132,12 @@ export default function ContactForm() {
           "mt-2 rounded-full bg-cream px-8 py-3 font-work-sans text-sm",
           "text-darkTeal transition-colors hover:bg-logoLime",
         )}
+        style={{
+          backgroundColor: form?.submitBackgroundColor,
+          color: form?.submitTextColor,
+        }}
       >
-        Send Message
+        {fields.submitLabel}
       </button>
     </form>
   );

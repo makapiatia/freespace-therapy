@@ -7,44 +7,41 @@ export default async function FeaturedImageSection() {
   const content = await getFeaturedImageSection();
 
   return (
-    <section>
-      <div className="bg-skyBlue px-4 py-2 text-center md:text-right">
-        <p
-          className={classNames(
-            "author-text font-work-sans text-[10px] font-semibold",
-            "tracking-wide text-darkNavy md:text-xs",
-          )}
-          style={
-            content?.descriptionColor
-              ? { color: content.descriptionColor }
-              : undefined
-          }
-        >
-          {content?.description
-            ? renderRichTextInline(content.description)
-            : "“Sky’s The Limit” — Photography by Kareem W."}
-        </p>
-      </div>
-      <div
+    <section
+      className={classNames(
+        "relative overflow-hidden",
+        "min-h-96 bg-navyBlue md:min-h-150 lg:min-h-200",
+      )}
+      style={
+        content?.overlayColor
+          ? { backgroundColor: content.overlayColor }
+          : undefined
+      }
+    >
+      <Image
+        src={content?.imageUrl ?? "/photos/skysthelimit.jpg"}
+        alt={content?.imageAlt ?? ""}
+        aria-hidden
+        fill
+        style={{ objectPosition: content?.objectPosition ?? "55% 15%" }}
+        className="object-cover opacity-75"
+      />
+      <p
         className={classNames(
-          "relative overflow-hidden",
-          "min-h-96 bg-navyBlue md:min-h-150 lg:min-h-200",
+          "author-text absolute top-0 right-0 rounded-full bg-skyBlue",
+          "px-3 py-1 font-work-sans text-[9px] md:text-[11px] font-semibold",
+          "tracking-wide text-darkNavy",
         )}
         style={
-          content?.overlayColor
-            ? { backgroundColor: content.overlayColor }
+          content?.descriptionColor
+            ? { color: content.descriptionColor }
             : undefined
         }
       >
-        <Image
-          src={content?.imageUrl ?? "/photos/skysthelimit.jpg"}
-          alt={content?.imageAlt ?? ""}
-          aria-hidden
-          fill
-          style={{ objectPosition: content?.objectPosition ?? "55% 15%" }}
-          className="object-cover opacity-75"
-        />
-      </div>
+        {content?.description
+          ? renderRichTextInline(content.description)
+          : "“Sky’s The Limit” — Photography by Kareem W."}
+      </p>
     </section>
   );
 }

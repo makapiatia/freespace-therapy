@@ -1,7 +1,9 @@
 import Image from "next/image";
 import classNames from "classnames";
+import type { HeroContent } from "@/lib/content/hero";
+import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richText";
 
-export default function DesktopHero() {
+export default function DesktopHero({ content }: { content: HeroContent | null }) {
   return (
     <div
       className={classNames(
@@ -11,8 +13,8 @@ export default function DesktopHero() {
     >
       <span className="relative row-span-3 block h-52 w-52 shrink-0 overflow-hidden rounded-full">
         <Image
-          src="/logos/1x/greenDragonflyLogo.png"
-          alt="Freespace Therapy"
+          src={content?.logoUrl ?? "/logos/1x/greenDragonflyLogo.png"}
+          alt={content?.logoAlt ?? "Freespace Therapy"}
           fill
           sizes="208px"
           priority
@@ -25,8 +27,11 @@ export default function DesktopHero() {
           "hero-tagline inline-block w-fit font-diamond text-base font-semibold",
           "tracking-widest text-grassGreen",
         )}
+        style={content?.taglineColor ? { color: content.taglineColor } : undefined}
       >
-        a free space to feel, heal, and be yourself
+        {content
+          ? renderRichTextInline(content.tagline)
+          : "a free space to feel, heal, and be yourself"}
       </p>
 
       <h1
@@ -34,16 +39,26 @@ export default function DesktopHero() {
           "hero-heading mt-3 max-w-137.5 font-diamond text-6xl",
           "leading-[1.05] text-darkTeal tracking-wide lg:text-7xl",
         )}
+        style={content?.headingColor ? { color: content.headingColor } : undefined}
       >
-        welcome to
-        <br />
-        free space
+        {content ? (
+          renderRichTextHeading(content.heading)
+        ) : (
+          <>
+            welcome to
+            <br />
+            free space
+          </>
+        )}
       </h1>
 
-      <p className="hero-body mt-4 max-w-137.5 font-aileron text-lg text-darkTeal/80 lg:mt-4">
-        Offering a compassionate, non-judgmental space to slow down and
-        explore what&rsquo;s really going on beneath the surface, for
-        adults navigating anxiety, loss, uncertainty, or feeling stuck.
+      <p
+        className="hero-body mt-4 max-w-137.5 font-aileron text-lg text-darkTeal/80 lg:mt-4"
+        style={content?.bodyColor ? { color: content.bodyColor } : undefined}
+      >
+        {content
+          ? renderRichTextInline(content.body)
+          : "Offering a compassionate, non-judgmental space to slow down and explore what's really going on beneath the surface, for adults navigating anxiety, loss, uncertainty, or feeling stuck."}
       </p>
     </div>
   );

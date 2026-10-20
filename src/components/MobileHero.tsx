@@ -1,7 +1,9 @@
 import Image from "next/image";
 import classNames from "classnames";
+import type { HeroContent } from "@/lib/content/hero";
+import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richText";
 
-export default function MobileHero() {
+export default function MobileHero({ content }: { content: HeroContent | null }) {
   return (
     <div className="hero:hidden max-w-112.5 mx-auto flex flex-col items-center justify-center text-center">
       <span
@@ -11,8 +13,8 @@ export default function MobileHero() {
         )}
       >
         <Image
-          src="/logos/1x/greenDragonflyLogo.png"
-          alt="Freespace Therapy"
+          src={content?.logoUrl ?? "/logos/1x/greenDragonflyLogo.png"}
+          alt={content?.logoAlt ?? "Freespace Therapy"}
           fill
           sizes="320px"
           priority
@@ -25,16 +27,26 @@ export default function MobileHero() {
           "tracking-wide whitespace-nowrap",
           "text-[clamp(2rem,10vw,4.5rem)] min-[570px]:text-[57px]",
         )}
+        style={content?.headingColor ? { color: content.headingColor } : undefined}
       >
-        welcome to
-        <br />
-        free space
+        {content ? (
+          renderRichTextHeading(content.heading)
+        ) : (
+          <>
+            welcome to
+            <br />
+            free space
+          </>
+        )}
       </h1>
 
-      <p className="hero-body mt-3 font-aileron text-sm text-darkTeal/80">
-        Offering a compassionate, non-judgmental space to slow down and
-        explore what&rsquo;s really going on beneath the surface, for
-        adults navigating anxiety, loss, uncertainty, or feeling stuck.
+      <p
+        className="hero-body mt-3 font-aileron text-sm text-darkTeal/80"
+        style={content?.bodyColor ? { color: content.bodyColor } : undefined}
+      >
+        {content
+          ? renderRichTextInline(content.body)
+          : "Offering a compassionate, non-judgmental space to slow down and explore what's really going on beneath the surface, for adults navigating anxiety, loss, uncertainty, or feeling stuck."}
       </p>
     </div>
   );

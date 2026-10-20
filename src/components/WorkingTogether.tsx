@@ -1,54 +1,6 @@
 import classNames from "classnames";
 import type { TextBlockContent } from "@/lib/content/services";
-import {
-  renderRichTextBody,
-  renderRichTextHeading,
-} from "@/lib/content/richText";
-
-function Card({
-  header,
-  body,
-  textColor,
-  backgroundColor,
-  detailColor,
-  fallbackHeader,
-  fallbackBody,
-}: {
-  header?: TextBlockContent["header"];
-  body?: TextBlockContent["body"];
-  textColor?: string;
-  backgroundColor?: string;
-  detailColor?: string;
-  fallbackHeader: string;
-  fallbackBody: React.ReactNode;
-}) {
-  return (
-    <div
-      className={classNames(
-        "rounded-2xl border border-cream/10 bg-darkGreen p-6 md:p-8",
-        "bg-canvas-texture overflow-hidden",
-      )}
-      style={backgroundColor ? { backgroundColor } : undefined}
-    >
-      <span
-        className="block h-1 w-10 rounded-full bg-logoLime"
-        style={detailColor ? { backgroundColor: detailColor } : undefined}
-      />
-      <h3
-        className="font-aileron-semibold mt-4 text-lg text-cream md:text-xl"
-        style={textColor ? { color: textColor } : undefined}
-      >
-        {header ? renderRichTextHeading(header) : fallbackHeader}
-      </h3>
-      <div
-        className="mt-3 space-y-3 font-aileron text-sm text-cream/80 md:text-base"
-        style={textColor ? { color: textColor } : undefined}
-      >
-        {body ? renderRichTextBody(body) : fallbackBody}
-      </div>
-    </div>
-  );
-}
+import WorkingTogetherCard from "./WorkingTogetherCard";
 
 export default function WorkingTogether({
   blocks,
@@ -56,6 +8,7 @@ export default function WorkingTogether({
   blocks?: TextBlockContent[];
 }) {
   const [workingTogether, whatToExpect] = blocks ?? [];
+  const singleCard = blocks?.length === 1;
 
   return (
     <div className="bg-cream py-10 md:py-12">
@@ -65,7 +18,7 @@ export default function WorkingTogether({
           "md:grid-cols-[3fr_2fr] md:gap-10",
         )}
       >
-        <Card
+        <WorkingTogetherCard
           header={workingTogether?.header}
           body={workingTogether?.body}
           textColor={workingTogether?.textColor}
@@ -92,26 +45,29 @@ export default function WorkingTogether({
               </p>
             </>
           }
+          className={singleCard ? "md:col-span-2" : undefined}
         />
 
-        <Card
-          header={whatToExpect?.header}
-          body={whatToExpect?.body}
-          textColor={whatToExpect?.textColor}
-          backgroundColor={whatToExpect?.backgroundColor}
-          detailColor={whatToExpect?.detailColor}
-          fallbackHeader="What to Expect"
-          fallbackBody={
-            <p>
-              At the first session you can expect some more information
-              about therapy, a few initial assessment questions, and a lot
-              of space to share what you are bringing. I will also answer
-              any questions or concerns that you may have. Then, together,
-              we will start to identify next steps toward the changes that
-              you are looking to see.
-            </p>
-          }
-        />
+        {!singleCard && (
+          <WorkingTogetherCard
+            header={whatToExpect?.header}
+            body={whatToExpect?.body}
+            textColor={whatToExpect?.textColor}
+            backgroundColor={whatToExpect?.backgroundColor}
+            detailColor={whatToExpect?.detailColor}
+            fallbackHeader="What to Expect"
+            fallbackBody={
+              <p>
+                At the first session you can expect some more information
+                about therapy, a few initial assessment questions, and a lot
+                of space to share what you are bringing. I will also answer
+                any questions or concerns that you may have. Then, together,
+                we will start to identify next steps toward the changes that
+                you are looking to see.
+              </p>
+            }
+          />
+        )}
       </div>
     </div>
   );

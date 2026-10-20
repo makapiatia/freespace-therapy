@@ -10,18 +10,23 @@ const inputClasses = classNames(
   "outline-none transition-colors focus:border-gold",
 );
 
+const FORMSUBMIT_ENDPOINT =
+  "https://formsubmit.co/ajax/koomooloorex@gmail.com";
+
 export default function ContactForm({
   form,
 }: {
   form?: ContactFormContent;
 }) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   const fields = {
     nameLabel: form?.nameLabel ?? "Name",
-    namePlaceholder: form?.namePlaceholder ?? "Jane Smith",
+    namePlaceholder: form?.namePlaceholder ?? "John Smith",
     emailLabel: form?.emailLabel ?? "Email",
-    emailPlaceholder: form?.emailPlaceholder ?? "jane@example.com",
+    emailPlaceholder: form?.emailPlaceholder ?? "john@example.com",
     phoneLabel: form?.phoneLabel ?? "Phone (optional)",
     phonePlaceholder: form?.phonePlaceholder ?? "(555) 555-0182",
     messageLabel: form?.messageLabel ?? "Message",
@@ -31,9 +36,38 @@ export default function ContactForm({
     submitLabel: form?.submitLabel ?? "Send Message",
   };
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+
+    setSubmitting(true);
+    setError(false);
+
+    const formData = new FormData(event.currentTarget);
+    const submittedName = formData.get("name");
+    if (typeof submittedName === "string" && submittedName.trim()) {
+      formData.set(
+        "_subject",
+        `New message from ${submittedName.trim()} — Free Space submission`,
+      );
+    }
+
+    try {
+      const response = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -59,6 +93,21 @@ export default function ContactForm({
       onSubmit={handleSubmit}
       className="flex w-full flex-col gap-4"
     >
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Free Space submission"
+      />
+      <input type="hidden" name="_captcha" value="false" />
+      <input
+        type="text"
+        name="_honey"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden
+      />
+
       <div>
         <label
           htmlFor="name"
@@ -126,18 +175,27 @@ export default function ContactForm({
         />
       </div>
 
+      {error && (
+        <p className="font-work-sans text-sm text-red-300">
+          Something went wrong sending your message. Please try again, or
+          reach out by phone or email instead.
+        </p>
+      )}
+
       <button
         type="submit"
+        disabled={submitting}
         className={classNames(
           "mt-2 rounded-full bg-cream px-8 py-3 font-work-sans text-sm",
           "text-darkTeal transition-colors hover:bg-logoLime",
+          "disabled:cursor-not-allowed disabled:opacity-60",
         )}
         style={{
           backgroundColor: form?.submitBackgroundColor,
           color: form?.submitTextColor,
         }}
       >
-        {fields.submitLabel}
+        {submitting ? "Sending..." : fields.submitLabel}
       </button>
     </form>
   );

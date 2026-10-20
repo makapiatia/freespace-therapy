@@ -29,13 +29,20 @@ function colorValue(token: unknown): string | undefined {
 }
 
 export async function getHeroSection(): Promise<HeroContent | null> {
-  const res = await contentfulClient.getEntries<HeroSectionSkeleton>({
-    content_type: "heroSection",
-    include: 3,
-    limit: 1,
-  });
+  let entry: Entry<HeroSectionSkeleton> | undefined;
 
-  const entry = res.items[0];
+  try {
+    const res = await contentfulClient.getEntries<HeroSectionSkeleton>({
+      content_type: "heroSection",
+      include: 3,
+      limit: 1,
+    });
+    entry = res.items[0];
+  } catch (error) {
+    console.error("Failed to fetch heroSection from Contentful:", error);
+    return null;
+  }
+
   if (!entry) return null;
 
   const f = entry.fields;

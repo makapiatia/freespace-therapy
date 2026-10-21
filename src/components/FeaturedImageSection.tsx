@@ -3,9 +3,6 @@ import classNames from "classnames";
 import { getFeaturedImageSection } from "@/lib/content/featuredImage";
 import { renderRichTextInline } from "@/lib/content/richText";
 
-const IMAGE_OPACITY_GRADIENT =
-  "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 85%, rgba(0,0,0,0.75) 100%)";
-
 export default async function FeaturedImageSection() {
   const content = await getFeaturedImageSection();
 
@@ -22,12 +19,15 @@ export default async function FeaturedImageSection() {
         alt={content?.imageAlt ?? ""}
         aria-hidden
         fill
-        style={{
-          objectPosition: content?.objectPosition ?? "55% 15%",
-          maskImage: IMAGE_OPACITY_GRADIENT,
-          WebkitMaskImage: IMAGE_OPACITY_GRADIENT,
-        }}
+        style={{ objectPosition: content?.objectPosition ?? "55% 15%" }}
         className="object-cover"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `linear-gradient(to bottom, ${content?.overlayColor ?? "#172a68"}26 0%, transparent 35%)`,
+        }}
       />
       <p
         className={classNames(

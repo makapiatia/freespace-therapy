@@ -42,6 +42,7 @@ export async function getFeaturedImageSection(): Promise<FeaturedImageContent | 
       content_type: "page",
       include: 3,
       limit: 1,
+      select: ["sys", "fields.imageSection"],
     });
 
     const page = res.items[0];

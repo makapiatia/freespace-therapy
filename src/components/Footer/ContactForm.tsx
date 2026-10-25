@@ -11,7 +11,7 @@ const inputClasses = classNames(
 );
 
 const FORMSUBMIT_ENDPOINT =
-  "https://formsubmit.co/ajax/koomooloorex@gmail.com";
+  "https://formsubmit.co/ajax/megan@freespace-therapy.com";
 
 export default function ContactForm({
   form,

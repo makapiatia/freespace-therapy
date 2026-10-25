@@ -32,7 +32,7 @@ export default async function FeaturedImageSection() {
       <p
         className={classNames(
           "author-text absolute top-0 right-0 tracking-wide text-darkNavy",
-          "px-3 py-1 font-work-sans text-[9px] md:text-[11px] font-semibold"
+          "px-3 py-1 font-work-sans text-[9px] md:text-[11px] font-semibold opacity-85"
         )}
         style={
           content?.descriptionColor

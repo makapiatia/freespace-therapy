@@ -85,17 +85,17 @@ export async function getFooterSection(): Promise<FooterContent | null> {
           nameLabel: (formFields.nameInputLabel as string | undefined) ?? "Name",
           namePlaceholder:
             (formFields.nameInputPlaceholder as string | undefined) ??
-            "Jane Smith",
+            "John Smith",
           emailLabel: (formFields.emailInputLabel as string | undefined) ?? "Email",
           emailPlaceholder:
             (formFields.emailInputPlaceholder as string | undefined) ??
-            "jane@example.com",
+            "john@example.com",
           phoneLabel:
             (formFields.phoneInputLabel as string | undefined) ??
             "Phone (optional)",
           phonePlaceholder:
             (formFields.phoneInputPlaceholder as string | undefined) ??
-            "(555) 555-0182",
+            "(000) 000-0000",
           messageLabel:
             (formFields.messageInputLabel as string | undefined) ?? "Message",
           messagePlaceholder:
@@ -103,7 +103,7 @@ export async function getFooterSection(): Promise<FooterContent | null> {
             "Tell us a little about what brings you here.",
           submitLabel:
             (submitButton?.fields.linkLabel as string | undefined) ??
-            "Send Message",
+            "Submit Message",
           submitTextColor: colorValue(submitButton?.fields.buttonLabelTextColor),
           submitBackgroundColor: colorValue(
             submitButton?.fields.buttonBackgroundColor,

@@ -28,12 +28,12 @@ export default function ContactForm({
     emailLabel: form?.emailLabel ?? "Email",
     emailPlaceholder: form?.emailPlaceholder ?? "john@example.com",
     phoneLabel: form?.phoneLabel ?? "Phone (optional)",
-    phonePlaceholder: form?.phonePlaceholder ?? "(555) 555-0182",
+    phonePlaceholder: form?.phonePlaceholder ?? "(000) 000-0000",
     messageLabel: form?.messageLabel ?? "Message",
     messagePlaceholder:
       form?.messagePlaceholder ??
       "Tell us a little about what brings you here.",
-    submitLabel: form?.submitLabel ?? "Send Message",
+    submitLabel: form?.submitLabel ?? "Submit Message",
   };
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {

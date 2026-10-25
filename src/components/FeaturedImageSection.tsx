@@ -42,7 +42,7 @@ export default async function FeaturedImageSection() {
       >
         {content?.description
           ? renderRichTextInline(content.description)
-          : "“Sky’s The Limit” — Photography by Kareem W."}
+          : "“Sky’s The Limit” — Photography by Kareem Wilder"}
       </p>
     </section>
   );

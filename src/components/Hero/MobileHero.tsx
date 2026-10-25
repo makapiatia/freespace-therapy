@@ -46,7 +46,7 @@ export default function MobileHero({ content }: { content: HeroContent | null })
       >
         {content
           ? renderRichTextInline(content.body)
-          : "Offering a compassionate, non-judgmental space to slow down and explore what's really going on beneath the surface, for adults navigating anxiety, loss, uncertainty, or feeling stuck."}
+          : "Offering a compassionate, non-judgmental space to slow down and explore what’s really going on beneath the surface, for adults navigating anxiety, loss, uncertainty, or feeling stuck."}
       </p>
     </div>
   );

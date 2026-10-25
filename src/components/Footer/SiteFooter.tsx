@@ -22,7 +22,7 @@ export default function SiteFooter({
       <p className="font-work-sans text-xs text-cream/70">
         {copyrightText
           ? renderRichTextInline(copyrightText)
-          : "© 2026 Freespace Therapy. All rights reserved."}
+          : "© 2026 Free Space Psychotherapy LLC. All rights reserved."}
       </p>
       <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-logoLime/50">
         <Image

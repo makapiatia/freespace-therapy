@@ -31,7 +31,7 @@ export default function DesktopHero({ content }: { content: HeroContent | null }
       >
         {content
           ? renderRichTextInline(content.tagline)
-          : "a free space to feel, heal, and be yourself"}
+          : "Free Space Psychotherapy LLC"}
       </p>
 
       <h1
@@ -58,7 +58,7 @@ export default function DesktopHero({ content }: { content: HeroContent | null }
       >
         {content
           ? renderRichTextInline(content.body)
-          : "Offering a compassionate, non-judgmental space to slow down and explore what's really going on beneath the surface, for adults navigating anxiety, loss, uncertainty, or feeling stuck."}
+          : "Offering a compassionate, non-judgmental space to slow down and explore what’s really going on beneath the surface, for adults navigating anxiety, loss, uncertainty, or feeling stuck."}
       </p>
     </div>
   );

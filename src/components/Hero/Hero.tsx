@@ -29,7 +29,7 @@ export default async function Hero() {
         >
           {content
             ? renderRichTextInline(content.tagline)
-            : "a free space to feel, heal, and be yourself"}
+            : "Free Space Psychotherapy LLC"}
         </p>
       </div>
 

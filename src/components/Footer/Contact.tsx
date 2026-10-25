@@ -28,12 +28,12 @@ export default function Contact({
         ) : (
           <>
             <p>
-              Have questions or ready to schedule? Send a message and
+              Have questions or ready to schedule? Send a message, and
               we&rsquo;ll follow up soon.
             </p>
             <p>
-              <a href="tel:+10000000000" className="hover:text-logoLime">
-                (000) 000-0000
+              <a href="tel:+18622292270" className="hover:text-logoLime">
+                (862) 229-2270
               </a>
               <br />
               <a

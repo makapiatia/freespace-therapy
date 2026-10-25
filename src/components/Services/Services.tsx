@@ -6,29 +6,24 @@ import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richT
 const fallbackTopSpecialties = ["Anxiety", "Family Issues", "Grief or Loss"];
 
 const fallbackMoreSpecialties = [
-  "Bipolar Disorder",
   "Depression",
-  "OCD",
   "Sleep Disorder",
   "Stress Management",
   "Anger Management",
-  "Cultural & Ethnic Issues",
+  "Cultural Issues",
   "Men's Issues",
-  "Relationship Issues",
   "Women's Issues",
+  "Relationship Issues",
   "Identity Issues",
   "Trauma",
-  "PTSD",
   "Transgender Issues",
 ];
 
 const fallbackTherapyMethods = [
-  "Strength-Based",
-  "Motivational Interviewing",
-  "Interpersonal Psychotherapy (IPT)",
-  "Cognitive Behavioral (CBT)",
   "Humanistic",
   "Psychodynamic",
+  "Strengths-Based",
+  "Interpersonal",
 ];
 
 function TagRow({
@@ -95,7 +90,7 @@ export default async function Services() {
         <p className="font-aileron mt-2 md:mt-4 text-sm text-darkTeal/80 md:text-lg">
           {specialtyList?.description
             ? renderRichTextInline(specialtyList.description)
-            : "A space for adults navigating anxiety, loss, uncertainty, or feeling stuck, sessions offered virtually and in person."}
+            : "A space for adults navigating anxiety, loss, uncertainty, or feeling stuck; sessions offered virtually and in person."}
         </p>
       </div>
 

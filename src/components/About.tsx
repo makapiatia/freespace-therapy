@@ -119,33 +119,6 @@ export default async function About() {
               </>
             )}
           </div>
-          <ul className="mt-6 space-y-2">
-            {credentials.map((item) => (
-              <li
-                key={item}
-                className={classNames(
-                  "flex items-center gap-2 rounded-xl bg-logoLime/75 max-w-[320px]",
-                  "px-4 py-2 font-work-sans text-sm text-darkTeal",
-                )}
-                style={{
-                  backgroundColor: content?.credentialsBackgroundColor,
-                  color: content?.credentialsTextColor,
-                }}
-              >
-                {content?.showBulletPoints !== false && (
-                  <span
-                    className="h-1.5 w-1.5 shrink-0 rounded-full bg-cream"
-                    style={
-                      content?.bulletPointColor
-                        ? { backgroundColor: content.bulletPointColor }
-                        : undefined
-                    }
-                  />
-                )}
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

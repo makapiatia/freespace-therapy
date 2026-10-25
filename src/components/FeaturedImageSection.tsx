@@ -26,7 +26,7 @@ export default async function FeaturedImageSection() {
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `linear-gradient(to bottom, ${content?.overlayColor ?? "#172a68"}26 0%, transparent 35%)`,
+          background: `linear-gradient(to bottom, ${content?.overlayColor ?? "#172a68"}1a 0%, transparent 18%)`,
         }}
       />
       <p

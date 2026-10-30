@@ -13,7 +13,7 @@ export default function MobileHero({ content }: { content: HeroContent | null })
         )}
       >
         <Image
-          src={content?.logoUrl ?? "/logos/1x/greenDragonflyLogo.png"}
+          src={content?.logoUrl ?? "/logos/NewLogoOct30.png"}
           alt={content?.logoAlt ?? "Freespace Therapy"}
           fill
           sizes="320px"

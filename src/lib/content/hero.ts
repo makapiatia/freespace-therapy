@@ -68,7 +68,7 @@ export async function getHeroSection(): Promise<HeroContent | null> {
     buttonBackgroundColor: colorValue(button?.fields.buttonBackgroundColor),
     logoUrl: logoFile?.url
       ? `https:${logoFile.url}`
-      : "/logos/1x/greenDragonflyLogo.png",
+      : "/logos/NewLogoOct30.png",
     logoAlt: (logo?.fields.imageAltText as string | undefined) ?? "Freespace Therapy",
   };
 }

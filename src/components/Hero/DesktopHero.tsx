@@ -13,7 +13,7 @@ export default function DesktopHero({ content }: { content: HeroContent | null }
     >
       <span className="relative row-span-3 block h-52 w-52 shrink-0 overflow-hidden rounded-full">
         <Image
-          src={content?.logoUrl ?? "/logos/1x/greenDragonflyLogo.png"}
+          src={content?.logoUrl ?? "/logos/NewLogoOct30.png"}
           alt={content?.logoAlt ?? "Freespace Therapy"}
           fill
           sizes="208px"

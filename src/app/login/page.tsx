@@ -43,7 +43,7 @@ export default async function LoginPage({
     <main className="flex min-h-dvh flex-col items-center justify-center bg-cream px-8 text-center">
       <span className="relative block h-28 w-28 shrink-0 overflow-hidden rounded-full">
         <Image
-          src="/logos/1x/greenDragonflyLogo.png"
+          src="/logos/NewLogoOct30.png"
           alt="Freespace Therapy"
           fill
           sizes="120px"

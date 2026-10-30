@@ -26,11 +26,11 @@ export default function SiteFooter({
       </p>
       <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-logoLime/50">
         <Image
-          src={logoUrl ?? "/logos/1x/greenDragonflyLogo.png"}
+          src={logoUrl ?? "/logos/NewLogoOct30.png"}
           alt={logoAlt ?? "Freespace Therapy"}
           fill
           sizes="64px"
-          className="scale-125 object-cover"
+          className="object-cover"
         />
       </span>
     </div>

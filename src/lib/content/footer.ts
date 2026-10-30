@@ -115,7 +115,7 @@ export async function getFooterSection(): Promise<FooterContent | null> {
       copyrightText: f.footerCopyrightText as Document | undefined,
       logoUrl: logoFile?.url
         ? `https:${logoFile.url}`
-        : "/logos/1x/greenDragonflyLogo.png",
+        : "/logos/NewLogoOct30.png",
       logoAlt:
         (logoSection?.fields.imageAltText as string | undefined) ??
         "Freespace Therapy",

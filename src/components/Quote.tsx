@@ -54,6 +54,16 @@ export default async function Quote() {
           </cite>
         </div>
 
+        <span
+          aria-hidden
+          className="mx-auto mt-8 block h-1 w-12 rounded-full bg-logoLime md:mt-10"
+          style={
+            content?.quoteMarkColor
+              ? { backgroundColor: content.quoteMarkColor }
+              : undefined
+          }
+        />
+
         <div className="relative mt-8 md:mt-10">
           <div
             className={classNames(

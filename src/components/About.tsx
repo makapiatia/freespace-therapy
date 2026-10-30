@@ -24,12 +24,8 @@ export default async function About() {
   return (
     <section
       id="about"
-      className="border-t-2 border-logoLime/50 bg-logoLime/20 px-8 py-10 md:py-12"
-      style={
-        content?.backgroundColor
-          ? { backgroundColor: content.backgroundColor }
-          : undefined
-      }
+      className="px-8 py-10 md:py-12"
+      style={{ backgroundColor: content?.backgroundColor ?? "#f6e2b3" }}
     >
       <div
         className={classNames(

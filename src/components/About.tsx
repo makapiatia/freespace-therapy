@@ -33,15 +33,15 @@ export default async function About() {
     >
       <div
         className={classNames(
-          "mx-auto grid max-w-5xl grid-cols-[1fr_auto] gap-x-6 gap-y-6",
+          "mx-auto grid max-w-5xl grid-cols-[auto_1fr] gap-x-8 gap-y-6",
           "md:grid-cols-[auto_1fr] md:items-start md:gap-y-4 md:gap-x-10",
         )}
       >
         <span
           className={classNames(
-            "relative col-start-2 row-start-1 block h-22 w-22 shrink-0",
-            "justify-self-center overflow-hidden rounded-full",
-            "md:col-start-1 md:row-span-2 md:row-start-1",
+            "relative col-start-1 row-start-1 block h-22 w-22 shrink-0",
+            "justify-self-start overflow-hidden rounded-full",
+            "md:row-span-2",
             "md:h-36 md:w-36 md:justify-self-start",
           )}
           style={
@@ -64,8 +64,8 @@ export default async function About() {
 
         <div
           className={classNames(
-            "about-header col-start-1 row-start-1 flex h-full flex-col",
-            "justify-end md:col-start-2",
+            "about-header col-start-2 row-start-1 flex h-full flex-col",
+            "justify-center",
           )}
         >
           <h2

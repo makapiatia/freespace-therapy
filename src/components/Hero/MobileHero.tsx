@@ -8,7 +8,7 @@ export default function MobileHero({ content }: { content: HeroContent | null })
     <div className="hero:hidden max-w-112.5 mx-auto flex flex-col items-center justify-center text-center">
       <span
         className={classNames(
-          "relative block aspect-square shrink-0 overflow-hidden rounded-full",
+          "relative my-4 block aspect-square shrink-0 overflow-hidden rounded-full",
           "w-[clamp(8rem,46vw,20rem)] min-[570px]:w-66",
         )}
       >

@@ -56,7 +56,7 @@ export default async function Quote() {
 
         <span
           aria-hidden
-          className="mx-auto mt-8 block h-1 w-12 rounded-full bg-logoLime md:mt-10"
+          className="mx-auto mt-8 block h-1 w-12 rounded-full bg-logoLime md:mt-10 opacity-90"
           style={
             content?.quoteMarkColor
               ? { backgroundColor: content.quoteMarkColor }

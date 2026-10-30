@@ -8,18 +8,9 @@ import {
   renderRichTextInline,
 } from "@/lib/content/richText";
 
-const fallbackCredentials = [
-  "LCSW, Licensed Clinical Social Worker, New Jersey",
-  "MSW, Rutgers University College, New Brunswick",
-  "4 Years of Experience",
-  "Virtual & In-Person Sessions",
-];
 
 export default async function About() {
   const content = await getAboutSection();
-  const credentials = content?.credentials.length
-    ? content.credentials
-    : fallbackCredentials;
 
   return (
     <section

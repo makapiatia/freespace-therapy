@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import Hero from "@/components/Hero/Hero";
 import Quote from "@/components/Quote";
-import FeaturedImageSection from "@/components/FeaturedImageSection";
 import Services from "@/components/Services/Services";
 import Community from "@/components/Footer/Community";
 import About from "@/components/About";
@@ -17,8 +16,8 @@ export const revalidate = 60;
 
 // Awaits the already-in-flight footer fetch rather than blocking on it at
 // the top of Home(), so it resolves in parallel with Hero/Quote/
-// FeaturedImageSection/Services/About's own Contentful fetches instead of
-// gating all of them behind it.
+// Services/About's own Contentful fetches instead of gating all of them
+// behind it.
 async function SiteFooterSection({
   footerPromise,
 }: {
@@ -79,7 +78,6 @@ export default function Home() {
         <Hero />
         <Quote />
       </div>
-      <FeaturedImageSection />
       <Services />
       <About />
       <SiteFooterSection footerPromise={footerPromise} />

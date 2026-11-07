@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import WorkingTogether from "./WorkingTogether";
+import TextSection from "./TextSection";
 import { getServicesSection } from "@/lib/content/services";
 import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richText";
 
@@ -132,7 +132,7 @@ export default async function Services() {
         </div>
       </div>
 
-      <WorkingTogether blocks={content?.blocks} />
+      <TextSection blocks={content?.blocks} />
     </section>
   );
 }

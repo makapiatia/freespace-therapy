@@ -1,7 +1,13 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { NodeRenderer, Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
-import type { Document } from "@contentful/rich-text-types";
+import type {
+  Block,
+  Document,
+  Inline,
+  Node,
+  Text,
+} from "@contentful/rich-text-types";
 
 /**
  * Splits literal "\n" characters inside Contentful rich text into <br />
@@ -14,6 +20,12 @@ const renderText: Options["renderText"] = (text) =>
     .flatMap((segment, i) =>
       i === 0 ? [segment] : [<br key={`br-${i}`} />, segment],
     );
+
+function documentToPlainText(node: Node): string {
+  return "value" in node
+    ? (node as Text).value
+    : ((node as Block | Inline).content ?? []).map(documentToPlainText).join("");
+}
 
 /** Renders a single-paragraph rich text document as a plain inline string (no wrapping tag). */
 export function renderRichTextInline(document: Document) {
@@ -58,17 +70,21 @@ export function renderRichTextBody(
   const linkClassName = options?.linkClassName;
   return documentToReactComponents(document, {
     renderText,
-    renderNode: linkClassName
-      ? {
-          [INLINES.HYPERLINK]: (node, children) => (
-            <a
-              href={(node.data as { uri: string }).uri}
-              className={linkClassName}
-            >
-              {children}
-            </a>
-          ),
-        }
-      : undefined,
+    renderNode: {
+      // Contentful appends an empty paragraph after lists; skip it so it
+      // doesn't add trailing space.
+      [BLOCKS.PARAGRAPH]: (node, children) =>
+        documentToPlainText(node) ? <p>{children}</p> : null,
+      ...(linkClassName && {
+        [INLINES.HYPERLINK]: (node, children) => (
+          <a
+            href={(node.data as { uri: string }).uri}
+            className={linkClassName}
+          >
+            {children}
+          </a>
+        ),
+      }),
+    },
   });
 }

@@ -5,14 +5,12 @@ import {
   renderRichTextHeading,
 } from "@/lib/content/richText";
 
-export default function WorkingTogetherCard({
+export default function TextSectionCard({
   header,
   body,
   textColor,
   backgroundColor,
   detailColor,
-  fallbackHeader,
-  fallbackBody,
   className,
 }: {
   header?: TextBlockContent["header"];
@@ -20,8 +18,6 @@ export default function WorkingTogetherCard({
   textColor?: string;
   backgroundColor?: string;
   detailColor?: string;
-  fallbackHeader: string;
-  fallbackBody: React.ReactNode;
   className?: string;
 }) {
   return (
@@ -37,18 +33,22 @@ export default function WorkingTogetherCard({
         className="block h-1 w-10 rounded-full bg-logoLime"
         style={detailColor ? { backgroundColor: detailColor } : undefined}
       />
-      <h3
-        className="font-aileron-semibold mt-4 text-lg text-cream md:text-xl"
-        style={textColor ? { color: textColor } : undefined}
-      >
-        {header ? renderRichTextHeading(header) : fallbackHeader}
-      </h3>
-      <div
-        className="mt-3 space-y-3 font-aileron text-sm text-cream/80 md:text-base"
-        style={textColor ? { color: textColor } : undefined}
-      >
-        {body ? renderRichTextBody(body) : fallbackBody}
-      </div>
+      {header && (
+        <h3
+          className="font-aileron-semibold mt-4 text-lg text-cream md:text-xl"
+          style={textColor ? { color: textColor } : undefined}
+        >
+          {renderRichTextHeading(header)}
+        </h3>
+      )}
+      {body && (
+        <div
+          className="mt-3 space-y-3 font-aileron text-sm text-cream/80 md:text-base"
+          style={textColor ? { color: textColor } : undefined}
+        >
+          {renderRichTextBody(body)}
+        </div>
+      )}
     </div>
   );
 }

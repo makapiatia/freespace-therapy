@@ -3,7 +3,13 @@ import classNames from "classnames";
 import type { HeroContent } from "@/lib/content/hero";
 import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richText";
 
-export default function MobileHero({ content }: { content: HeroContent | null }) {
+export default function MobileHero({
+  content,
+  logoUrl,
+}: {
+  content: HeroContent | null;
+  logoUrl?: string;
+}) {
   return (
     <div className="hero:hidden max-w-112.5 mx-auto flex flex-col items-center justify-center text-center">
       <span
@@ -13,7 +19,7 @@ export default function MobileHero({ content }: { content: HeroContent | null })
         )}
       >
         <Image
-          src={content?.logoUrl ?? "/logos/NewLogoOct30.png"}
+          src={logoUrl ?? "/logos/NewLogoOct30.png"}
           alt={content?.logoAlt ?? "Freespace Therapy"}
           fill
           sizes="320px"

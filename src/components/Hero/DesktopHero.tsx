@@ -3,7 +3,13 @@ import classNames from "classnames";
 import type { HeroContent } from "@/lib/content/hero";
 import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richText";
 
-export default function DesktopHero({ content }: { content: HeroContent | null }) {
+export default function DesktopHero({
+  content,
+  logoUrl,
+}: {
+  content: HeroContent | null;
+  logoUrl?: string;
+}) {
   return (
     <div
       className={classNames(
@@ -13,7 +19,7 @@ export default function DesktopHero({ content }: { content: HeroContent | null }
     >
       <span className="relative row-span-3 block h-52 w-52 shrink-0 overflow-hidden rounded-full">
         <Image
-          src={content?.logoUrl ?? "/logos/NewLogoOct30.png"}
+          src={logoUrl ?? "/logos/NewLogoOct30.png"}
           alt={content?.logoAlt ?? "Freespace Therapy"}
           fill
           sizes="208px"

@@ -4,8 +4,9 @@ import DesktopHero from "./DesktopHero";
 import { getHeroSection } from "@/lib/content/hero";
 import { renderRichTextInline } from "@/lib/content/richText";
 
-export default async function Hero() {
+export default async function Hero({ logoUrl }: { logoUrl?: string }) {
   const content = await getHeroSection();
+  const logo = logoUrl ?? content?.logoUrl;
 
   return (
     <section
@@ -34,8 +35,8 @@ export default async function Hero() {
       </div>
 
       <div className="mx-auto max-w-4xl px-8 md:pt-14">
-        <MobileHero content={content} />
-        <DesktopHero content={content} />
+        <MobileHero content={content} logoUrl={logo} />
+        <DesktopHero content={content} logoUrl={logo} />
       </div>
 
       <div className="mx-auto max-w-4xl px-8 pt-4 pb-8 text-center md:pt-6 md:pb-10">

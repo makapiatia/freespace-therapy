@@ -65,7 +65,7 @@ async function SiteFooterSection({
 
 /**
  * The full site. `logoUrl` overrides the Contentful logo in the hero and
- * footer (used by the /1–/8 logo test pages).
+ * footer.
  */
 export default function HomePage({ logoUrl }: { logoUrl?: string }) {
   // Kick off the fetch now, without awaiting it here — awaiting inline

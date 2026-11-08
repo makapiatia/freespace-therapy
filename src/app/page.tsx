@@ -6,5 +6,5 @@ import HomePage from "@/components/HomePage";
 export const revalidate = 60;
 
 export default function Home() {
-  return <HomePage />;
+  return <HomePage logoUrl="/logos/LogoOptions/LogoOption0.svg" />;
 }

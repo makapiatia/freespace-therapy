@@ -1,8 +1,8 @@
 import HomePage from "@/components/HomePage";
 
-// Logo test pages: /1–/8 render the full site with one of the logo options
+// Logo test pages: /1–/12 render the full site with one of the logo options
 // in public/logos/LogoOptions swapped into the hero and footer.
-const LOGO_OPTIONS = ["1", "2", "3", "4", "5", "6", "7", "8"];
+const LOGO_OPTIONS = Array.from({ length: 12 }, (_, i) => String(i + 1));
 
 export const revalidate = 60;
 
@@ -18,5 +18,5 @@ export default async function LogoOptionPage({
 }: PageProps<"/[logo]">) {
   const { logo } = await params;
 
-  return <HomePage logoUrl={`/logos/LogoOptions/LogoOption${logo}.png`} />;
+  return <HomePage logoUrl={`/logos/LogoOptions/LogoOption${logo}.svg`} />;
 }

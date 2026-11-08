@@ -1,8 +1,8 @@
 import HomePage from "@/components/HomePage";
 
-// Logo test pages: /1–/4 render the full site with one of the logo options
+// Logo test pages: /1–/8 render the full site with one of the logo options
 // in public/logos/LogoOptions swapped into the hero and footer.
-const LOGO_OPTIONS = ["1", "2", "3", "4"];
+const LOGO_OPTIONS = ["1", "2", "3", "4", "5", "6", "7", "8"];
 
 export const revalidate = 60;
 

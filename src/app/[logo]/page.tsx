@@ -1,16 +1,16 @@
 import HomePage from "@/components/HomePage";
+import { LOGO_OPTIONS } from "@/components/LogoOptionsNav";
 
-// Logo test pages: /1–/12 render the full site with one of the logo options
+// Logo test pages: /1–/13 render the full site with one of the logo options
 // in public/logos/LogoOptions swapped into the hero and footer.
-const LOGO_OPTIONS = Array.from({ length: 12 }, (_, i) => String(i + 1));
 
 export const revalidate = 60;
 
-// Anything other than /1–/4 404s instead of rendering on demand.
+// Anything other than /1–/13 404s instead of rendering on demand.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return LOGO_OPTIONS.map((logo) => ({ logo }));
+  return LOGO_OPTIONS.map((option) => ({ logo: String(option) }));
 }
 
 export default async function LogoOptionPage({
@@ -18,5 +18,5 @@ export default async function LogoOptionPage({
 }: PageProps<"/[logo]">) {
   const { logo } = await params;
 
-  return <HomePage logoUrl={`/logos/LogoOptions/LogoOption${logo}.svg`} />;
+  return <HomePage logoOption={Number(logo)} />;
 }

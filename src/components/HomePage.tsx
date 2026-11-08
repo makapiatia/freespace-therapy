@@ -7,6 +7,7 @@ import About from "@/components/About";
 import Contact from "@/components/Footer/Contact";
 import ContactForm from "@/components/Footer/ContactForm";
 import SiteFooter from "@/components/Footer/SiteFooter";
+import LogoOptionsNav, { logoOptionUrl } from "@/components/LogoOptionsNav";
 import { getFooterSection, type FooterContent } from "@/lib/content/footer";
 
 // Awaits the already-in-flight footer fetch rather than blocking on it at
@@ -64,10 +65,11 @@ async function SiteFooterSection({
 }
 
 /**
- * The full site. `logoUrl` overrides the Contentful logo in the hero and
- * footer.
+ * The full site, with logo option `logoOption` from public/logos/LogoOptions
+ * in the hero and footer instead of the Contentful logo.
  */
-export default function HomePage({ logoUrl }: { logoUrl?: string }) {
+export default function HomePage({ logoOption }: { logoOption: number }) {
+  const logoUrl = logoOptionUrl(logoOption);
   // Kick off the fetch now, without awaiting it here — awaiting inline
   // would block React from even starting to render (and fetch data for)
   // the rest of the tree below.
@@ -75,6 +77,7 @@ export default function HomePage({ logoUrl }: { logoUrl?: string }) {
 
   return (
     <div className="flex flex-1 flex-col bg-cream">
+      <LogoOptionsNav current={logoOption} />
       <div className="flex min-h-dvh flex-col md:block md:min-h-0">
         <Hero logoUrl={logoUrl} />
         <Quote />

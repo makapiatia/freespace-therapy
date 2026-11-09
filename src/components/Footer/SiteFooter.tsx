@@ -19,12 +19,12 @@ export default function SiteFooter({
         "flex-row justify-end gap-6 pt-8 sm:pt-8 text-left",
       )}
     >
-      <p className="font-work-sans text-xs text-cream/70">
+      <p className="font-work-sans text-xs text-cream/60">
         {copyrightText
           ? renderRichTextInline(copyrightText)
           : "© 2026 Free Space Psychotherapy LLC. All rights reserved."}
       </p>
-      <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-logoLime/50">
+      <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full">
         <Image
           src={logoUrl ?? "/logos/NewLogoOct30.png"}
           alt={logoAlt ?? "Freespace Therapy"}

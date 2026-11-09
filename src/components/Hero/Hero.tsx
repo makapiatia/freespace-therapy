@@ -4,7 +4,13 @@ import DesktopHero from "./DesktopHero";
 import { getHeroSection } from "@/lib/content/hero";
 import { renderRichTextInline } from "@/lib/content/richText";
 
-export default async function Hero({ logoUrl }: { logoUrl?: string }) {
+export default async function Hero({
+  logoUrl,
+  buttonClassName,
+}: {
+  logoUrl?: string;
+  buttonClassName: string;
+}) {
   const content = await getHeroSection();
   const logo = logoUrl ?? content?.logoUrl;
 
@@ -43,14 +49,11 @@ export default async function Hero({ logoUrl }: { logoUrl?: string }) {
         <a
           href={content?.buttonUrl ?? "#contact"}
           className={classNames(
-            "inline-block rounded-full bg-gold/90 px-6 py-3 font-bold",
-            "font-work-sans text-base text-darkGreen transition-[filter]",
+            "inline-block rounded-full px-6 py-3 font-bold",
+            "font-work-sans text-base transition-[filter]",
             "hover:brightness-90",
+            buttonClassName,
           )}
-          style={{
-            backgroundColor: content?.buttonBackgroundColor,
-            color: content?.buttonTextColor,
-          }}
         >
           {content?.buttonLabel ?? "Get in Touch"}
         </a>

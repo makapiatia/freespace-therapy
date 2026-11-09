@@ -1,12 +1,12 @@
 import HomePage from "@/components/HomePage";
 import { LOGO_OPTIONS } from "@/components/LogoOptionsNav";
 
-// Logo test pages: /1–/13 render the full site with one of the logo options
-// in public/logos/LogoOptions swapped into the hero and footer.
+// Logo test pages: /<option> renders the full site with one of the logo
+// options in public/logos/LogoOptions swapped into the hero and footer.
 
 export const revalidate = 60;
 
-// Anything other than /1–/13 404s instead of rendering on demand.
+// Anything other than the listed options 404s instead of rendering on demand.
 export const dynamicParams = false;
 
 export function generateStaticParams() {

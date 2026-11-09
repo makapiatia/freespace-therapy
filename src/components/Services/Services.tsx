@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import TextSection from "./TextSection";
 import { getServicesSection } from "@/lib/content/services";
+import type { SiteTheme } from "@/lib/siteTheme";
 import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richText";
 
 const fallbackTopSpecialties = ["Anxiety", "Family Issues", "Grief or Loss"];
@@ -30,12 +31,13 @@ function TagRow({
   items,
   textColor,
   backgroundColor,
-  bold,
+  highlightClassName,
 }: {
   items: string[];
   textColor?: string;
   backgroundColor?: string;
-  bold?: boolean;
+  /** Renders bold highlighted pills in these colors. */
+  highlightClassName?: string;
 }) {
   return (
     <div className="flex flex-wrap justify-center gap-2">
@@ -44,9 +46,9 @@ function TagRow({
           key={item}
           className={classNames(
             "rounded-full px-3 py-1 text-sm font-work-sans",
-            bold
-              ? "bg-mediumGreen/90 text-cream font-bold"
-              : "bg-logoLime/30 text-darkTeal/80",
+            highlightClassName
+              ? classNames(highlightClassName, "font-bold")
+              : "bg-yellow/30 text-darkTeal/80",
           )}
           style={{ backgroundColor, color: textColor }}
         >
@@ -57,7 +59,7 @@ function TagRow({
   );
 }
 
-export default async function Services() {
+export default async function Services({ theme }: { theme: SiteTheme }) {
   const content = await getServicesSection();
   const specialtyList = content?.lists[0];
   const methodsList = content?.lists[1];
@@ -95,11 +97,10 @@ export default async function Services() {
       </div>
 
       <div className="mx-auto mt-6 md:mt-10 max-w-6xl px-8">
+        {/* Highlighted colors come from the site theme, not Contentful. */}
         <TagRow
           items={topSpecialties}
-          textColor={specialtyList?.highlightedTextColor}
-          backgroundColor={specialtyList?.highlightedBackgroundColor}
-          bold
+          highlightClassName={theme.highlightPillClassName}
         />
         <div className="mt-4">
           <TagRow
@@ -132,7 +133,7 @@ export default async function Services() {
         </div>
       </div>
 
-      <TextSection blocks={content?.blocks} />
+      <TextSection blocks={content?.blocks} themes={theme.cards} />
     </section>
   );
 }

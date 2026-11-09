@@ -8,43 +8,49 @@ import {
 export default function TextSectionCard({
   header,
   body,
-  textColor,
-  backgroundColor,
+  background,
   detailColor,
+  dark,
   className,
 }: {
   header?: TextBlockContent["header"];
   body?: TextBlockContent["body"];
-  textColor?: string;
-  backgroundColor?: string;
+  /** Any CSS background, e.g. a color or gradient. */
+  background?: string;
   detailColor?: string;
+  /** Use cream text for a dark background. */
+  dark?: boolean;
   className?: string;
 }) {
   return (
     <div
       className={classNames(
-        "rounded-2xl border border-cream/10 bg-darkGreen p-6 md:p-8",
-        "bg-canvas-texture overflow-hidden",
+        "rounded-2xl border border-darkTeal/5 bg-lightGold p-6 md:p-8",
+        "overflow-hidden",
         className,
       )}
-      style={backgroundColor ? { backgroundColor } : undefined}
+      style={background ? { background } : undefined}
     >
       <span
-        className="block h-1 w-10 rounded-full bg-logoLime"
+        className="block h-1 w-10 rounded-full bg-grassGreen"
         style={detailColor ? { backgroundColor: detailColor } : undefined}
       />
       {header && (
         <h3
-          className="font-aileron-semibold mt-4 text-lg text-cream md:text-xl"
-          style={textColor ? { color: textColor } : undefined}
+          className={classNames(
+            "font-aileron-semibold mt-4 text-lg md:text-xl",
+            dark ? "text-cream" : "text-darkNavy",
+          )}
         >
           {renderRichTextHeading(header)}
         </h3>
       )}
       {body && (
         <div
-          className="mt-3 space-y-3 font-aileron text-sm text-cream/80 md:text-base"
-          style={textColor ? { color: textColor } : undefined}
+          className={classNames(
+            "mt-3 space-y-3 font-aileron text-sm md:text-base",
+            dark ? "text-cream/85" : "text-darkNavy",
+          )}
         >
           {renderRichTextBody(body)}
         </div>

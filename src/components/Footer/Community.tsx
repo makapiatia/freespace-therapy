@@ -14,7 +14,7 @@ export default function Community({
       <div
         className={classNames(
           "divide-y divide-cream/15 rounded-2xl border",
-          "border-gold/30 bg-cream/10",
+          "border-cream/15 bg-cream/5",
         )}
       >
         <div className="p-4">

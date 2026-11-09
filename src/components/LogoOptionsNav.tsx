@@ -1,13 +1,13 @@
 import Link from "next/link";
 import classNames from "classnames";
 
-export const LOGO_OPTIONS = Array.from({ length: 13 }, (_, i) => i + 1);
+export const LOGO_OPTIONS = [2, 7, 9];
 
 export function logoOptionUrl(option: number) {
   return `/logos/LogoOptions/LogoOption${option}.svg`;
 }
 
-/** Bar for flipping between the logo test pages (/ shows option 1). */
+/** Bar for flipping between the logo test pages (/ shows the first option). */
 export default function LogoOptionsNav({ current }: { current: number }) {
   return (
     <nav

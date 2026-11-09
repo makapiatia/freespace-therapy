@@ -4,27 +4,19 @@ import { renderRichTextBody, renderRichTextHeading } from "@/lib/content/richTex
 export default function Contact({
   header,
   body,
-  textColor,
 }: {
   header?: Document;
   body?: Document;
-  textColor?: string;
 }) {
   return (
     <div id="contact">
-      <h2
-        className="font-diamond text-3xl text-cream md:text-5xl"
-        style={textColor ? { color: textColor } : undefined}
-      >
+      <h2 className="font-diamond text-3xl text-cream md:text-5xl">
         {header ? renderRichTextHeading(header) : "Contact"}
       </h2>
-      <span className="mt-2 block h-1 w-12 rounded-full bg-logoLime" />
-      <div
-        className="font-aileron mt-3 space-y-4 text-md text-cream/80 md:text-lg"
-        style={textColor ? { color: textColor } : undefined}
-      >
+      <span className="mt-2 block h-1 w-12 rounded-full bg-yellow" />
+      <div className="font-aileron mt-3 space-y-4 text-md text-cream/85 md:text-lg">
         {body ? (
-          renderRichTextBody(body, { linkClassName: "hover:text-logoLime" })
+          renderRichTextBody(body, { linkClassName: "hover:text-yellow" })
         ) : (
           <>
             <p>
@@ -32,13 +24,13 @@ export default function Contact({
               we&rsquo;ll follow up soon.
             </p>
             <p>
-              <a href="tel:+18622292270" className="hover:text-logoLime">
+              <a href="tel:+18622292270" className="hover:text-yellow">
                 (862) 229-2270
               </a>
               <br />
               <a
                 href="mailto:megan@freespace-therapy.com"
-                className="hover:text-logoLime"
+                className="hover:text-yellow"
               >
                 megan@freespace-therapy.com
               </a>

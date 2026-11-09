@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import type { Block, Inline, Text } from "@contentful/rich-text-types";
 import type { TextBlockContent } from "@/lib/content/services";
+import type { CardTheme } from "@/lib/siteTheme";
 import TextSectionCard from "./TextSectionCard";
 
 const MAX_CARDS = 3;
@@ -25,10 +26,13 @@ function columnTemplate(blocks: TextBlockContent[], minWidth: string) {
     .join(" ");
 }
 
+// Card colors come from the site theme rather than Contentful.
 export default function TextSection({
   blocks,
+  themes,
 }: {
   blocks?: TextBlockContent[];
+  themes: CardTheme[];
 }) {
   const cards = (blocks ?? []).slice(0, MAX_CARDS);
   if (cards.length === 0) return null;
@@ -55,9 +59,7 @@ export default function TextSection({
             key={i}
             header={card.header}
             body={card.body}
-            textColor={card.textColor}
-            backgroundColor={card.backgroundColor}
-            detailColor={card.detailColor}
+            {...themes[i % themes.length]}
           />
         ))}
       </div>

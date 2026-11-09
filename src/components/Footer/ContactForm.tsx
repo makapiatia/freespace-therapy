@@ -5,9 +5,9 @@ import classNames from "classnames";
 import type { ContactFormContent } from "@/lib/content/footer";
 
 const inputClasses = classNames(
-  "w-full rounded-lg border border-cream/30 bg-cream/90 px-4 py-2.5",
+  "w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5",
   "font-work-sans text-sm text-darkTeal placeholder:text-darkTeal/40",
-  "outline-none transition-colors focus:border-gold",
+  "outline-none transition-colors focus:border-yellow",
 );
 
 const FORMSUBMIT_ENDPOINT =
@@ -74,8 +74,8 @@ export default function ContactForm({
     return (
       <div
         className={classNames(
-          "rounded-2xl border border-cream/25",
-          "bg-cream/10 p-8 text-center",
+          "rounded-2xl border border-cream/15",
+          "bg-cream/5 p-8 text-center",
         )}
       >
         <p className="font-aileron-semibold text-lg text-cream">
@@ -111,7 +111,7 @@ export default function ContactForm({
       <div>
         <label
           htmlFor="name"
-          className="font-work-sans mb-1 block text-xs text-cream/70"
+          className="font-work-sans mb-1 block text-xs text-cream/75"
         >
           {fields.nameLabel}
         </label>
@@ -128,7 +128,7 @@ export default function ContactForm({
       <div>
         <label
           htmlFor="email"
-          className="font-work-sans mb-1 block text-xs text-cream/70"
+          className="font-work-sans mb-1 block text-xs text-cream/75"
         >
           {fields.emailLabel}
         </label>
@@ -145,7 +145,7 @@ export default function ContactForm({
       <div>
         <label
           htmlFor="phone"
-          className="font-work-sans mb-1 block text-xs text-cream/70"
+          className="font-work-sans mb-1 block text-xs text-cream/75"
         >
           {fields.phoneLabel}
         </label>
@@ -161,7 +161,7 @@ export default function ContactForm({
       <div>
         <label
           htmlFor="message"
-          className="font-work-sans mb-1 block text-xs text-cream/70"
+          className="font-work-sans mb-1 block text-xs text-cream/75"
         >
           {fields.messageLabel}
         </label>
@@ -186,14 +186,10 @@ export default function ContactForm({
         type="submit"
         disabled={submitting}
         className={classNames(
-          "mt-2 rounded-full bg-cream px-8 py-3 font-work-sans text-sm",
-          "text-darkTeal transition-colors hover:bg-logoLime",
+          "mt-2 rounded-full bg-yellow px-8 py-3 font-work-sans text-sm",
+          "font-bold text-darkTeal transition-[filter] hover:brightness-90",
           "disabled:cursor-not-allowed disabled:opacity-60",
         )}
-        style={{
-          backgroundColor: form?.submitBackgroundColor,
-          color: form?.submitTextColor,
-        }}
       >
         {submitting ? "Sending..." : fields.submitLabel}
       </button>

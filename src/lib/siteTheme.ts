@@ -110,16 +110,16 @@ const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
 
 const LOGO_7_THEME: SiteTheme = {
   quote: {
-    // Brick red from the right side of logo #7's swoosh, with brighter
-    // take on the logo's orange for accents.
-    backgroundClassName: "bg-[#802820]",
+    // A touch lighter than the merlot of logo #7's background circle, with
+    // brighter take on the logo's orange for accents.
+    backgroundClassName: "bg-[#661630]",
     markClassName: "text-[#f5a762]",
     dashClassName: "bg-[#f5a762]",
   },
   // Matches the quote section; submit button uses logo #7's orange sun,
   // with cream text.
   footer: {
-    backgroundClassName: "bg-[#802820]",
+    backgroundClassName: "bg-[#661630]",
     accentColor: "#f5a762",
     buttonColor: "#c06327",
     buttonTextColor: "var(--cream)",
@@ -135,8 +135,8 @@ const LOGO_7_THEME: SiteTheme = {
 const LOGO_2_THEME: SiteTheme = {
   // Dark navy text, matching the hero button text.
   textColor: "var(--darkNavy)",
-  // Brick sections, pills and cards follow /7; all details use the footer
-  // yellow.
+  // Brick sections (from logo #7's swoosh); cards follow /7; all details
+  // use the footer yellow.
   quote: {
     backgroundClassName: "bg-[#802820]",
     markClassName: "text-yellow",

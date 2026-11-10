@@ -52,29 +52,6 @@ export interface SiteTheme {
   aboutNoTopPadding?: boolean;
 }
 
-const MERLOT_QUOTE: QuoteTheme = {
-  backgroundClassName: "bg-merlot",
-  markClassName: "text-lightYellow",
-  dashClassName: "bg-lightYellow",
-};
-
-const MERLOT_FOOTER: FooterTheme = {
-  backgroundClassName: "bg-merlot",
-  accentColor: "var(--yellow)",
-};
-
-const DEFAULT_THEME: SiteTheme = {
-  quote: MERLOT_QUOTE,
-  footer: MERLOT_FOOTER,
-  buttonClassName: "bg-brick text-cream",
-  highlightPillClassName: "bg-seaGreen text-darkNavy",
-  cards: [
-    { background: "var(--seaGreen)", detailColor: "var(--brick)", dark: false },
-    { background: "var(--darkTeal)", detailColor: "var(--orange)", dark: true },
-    { background: "var(--merlot)", detailColor: "var(--yellow)", dark: true },
-  ],
-};
-
 // Deep seafoam greens (from logo #2's seafoam), stepping darker to lighter
 // so the gradient flows from one card into the next.
 // The lightest step still passes 4.5:1 with white text.
@@ -87,8 +64,7 @@ const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
   dark: true,
 }));
 
-// The chosen site coloring (/2.1).
-const LOGO_2_THEME: SiteTheme = {
+export const siteTheme: SiteTheme = {
   // Dark navy text, matching the hero button text.
   textColor: "var(--darkNavy)",
   // Deep brown halfway between wenge and merlot; all details use the footer
@@ -117,12 +93,3 @@ const LOGO_2_THEME: SiteTheme = {
   aboutBackgroundColor: "var(--cream)",
   aboutNoTopPadding: true,
 };
-
-// Per-page themes for the logo test pages; others use the default.
-const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
-  "2.1": LOGO_2_THEME,
-};
-
-export function themeForLogo(page: string): SiteTheme {
-  return LOGO_THEMES[page] ?? DEFAULT_THEME;
-}

@@ -10,26 +10,9 @@ import type {
 export interface FeaturedImageContent {
   imageUrl: string;
   imageAlt: string;
-  objectPosition: string;
   description?: Document;
   descriptionColor?: string;
   overlayColor?: string;
-}
-
-function objectPositionFromFocalPoint(
-  focalPoint: unknown,
-  width: number | undefined,
-  height: number | undefined,
-): string {
-  const point = (
-    focalPoint as { focalPoint?: { x?: number; y?: number } } | undefined
-  )?.focalPoint;
-
-  if (!point || !width || !height) return "50% 50%";
-
-  const x = ((point.x ?? width / 2) / width) * 100;
-  const y = ((point.y ?? height / 2) / height) * 100;
-  return `${x.toFixed(1)}% ${y.toFixed(1)}%`;
 }
 
 export async function getFeaturedImageSection(): Promise<FeaturedImageContent | null> {
@@ -55,11 +38,6 @@ export async function getFeaturedImageSection(): Promise<FeaturedImageContent | 
     return {
       imageUrl: `https:${file.url}`,
       imageAlt: (f.imageAltText as string | undefined) ?? "",
-      objectPosition: objectPositionFromFocalPoint(
-        f.imageFocalPoint,
-        file.details?.image?.width,
-        file.details?.image?.height,
-      ),
       description: f.imageDescriptionText as Document | undefined,
       descriptionColor: colorValue(f.imageDescriptionTextColor),
       overlayColor: colorValue(f.imageOverlayColor),

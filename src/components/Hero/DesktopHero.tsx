@@ -2,6 +2,7 @@ import Image from "next/image";
 import classNames from "classnames";
 import type { HeroContent } from "@/lib/content/hero";
 import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richText";
+import { LOGO_URL } from "@/lib/logo";
 
 export default function DesktopHero({
   content,
@@ -19,7 +20,7 @@ export default function DesktopHero({
     >
       <span className="relative row-span-3 block h-52 w-52 shrink-0 overflow-hidden rounded-full">
         <Image
-          src={logoUrl ?? "/logos/NewLogoOct30.png"}
+          src={logoUrl ?? LOGO_URL}
           alt={content?.logoAlt ?? "Freespace Therapy"}
           fill
           sizes="208px"

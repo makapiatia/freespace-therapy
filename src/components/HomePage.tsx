@@ -7,8 +7,8 @@ import About from "@/components/About";
 import Contact from "@/components/Footer/Contact";
 import ContactForm from "@/components/Footer/ContactForm";
 import SiteFooter from "@/components/Footer/SiteFooter";
-import { logoOptionUrl } from "@/lib/logoOptions";
-import { themeForLogo, type FooterTheme } from "@/lib/siteTheme";
+import { LOGO_URL } from "@/lib/logo";
+import { siteTheme as theme, type FooterTheme } from "@/lib/siteTheme";
 import { getFooterSection, type FooterContent } from "@/lib/content/footer";
 
 // Awaits the already-in-flight footer fetch rather than blocking on it at
@@ -80,14 +80,9 @@ async function SiteFooterSection({
   );
 }
 
-/**
- * The full site for logo test page `page`, with its logo from
- * public/logos/LogoOptions in the hero and footer instead of the Contentful
- * logo.
- */
-export default function HomePage({ page }: { page: string }) {
-  const logoUrl = logoOptionUrl(page);
-  const theme = themeForLogo(page);
+/** The full site, with the site logo in the hero and footer. */
+export default function HomePage() {
+  const logoUrl = LOGO_URL;
   // Kick off the fetch now, without awaiting it here — awaiting inline
   // would block React from even starting to render (and fetch data for)
   // the rest of the tree below.

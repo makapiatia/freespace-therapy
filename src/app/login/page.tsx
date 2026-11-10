@@ -2,7 +2,7 @@ import Image from "next/image";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import classNames from "classnames";
-import { logoOptionUrl, PAGE_OPTIONS } from "@/lib/logoOptions";
+import { LOGO_URL } from "@/lib/logo";
 
 export default async function LoginPage({
   searchParams,
@@ -44,7 +44,7 @@ export default async function LoginPage({
     <main className="flex min-h-dvh flex-col items-center justify-center bg-cream px-8 text-center">
       <span className="relative block h-28 w-28 shrink-0 overflow-hidden rounded-full">
         <Image
-          src={logoOptionUrl(PAGE_OPTIONS[0])}
+          src={LOGO_URL}
           alt="Freespace Therapy"
           fill
           sizes="120px"

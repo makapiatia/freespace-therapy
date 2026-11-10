@@ -10,6 +10,7 @@ import type {
   LinkButtonSkeleton,
   TextSectionSkeleton,
 } from "@/lib/content/types";
+import { LOGO_URL } from "@/lib/logo";
 
 export interface ContactFormContent {
   nameLabel: string;
@@ -111,7 +112,7 @@ export async function getFooterSection(): Promise<FooterContent | null> {
       copyrightText: f.footerCopyrightText as Document | undefined,
       logoUrl: logoFile?.url
         ? `https:${logoFile.url}`
-        : "/logos/NewLogoOct30.png",
+        : LOGO_URL,
       logoAlt:
         (logoSection?.fields.imageAltText as string | undefined) ??
         "Freespace Therapy",

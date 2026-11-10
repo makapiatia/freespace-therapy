@@ -5,7 +5,6 @@ import { colorValue } from "@/lib/content/colors";
 import type {
   AboutSectionSkeleton,
   ImageSectionSkeleton,
-  ServiceListSectionSkeleton,
   TextSectionSkeleton,
 } from "@/lib/content/types";
 
@@ -17,13 +16,7 @@ export interface AboutContent {
   subtext?: Document;
   body?: Document;
   textColor?: string;
-  credentials: string[];
-  credentialsTextColor?: string;
-  credentialsBackgroundColor?: string;
-  showBulletPoints: boolean;
-  bulletPointColor?: string;
   backgroundColor?: string;
-  detailsColor?: string;
 }
 
 function objectPositionFromFocalPoint(
@@ -62,9 +55,6 @@ export async function getAboutSection(): Promise<AboutContent | null> {
     const textSection = f.textSection as Entry<TextSectionSkeleton> | undefined;
     const textFields = textSection?.fields;
 
-    const textList = f.textList as Entry<ServiceListSectionSkeleton> | undefined;
-    const listFields = textList?.fields;
-
     return {
       imageUrl: file?.url
         ? `https:${file.url}`
@@ -81,13 +71,7 @@ export async function getAboutSection(): Promise<AboutContent | null> {
       subtext: textFields?.headerSubtext as Document | undefined,
       body: textFields?.textBody as Document | undefined,
       textColor: colorValue(textFields?.textColor),
-      credentials: (listFields?.textList as string[] | undefined) ?? [],
-      credentialsTextColor: colorValue(listFields?.textListColor),
-      credentialsBackgroundColor: colorValue(listFields?.textListBackgroundColor),
-      showBulletPoints: (listFields?.showBulletPoints as boolean | undefined) ?? true,
-      bulletPointColor: colorValue(listFields?.bulletPointColor),
       backgroundColor: colorValue(f.backgroundColor),
-      detailsColor: colorValue(f.detailsColor),
     };
   } catch (error) {
     console.error("Failed to fetch aboutSection from Contentful:", error);

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import classNames from "classnames";
-import type { CSSProperties } from "react";
 import { getAboutSection } from "@/lib/content/about";
 import {
   renderRichTextBody,
@@ -43,13 +42,6 @@ export default async function About({
             "md:row-span-2",
             "md:h-36 md:w-36 md:justify-self-start",
           )}
-          style={
-            content?.detailsColor
-              ? ({
-                  "--tw-ring-color": content.detailsColor,
-                } as CSSProperties)
-              : undefined
-          }
         >
           <Image
             src={content?.imageUrl ?? "/photos/auntmegan.png"}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import classNames from "classnames";
 import type { Document } from "@contentful/rich-text-types";
 import { renderRichTextInline } from "@/lib/content/richText";
+import { LOGO_URL } from "@/lib/logo";
 
 export default function SiteFooter({
   copyrightText,
@@ -26,7 +27,7 @@ export default function SiteFooter({
       </p>
       <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full">
         <Image
-          src={logoUrl ?? "/logos/NewLogoOct30.png"}
+          src={logoUrl ?? LOGO_URL}
           alt={logoAlt ?? "Freespace Therapy"}
           fill
           sizes="64px"

@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import classNames from "classnames";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const diamondGrotesk = localFont({
   src: "../../public/fonts/DiamondGrotesk-VF.ttf",
@@ -48,8 +37,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={classNames(
-        geistSans.variable,
-        geistMono.variable,
         diamondGrotesk.variable,
         workSans.variable,
         aileron.variable,

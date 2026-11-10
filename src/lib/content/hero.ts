@@ -7,6 +7,7 @@ import type {
   ImageSectionSkeleton,
   LinkButtonSkeleton,
 } from "@/lib/content/types";
+import { LOGO_URL } from "@/lib/logo";
 
 export interface HeroContent {
   tagline: Document;
@@ -64,7 +65,7 @@ export async function getHeroSection(): Promise<HeroContent | null> {
     buttonBackgroundColor: colorValue(button?.fields.buttonBackgroundColor),
     logoUrl: logoFile?.url
       ? `https:${logoFile.url}`
-      : "/logos/NewLogoOct30.png",
+      : LOGO_URL,
     logoAlt: (logo?.fields.imageAltText as string | undefined) ?? "Freespace Therapy",
   };
 }

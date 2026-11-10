@@ -2,6 +2,7 @@ import Image from "next/image";
 import classNames from "classnames";
 import type { HeroContent } from "@/lib/content/hero";
 import { renderRichTextHeading, renderRichTextInline } from "@/lib/content/richText";
+import { LOGO_URL } from "@/lib/logo";
 
 export default function MobileHero({
   content,
@@ -19,7 +20,7 @@ export default function MobileHero({
         )}
       >
         <Image
-          src={logoUrl ?? "/logos/NewLogoOct30.png"}
+          src={logoUrl ?? LOGO_URL}
           alt={content?.logoAlt ?? "Freespace Therapy"}
           fill
           sizes="320px"

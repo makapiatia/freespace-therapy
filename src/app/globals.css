@@ -2,23 +2,12 @@
 
 :root {
   --cream: #fdf6ed;
-  --logoLime: #add35d;
   --darkTeal: #003d50;
-  --mediumGreen: #0d530e;
   --darkGreen: #0d4715;
-  --logoGreen: #1b662a;
-  --navyBlue: #172a68;
   --gold: #d8a02a;
-  --darkGold: #946410;
   --yellow: #ceaf2c;
-  --lightYellow: #e6d27a;
   --lightGold: #f6e2b3;
-  --merlot: #590e25;
-  --orange: #c06327;
-  --brick: #a63f1a;
-  --seaGreen: #5f987a;
   --grassGreen: #2a8b23;
-  --skyBlue: #caccd9;
   --darkNavy: #1c2133;
 }
 
@@ -26,26 +15,13 @@
 @theme inline {
   --breakpoint-hero: 768px;
   --color-cream: var(--cream);
-  --color-logoLime: var(--logoLime);
   --color-darkTeal: var(--darkTeal);
-  --color-mediumGreen: var(--mediumGreen);
   --color-darkGreen: var(--darkGreen);
-  --color-logoGreen: var(--logoGreen);
-  --color-navyBlue: var(--navyBlue);
   --color-gold: var(--gold);
-  --color-darkGold: var(--darkGold);
   --color-yellow: var(--yellow);
-  --color-lightYellow: var(--lightYellow);
   --color-lightGold: var(--lightGold);
-  --color-merlot: var(--merlot);
-  --color-orange: var(--orange);
-  --color-brick: var(--brick);
-  --color-seaGreen: var(--seaGreen);
   --color-grassGreen: var(--grassGreen);
-  --color-skyBlue: var(--skyBlue);
   --color-darkNavy: var(--darkNavy);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --font-diamond: var(--font-diamond-grotesk);
   --font-work-sans: var(--font-work-sans);
   --font-aileron: var(--font-aileron);
@@ -61,17 +37,4 @@ body {
 .font-aileron,
 .font-aileron-semibold {
   letter-spacing: 0.025em;
-}
-
-.bg-canvas-texture {
-  position: relative;
-}
-
-.bg-canvas-texture::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
 }

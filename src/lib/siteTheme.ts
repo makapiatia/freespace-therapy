@@ -170,15 +170,23 @@ function withSectionBackground(
 const WENGE_MERLOT = "bg-[#4a1e28]";
 // Wenge brown in place of merlot.
 const WENGE = "bg-[#3c2d2b]";
+// Raisin in place of merlot.
+const RAISIN = "bg-[#392b2d]";
+// Velvet cloak in place of merlot.
+const VELVET_CLOAK = "bg-[#382930]";
 
 // Per-page themes for the logo test pages; others use the default.
 const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   "2": LOGO_2_THEME,
   "2.1": withSectionBackground(LOGO_2_THEME, WENGE_MERLOT),
   "2.2": withSectionBackground(LOGO_2_THEME, WENGE),
+  "2.3": withSectionBackground(LOGO_2_THEME, RAISIN),
+  "2.4": withSectionBackground(LOGO_2_THEME, VELVET_CLOAK),
   "9": LOGO_9_THEME,
   "9.1": withSectionBackground(LOGO_9_THEME, WENGE_MERLOT),
   "9.2": withSectionBackground(LOGO_9_THEME, WENGE),
+  "9.3": withSectionBackground(LOGO_9_THEME, RAISIN),
+  "9.4": withSectionBackground(LOGO_9_THEME, VELVET_CLOAK),
 };
 
 export function themeForLogo(page: string): SiteTheme {

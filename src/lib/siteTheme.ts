@@ -177,11 +177,11 @@ function withSectionBackground(
 // Per-page themes for the logo test pages; others use the default.
 const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   "2": LOGO_2_THEME,
-  // Cinnamon brown in place of brick.
-  "2.1": withSectionBackground(LOGO_2_THEME, "bg-[#7e5236]"),
+  // Reddish brown (same as /9.1) in place of brick.
+  "2.1": withSectionBackground(LOGO_2_THEME, "bg-[#7f4332]"),
   "7": LOGO_7_THEME,
   "9": LOGO_9_THEME,
-  // Redder take on the /2.1 brown, in place of merlot.
+  // Same reddish brown as /2.1, in place of merlot.
   "9.1": withSectionBackground(LOGO_9_THEME, "bg-[#7f4332]"),
 };
 

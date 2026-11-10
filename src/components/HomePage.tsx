@@ -72,12 +72,13 @@ async function SiteFooterSection({
 }
 
 /**
- * The full site, with logo option `logoOption` from public/logos/LogoOptions
- * in the hero and footer instead of the Contentful logo.
+ * The full site for logo test page `page`, with its logo from
+ * public/logos/LogoOptions in the hero and footer instead of the Contentful
+ * logo.
  */
-export default function HomePage({ logoOption }: { logoOption: number }) {
-  const logoUrl = logoOptionUrl(logoOption);
-  const theme = themeForLogo(logoOption);
+export default function HomePage({ page }: { page: string }) {
+  const logoUrl = logoOptionUrl(page);
+  const theme = themeForLogo(page);
   // Kick off the fetch now, without awaiting it here — awaiting inline
   // would block React from even starting to render (and fetch data for)
   // the rest of the tree below.
@@ -92,7 +93,7 @@ export default function HomePage({ logoOption }: { logoOption: number }) {
           : undefined
       }
     >
-      <LogoOptionsNav current={logoOption} />
+      <LogoOptionsNav current={page} />
       <div className="flex min-h-dvh flex-col md:block md:min-h-0">
         <Hero
           logoUrl={logoUrl}

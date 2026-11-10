@@ -1,14 +1,16 @@
 import Link from "next/link";
 import classNames from "classnames";
 
-export const LOGO_OPTIONS = [2, 7, 9];
+// Logo test pages. A decimal page (e.g. 2.1) is a color variant that reuses
+// the whole-number logo.
+export const PAGE_OPTIONS = ["2", "2.1", "7", "9"];
 
-export function logoOptionUrl(option: number) {
-  return `/logos/LogoOptions/LogoOption${option}.svg`;
+export function logoOptionUrl(page: string) {
+  return `/logos/LogoOptions/LogoOption${page.split(".")[0]}.svg`;
 }
 
 /** Bar for flipping between the logo test pages (/ shows the first option). */
-export default function LogoOptionsNav({ current }: { current: number }) {
+export default function LogoOptionsNav({ current }: { current: string }) {
   return (
     <nav
       aria-label="Logo options"
@@ -17,7 +19,7 @@ export default function LogoOptionsNav({ current }: { current: number }) {
         "font-work-sans text-xs text-darkTeal",
       )}
     >
-      {LOGO_OPTIONS.map((option) => (
+      {PAGE_OPTIONS.map((option) => (
         <Link
           key={option}
           href={`/${option}`}

@@ -161,13 +161,24 @@ const LOGO_2_THEME: SiteTheme = {
   })),
 };
 
-// Per-logo themes for the logo test pages; others use the default.
-const LOGO_THEMES: Partial<Record<number, SiteTheme>> = {
-  2: LOGO_2_THEME,
-  7: LOGO_7_THEME,
-  9: LOGO_9_THEME,
+// /2 with a warm brown in place of the brick quote and footer sections.
+function logo2BrownTheme(backgroundClassName: string): SiteTheme {
+  return {
+    ...LOGO_2_THEME,
+    quote: { ...LOGO_2_THEME.quote, backgroundClassName },
+    footer: { ...LOGO_2_THEME.footer, backgroundClassName },
+  };
+}
+
+// Per-page themes for the logo test pages; others use the default.
+const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
+  "2": LOGO_2_THEME,
+  // Cinnamon brown.
+  "2.1": logo2BrownTheme("bg-[#8a5a3c]"),
+  "7": LOGO_7_THEME,
+  "9": LOGO_9_THEME,
 };
 
-export function themeForLogo(option: number): SiteTheme {
-  return LOGO_THEMES[option] ?? DEFAULT_THEME;
+export function themeForLogo(page: string): SiteTheme {
+  return LOGO_THEMES[page] ?? DEFAULT_THEME;
 }

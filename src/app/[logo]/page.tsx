@@ -1,5 +1,5 @@
 import HomePage from "@/components/HomePage";
-import { LOGO_OPTIONS } from "@/components/LogoOptionsNav";
+import { PAGE_OPTIONS } from "@/components/LogoOptionsNav";
 
 // Logo test pages: /<option> renders the full site with one of the logo
 // options in public/logos/LogoOptions swapped into the hero and footer.
@@ -10,7 +10,7 @@ export const revalidate = 60;
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return LOGO_OPTIONS.map((option) => ({ logo: String(option) }));
+  return PAGE_OPTIONS.map((logo) => ({ logo }));
 }
 
 export default async function LogoOptionPage({
@@ -18,5 +18,5 @@ export default async function LogoOptionPage({
 }: PageProps<"/[logo]">) {
   const { logo } = await params;
 
-  return <HomePage logoOption={Number(logo)} />;
+  return <HomePage page={logo} />;
 }

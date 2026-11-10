@@ -30,13 +30,21 @@ async function SiteFooterSection({
     <footer
       className={classNames(
         "pt-10 pb-6 md:pt-12 md:pb-6",
+        // Theme colors are fallbacks for Contentful's.
         theme.backgroundClassName,
       )}
       style={
         {
+          backgroundColor: footer?.contactBackgroundColor,
           "--footer-accent": theme.accentColor,
-          "--footer-button": theme.buttonColor ?? theme.accentColor,
-          "--footer-button-text": theme.buttonTextColor ?? "var(--darkTeal)",
+          "--footer-button":
+            footer?.form?.submitBackgroundColor ??
+            theme.buttonColor ??
+            theme.accentColor,
+          "--footer-button-text":
+            footer?.form?.submitTextColor ??
+            theme.buttonTextColor ??
+            "var(--darkTeal)",
         } as React.CSSProperties
       }
     >
@@ -50,6 +58,7 @@ async function SiteFooterSection({
           <Contact
             header={footer?.contactHeader}
             body={footer?.contactBody}
+            textColor={footer?.contactTextColor}
           />
           <Community
             header={footer?.referencesHeader}

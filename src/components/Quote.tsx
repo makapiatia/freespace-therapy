@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { getQuoteSection } from "@/lib/content/quote";
 import { getFeaturedImageSection } from "@/lib/content/featuredImage";
 import { renderRichTextInline } from "@/lib/content/richText";
+import { withOpacity } from "@/lib/content/colors";
 import type { QuoteTheme } from "@/lib/siteTheme";
 
 export default async function Quote({ theme }: { theme: QuoteTheme }) {
@@ -17,8 +18,10 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
         "relative flex flex-1 flex-col justify-center overflow-hidden",
         "min-h-56 px-8 py-10 text-center md:min-h-72",
         "lg:min-h-96 md:py-8",
+        // Theme colors are fallbacks for Contentful's.
         theme.backgroundClassName,
       )}
+      style={{ backgroundColor: content?.backgroundColor }}
     >
       <div className="relative mx-auto flex max-w-5xl flex-col">
         <div className="relative mx-auto max-w-3xl">
@@ -28,11 +31,13 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
               "font-diamond block text-4xl md:text-6xl mb-4",
               theme.markClassName,
             )}
+            style={{ color: content?.quoteMarkColor }}
           >
             &ldquo;
           </span>
           <blockquote
             className="font-aileron-semibold -mt-6 text-lg leading-snug text-cream md:text-2xl"
+            style={{ color: content?.quoteTextColor }}
           >
             {content
               ? renderRichTextInline(content.quoteText)
@@ -40,6 +45,11 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
           </blockquote>
           <cite
             className="font-aileron mt-2 md:mt-4 block text-base text-cream/85 not-italic"
+            style={
+              content?.quoteTextColor
+                ? { color: withOpacity(content.quoteTextColor, 85) }
+                : undefined
+            }
           >
             ― {content?.quoteAuthor || "James Baldwin"}
           </cite>
@@ -79,6 +89,7 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
                 "pointer-events-none absolute inset-0 mix-blend-screen",
                 theme.imageTintClassName ?? "bg-darkGreen opacity-25",
               )}
+              style={{ backgroundColor: image?.overlayColor }}
             />
           </div>
           <p
@@ -86,6 +97,11 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
               "author-text mt-2 text-center tracking-wide text-cream/70",
               "font-work-sans text-[9px] md:text-[11px] font-semibold",
             )}
+            style={
+              image?.descriptionColor
+                ? { color: withOpacity(image.descriptionColor, 70) }
+                : undefined
+            }
           >
             {image?.description
               ? renderRichTextInline(image.description)

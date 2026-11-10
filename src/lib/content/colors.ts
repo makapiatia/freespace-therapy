@@ -10,3 +10,8 @@ export function colorValue(token: unknown): string | undefined {
   const value = (token as ColorToken | undefined)?.value;
   return value ? (THEMEABLE_COLORS[value.toLowerCase()] ?? value) : undefined;
 }
+
+/** `color` at `percent` opacity, e.g. for softened text. */
+export function withOpacity(color: string, percent: number): string {
+  return `color-mix(in srgb, ${color} ${percent}%, transparent)`;
+}

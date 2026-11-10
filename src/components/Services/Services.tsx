@@ -97,10 +97,12 @@ export default async function Services({ theme }: { theme: SiteTheme }) {
       </div>
 
       <div className="mx-auto mt-6 md:mt-10 max-w-6xl px-8">
-        {/* Highlighted colors come from the site theme, not Contentful. */}
+        {/* Theme highlight colors are a fallback for Contentful's. */}
         <TagRow
           items={topSpecialties}
           highlightClassName={theme.highlightPillClassName}
+          textColor={specialtyList?.highlightedTextColor}
+          backgroundColor={specialtyList?.highlightedBackgroundColor}
         />
         <div className="mt-4">
           <TagRow

@@ -12,7 +12,7 @@ export default async function About({
   backgroundColor,
   noTopPadding = false,
 }: {
-  /** Overrides the Contentful background color. */
+  /** Background color when Contentful has none. */
   backgroundColor?: string;
   noTopPadding?: boolean;
 }) {
@@ -27,7 +27,7 @@ export default async function About({
       )}
       style={{
         backgroundColor:
-          backgroundColor ?? content?.backgroundColor ?? "#f6e2b3",
+          content?.backgroundColor ?? backgroundColor ?? "#f6e2b3",
       }}
     >
       <div

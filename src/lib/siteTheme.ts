@@ -1,3 +1,5 @@
+// Site theme colors are fallbacks: Contentful colors win wherever they're set.
+
 export interface CardTheme {
   background: string;
   detailColor: string;
@@ -38,13 +40,13 @@ export interface SiteTheme {
   footer: FooterTheme;
   /** Colors for the hero "Get in Touch" button. */
   buttonClassName: string;
-  /** Hero tagline color; omit to use the Contentful color. */
+  /** Hero tagline color when Contentful has none. */
   taglineColor?: string;
   /** Colors for the highlighted specialty pills. */
   highlightPillClassName: string;
   /** Text section cards, applied in order and cycled. */
   cards: CardTheme[];
-  /** "Meet Megan" background; omit to use the Contentful color. */
+  /** "Meet Megan" background when Contentful has none. */
   aboutBackgroundColor?: string;
   /** Drop "Meet Megan"'s top padding. */
   aboutNoTopPadding?: boolean;

@@ -1,20 +1,30 @@
 import type { Document } from "@contentful/rich-text-types";
 import { renderRichTextBody, renderRichTextHeading } from "@/lib/content/richText";
+import { withOpacity } from "@/lib/content/colors";
 
 export default function Contact({
   header,
   body,
+  textColor,
 }: {
   header?: Document;
   body?: Document;
+  /** Contentful text color; cream when unset. */
+  textColor?: string;
 }) {
   return (
     <div id="contact">
-      <h2 className="font-diamond text-3xl text-cream md:text-5xl">
+      <h2
+        className="font-diamond text-3xl text-cream md:text-5xl"
+        style={{ color: textColor }}
+      >
         {header ? renderRichTextHeading(header) : "Contact"}
       </h2>
       <span className="mt-2 block h-1 w-12 rounded-full bg-(--footer-accent)" />
-      <div className="font-aileron mt-3 space-y-4 text-md text-cream/85 md:text-lg">
+      <div
+        className="font-aileron mt-3 space-y-4 text-md text-cream/85 md:text-lg"
+        style={textColor ? { color: withOpacity(textColor, 85) } : undefined}
+      >
         {body ? (
           renderRichTextBody(body, { linkClassName: "hover:text-(--footer-accent)" })
         ) : (

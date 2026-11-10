@@ -26,7 +26,44 @@ function columnTemplate(blocks: TextBlockContent[], minWidth: string) {
     .join(" ");
 }
 
-// Card colors come from the site theme rather than Contentful.
+/** `hex` with its HSL lightness raised by `points`, or undefined if not hex. */
+function lighten(hex: string, points: number): string | undefined {
+  const m = /^#([0-9a-f]{6})$/i.exec(hex);
+  if (!m) return undefined;
+  const [r, g, b] = [0, 2, 4].map(
+    (i) => parseInt(m[1].slice(i, i + 2), 16) / 255,
+  );
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const l = (max + min) / 2;
+  const d = max - min;
+  const s = d === 0 ? 0 : d / (1 - Math.abs(2 * l - 1));
+  const h =
+    d === 0
+      ? 0
+      : max === r
+        ? ((g - b) / d + 6) % 6
+        : max === g
+          ? (b - r) / d + 2
+          : (r - g) / d + 4;
+  const hue = (h * 60).toFixed(1);
+  const saturation = (s * 100).toFixed(1);
+  const lightness = Math.min(100, l * 100 + points).toFixed(1);
+  return `hsl(${hue} ${saturation}% ${lightness}%)`;
+}
+
+// Each card steps 2 lightness points lighter across its width, continuing from
+// where the previous card left off, so the cards read as one gradient.
+const GRADIENT_STEP = 2;
+
+function cardGradient(color: string, index: number): string | undefined {
+  const from = lighten(color, index * GRADIENT_STEP);
+  const to = lighten(color, (index + 1) * GRADIENT_STEP);
+  return from && to ? `linear-gradient(90deg, ${from}, ${to})` : undefined;
+}
+
+// Card colors come from Contentful, falling back to the site theme; each
+// Contentful background becomes a gradient.
 export default function TextSection({
   blocks,
   themes,
@@ -54,14 +91,25 @@ export default function TextSection({
           } as React.CSSProperties
         }
       >
-        {cards.map((card, i) => (
-          <TextSectionCard
-            key={i}
-            header={card.header}
-            body={card.body}
-            {...themes[i % themes.length]}
-          />
-        ))}
+        {cards.map((card, i) => {
+          const theme = themes[i % themes.length];
+          return (
+            <TextSectionCard
+              key={i}
+              header={card.header}
+              body={card.body}
+              dark={theme.dark}
+              background={
+                card.backgroundColor
+                  ? (cardGradient(card.backgroundColor, i) ??
+                    card.backgroundColor)
+                  : theme.background
+              }
+              textColor={card.textColor ?? theme.textColor}
+              detailColor={card.detailColor ?? theme.detailColor}
+            />
+          );
+        })}
       </div>
     </div>
   );

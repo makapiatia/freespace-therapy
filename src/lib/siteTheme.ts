@@ -175,7 +175,7 @@ function logo2BrownTheme(backgroundClassName: string): SiteTheme {
 const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   "2": LOGO_2_THEME,
   // Cinnamon brown.
-  "2.1": logo2BrownTheme("bg-[#8a5a3c]"),
+  "2.1": logo2BrownTheme("bg-[#7e5236]"),
   "7": LOGO_7_THEME,
   "9": LOGO_9_THEME,
 };

@@ -11,7 +11,6 @@ export default async function About({
   backgroundColor,
   noTopPadding = false,
 }: {
-  /** Background color when Contentful has none. */
   backgroundColor?: string;
   noTopPadding?: boolean;
 }) {

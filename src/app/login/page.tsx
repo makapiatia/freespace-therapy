@@ -88,7 +88,6 @@ export default async function LoginPage({
         <button
           type="submit"
           className={classNames(
-            // Matches the hero "Get in Touch" button.
             "rounded-full bg-gold px-6 py-3 font-work-sans text-sm font-bold",
             "text-darkNavy transition-[filter] hover:brightness-90",
           )}

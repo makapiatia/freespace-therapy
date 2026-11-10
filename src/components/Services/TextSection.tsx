@@ -15,8 +15,6 @@ function textLength(node: Block | Inline | Text | undefined): number {
   );
 }
 
-// Columns grow with body length, softened with sqrt so a longer card
-// takes a bit more room without crowding out the others.
 function columnTemplate(blocks: TextBlockContent[], minWidth: string) {
   return blocks
     .map((block) => {
@@ -26,7 +24,6 @@ function columnTemplate(blocks: TextBlockContent[], minWidth: string) {
     .join(" ");
 }
 
-/** `hex` with its HSL lightness raised by `points`, or undefined if not hex. */
 function lighten(hex: string, points: number): string | undefined {
   const m = /^#([0-9a-f]{6})$/i.exec(hex);
   if (!m) return undefined;
@@ -52,8 +49,6 @@ function lighten(hex: string, points: number): string | undefined {
   return `hsl(${hue} ${saturation}% ${lightness}%)`;
 }
 
-// Each card steps 2 lightness points lighter across its width, continuing from
-// where the previous card left off, so the cards read as one gradient.
 const GRADIENT_STEP = 2;
 
 function cardGradient(color: string, index: number): string | undefined {
@@ -62,8 +57,6 @@ function cardGradient(color: string, index: number): string | undefined {
   return from && to ? `linear-gradient(90deg, ${from}, ${to})` : undefined;
 }
 
-// Card colors come from Contentful, falling back to the site theme; each
-// Contentful background becomes a gradient.
 export default function TextSection({
   blocks,
   themes,
@@ -79,7 +72,6 @@ export default function TextSection({
       <div
         className={classNames(
           "grid gap-6 px-8",
-          // 350px minimums don't fit two cards at md, so they only kick in at lg.
           cards.length === 2 &&
             "md:grid-cols-(--text-cols) md:gap-10 lg:grid-cols-(--text-cols-min)",
           cards.length === 3 && "xl:grid-cols-(--text-cols-min)",

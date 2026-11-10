@@ -9,7 +9,6 @@ export default function Contact({
 }: {
   header?: Document;
   body?: Document;
-  /** Contentful text color; cream when unset. */
   textColor?: string;
 }) {
   return (

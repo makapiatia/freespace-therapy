@@ -16,12 +16,9 @@ export default function TextSectionCard({
 }: {
   header?: TextBlockContent["header"];
   body?: TextBlockContent["body"];
-  /** Any CSS background, e.g. a color or gradient. */
   background?: string;
   detailColor?: string;
-  /** Use cream text for a dark background. */
   dark?: boolean;
-  /** Overrides the heading and body text color. */
   textColor?: string;
   className?: string;
 }) {

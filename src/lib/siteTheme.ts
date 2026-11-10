@@ -1,60 +1,38 @@
-// Site theme colors are fallbacks: Contentful colors win wherever they're set.
-
 export interface CardTheme {
   background: string;
   detailColor: string;
-  /** Use cream text for a dark background. */
   dark: boolean;
-  /** Overrides the card's heading and body text color. */
   textColor?: string;
 }
 
 export interface QuoteTheme {
-  /** Section background behind the quote and featured image. */
   backgroundClassName: string;
-  /** Quote mark color. */
   markClassName: string;
-  /** Divider dash color between the quote and image. */
   dashClassName: string;
-  /** Featured image tint color and strength; defaults to dark green. */
   imageTintClassName?: string;
 }
 
-// Near-black merlot featured image tint.
 const DARK_MERLOT_TINT = "bg-[#240511] opacity-35";
 
 export interface FooterTheme {
   backgroundClassName: string;
-  /** Accent bar, link hovers, input focus and submit button color. */
   accentColor: string;
-  /** Submit button background; defaults to `accentColor`. */
   buttonColor?: string;
-  /** Submit button text color; defaults to dark teal. */
   buttonTextColor?: string;
 }
 
 export interface SiteTheme {
-  /** Replaces dark teal text across the page (including Contentful's). */
   textColor?: string;
   quote: QuoteTheme;
   footer: FooterTheme;
-  /** Colors for the hero "Get in Touch" button. */
   buttonClassName: string;
-  /** Hero tagline color when Contentful has none. */
   taglineColor?: string;
-  /** Colors for the highlighted specialty pills. */
   highlightPillClassName: string;
-  /** Text section cards, applied in order and cycled. */
   cards: CardTheme[];
-  /** "Meet Megan" background when Contentful has none. */
   aboutBackgroundColor?: string;
-  /** Drop "Meet Megan"'s top padding. */
   aboutNoTopPadding?: boolean;
 }
 
-// Deep seafoam greens (from logo #2's seafoam), stepping darker to lighter
-// so the gradient flows from one card into the next.
-// The lightest step still passes 4.5:1 with white text.
 const SEAFOAM_STEPS = ["#3a6e54", "#3f765a", "#43795e", "#478063"];
 
 const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
@@ -65,10 +43,7 @@ const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
 }));
 
 export const siteTheme: SiteTheme = {
-  // Dark navy text, matching the hero button text.
   textColor: "var(--darkNavy)",
-  // Deep brown halfway between wenge and merlot; all details use the footer
-  // yellow.
   quote: {
     backgroundClassName: "bg-[#4a1e28]",
     markClassName: "text-yellow",
@@ -77,19 +52,14 @@ export const siteTheme: SiteTheme = {
   },
   footer: {
     backgroundClassName: "bg-[#4a1e28]",
-    // Submit button matches the hero button.
     accentColor: "var(--yellow)",
     buttonColor: "var(--gold)",
     buttonTextColor: "var(--darkNavy)",
   },
-  // Marigold button.
   buttonClassName: "bg-gold text-darkNavy",
-  // Deep teal from logo #2's swoosh.
   taglineColor: "#006059",
-  // Light seafoam pills (about 3.5:1 with white text).
   highlightPillClassName: "bg-[#5a9376] text-white",
   cards: seafoamGradientCards,
-  // "Meet Megan" on cream with no top padding.
   aboutBackgroundColor: "var(--cream)",
   aboutNoTopPadding: true,
 };

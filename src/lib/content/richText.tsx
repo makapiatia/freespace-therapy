@@ -9,11 +9,6 @@ import type {
   Text,
 } from "@contentful/rich-text-types";
 
-/**
- * Splits literal "\n" characters inside Contentful rich text into <br />
- * elements, since editors encode line breaks as plain newlines rather than
- * separate paragraph blocks.
- */
 const renderText: Options["renderText"] = (text) =>
   text
     .split("\n")
@@ -27,7 +22,6 @@ function documentToPlainText(node: Node): string {
     : ((node as Block | Inline).content ?? []).map(documentToPlainText).join("");
 }
 
-/** Renders a single-paragraph rich text document as a plain inline string (no wrapping tag). */
 export function renderRichTextInline(document: Document) {
   return documentToReactComponents(document, {
     renderText,
@@ -37,10 +31,6 @@ export function renderRichTextInline(document: Document) {
   });
 }
 
-/**
- * Renders a heading-only rich text document (any heading level) as plain
- * inline content, dropping any empty trailing paragraphs the CMS editor adds.
- */
 export function renderRichTextHeading(document: Document) {
   const unwrap: NodeRenderer = (_node, children) => children;
   return documentToReactComponents(document, {
@@ -55,14 +45,6 @@ export function renderRichTextHeading(document: Document) {
   });
 }
 
-/**
- * Renders a multi-paragraph rich text document as separate <p> tags (no
- * className — text styling is inherited from the parent), letting a
- * `space-y-*` utility on the container handle spacing between paragraphs.
- *
- * Pass `linkClassName` to style any embedded hyperlinks (e.g. tel:/mailto:
- * links), since the default renderer emits a plain, unstyled <a>.
- */
 export function renderRichTextBody(
   document: Document,
   options?: { linkClassName?: string },
@@ -71,8 +53,6 @@ export function renderRichTextBody(
   return documentToReactComponents(document, {
     renderText,
     renderNode: {
-      // Contentful appends an empty paragraph after lists; skip it so it
-      // doesn't add trailing space.
       [BLOCKS.PARAGRAPH]: (node, children) =>
         documentToPlainText(node) ? <p>{children}</p> : null,
       ...(linkClassName && {

@@ -18,7 +18,6 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
         "relative flex flex-1 flex-col justify-center overflow-hidden",
         "min-h-56 px-8 py-10 text-center md:min-h-72",
         "lg:min-h-96 md:py-8",
-        // Theme colors are fallbacks for Contentful's.
         theme.backgroundClassName,
       )}
       style={{ backgroundColor: content?.backgroundColor }}

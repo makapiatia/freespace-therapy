@@ -11,10 +11,6 @@ import { LOGO_URL } from "@/lib/logo";
 import { siteTheme as theme, type FooterTheme } from "@/lib/siteTheme";
 import { getFooterSection, type FooterContent } from "@/lib/content/footer";
 
-// Awaits the already-in-flight footer fetch rather than blocking on it at
-// the top of HomePage(), so it resolves in parallel with Hero/Quote/
-// Services/About's own Contentful fetches instead of gating all of them
-// behind it.
 async function SiteFooterSection({
   footerPromise,
   logoUrl,
@@ -30,7 +26,6 @@ async function SiteFooterSection({
     <footer
       className={classNames(
         "pt-10 pb-6 md:pt-12 md:pb-6",
-        // Theme colors are fallbacks for Contentful's.
         theme.backgroundClassName,
       )}
       style={
@@ -80,12 +75,8 @@ async function SiteFooterSection({
   );
 }
 
-/** The full site, with the site logo in the hero and footer. */
 export default function HomePage() {
   const logoUrl = LOGO_URL;
-  // Kick off the fetch now, without awaiting it here — awaiting inline
-  // would block React from even starting to render (and fetch data for)
-  // the rest of the tree below.
   const footerPromise = getFooterSection();
 
   return (

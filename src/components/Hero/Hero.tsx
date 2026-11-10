@@ -11,7 +11,6 @@ export default async function Hero({
 }: {
   logoUrl?: string;
   buttonClassName: string;
-  /** Tagline color when Contentful has none. */
   taglineColor?: string;
 }) {
   const cmsContent = await getHeroSection();
@@ -59,7 +58,6 @@ export default async function Hero({
             "inline-block rounded-full px-6 py-3 font-bold",
             "font-work-sans text-base transition-[filter]",
             "hover:brightness-90",
-            // Fallback when Contentful has no button colors.
             buttonClassName,
           )}
           style={{

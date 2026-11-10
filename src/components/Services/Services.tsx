@@ -36,7 +36,6 @@ function TagRow({
   items: string[];
   textColor?: string;
   backgroundColor?: string;
-  /** Renders bold highlighted pills in these colors. */
   highlightClassName?: string;
 }) {
   return (
@@ -97,7 +96,6 @@ export default async function Services({ theme }: { theme: SiteTheme }) {
       </div>
 
       <div className="mx-auto mt-6 md:mt-10 max-w-6xl px-8">
-        {/* Theme highlight colors are a fallback for Contentful's. */}
         <TagRow
           items={topSpecialties}
           highlightClassName={theme.highlightPillClassName}

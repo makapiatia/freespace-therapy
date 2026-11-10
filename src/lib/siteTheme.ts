@@ -73,47 +73,8 @@ const DEFAULT_THEME: SiteTheme = {
   ],
 };
 
-// Olive greens from where logo #9's swoosh blends toward gold, stepping
-// darker to lighter so the gradient flows from one card into the next.
-const OLIVE_STEPS = ["#3a6534", "#42713a", "#4e763a", "#5a7a3a"];
-
-const oliveGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
-  background: `linear-gradient(90deg, ${OLIVE_STEPS[i]}, ${OLIVE_STEPS[i + 1]})`,
-  // Logo #9's sun yellow.
-  detailColor: "var(--yellow)",
-  dark: true,
-}));
-
-// Finalized: a full theme (not overrides) so default changes can't affect it.
-const LOGO_9_THEME: SiteTheme = {
-  // Same dark navy text as /2.
-  textColor: "var(--darkNavy)",
-  quote: {
-    backgroundClassName: "bg-merlot",
-    // Same yellow as the footer details.
-    markClassName: "text-yellow",
-    dashClassName: "bg-yellow",
-    imageTintClassName: DARK_MERLOT_TINT,
-  },
-  footer: {
-    backgroundClassName: "bg-merlot",
-    accentColor: "var(--yellow)",
-    // Submit button matches the hero button, like /2.
-    buttonColor: "var(--gold)",
-    buttonTextColor: "var(--darkNavy)",
-  },
-  buttonClassName: "bg-gold text-darkNavy",
-  // A bit darker than Contentful's grass green (#2a8b23).
-  taglineColor: "#237a1d",
-  highlightPillClassName: "bg-[#4e8244] text-white",
-  cards: oliveGradientCards,
-  // "Meet Megan" on cream with no top padding, like /2.
-  aboutBackgroundColor: "var(--cream)",
-  aboutNoTopPadding: true,
-};
-
 // Deep seafoam greens (from logo #2's seafoam), stepping darker to lighter
-// across the cards like the /9 olive gradient.
+// so the gradient flows from one card into the next.
 // The lightest step still passes 4.5:1 with white text.
 const SEAFOAM_STEPS = ["#3a6e54", "#3f765a", "#43795e", "#478063"];
 
@@ -124,11 +85,11 @@ const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
   dark: true,
 }));
 
+// Base for the logo #2 pages, which each swap in their own section color.
 const LOGO_2_THEME: SiteTheme = {
   // Dark navy text, matching the hero button text.
   textColor: "var(--darkNavy)",
-  // Same merlot sections and image tint as /9; all details use the footer
-  // yellow.
+  // All details use the footer yellow.
   quote: {
     backgroundClassName: "bg-merlot",
     markClassName: "text-yellow",
@@ -137,19 +98,19 @@ const LOGO_2_THEME: SiteTheme = {
   },
   footer: {
     backgroundClassName: "bg-merlot",
-    // Same yellow as the /9 footer; submit button matches the hero button.
+    // Submit button matches the hero button.
     accentColor: "var(--yellow)",
     buttonColor: "var(--gold)",
     buttonTextColor: "var(--darkNavy)",
   },
-  // Same marigold button as /9.
+  // Marigold button.
   buttonClassName: "bg-gold text-darkNavy",
   // Deep teal from logo #2's swoosh.
   taglineColor: "#006059",
   // Light seafoam pills (about 3.5:1 with white text).
   highlightPillClassName: "bg-[#5a9376] text-white",
   cards: seafoamGradientCards,
-  // "Meet Megan" on cream with no top padding, like /9.
+  // "Meet Megan" on cream with no top padding.
   aboutBackgroundColor: "var(--cream)",
   aboutNoTopPadding: true,
 };
@@ -166,27 +127,14 @@ function withSectionBackground(
   };
 }
 
-// Deep brown halfway between wenge and merlot, in place of merlot.
-const WENGE_MERLOT = "bg-[#4a1e28]";
-// Wenge brown in place of merlot.
-const WENGE = "bg-[#3c2d2b]";
-// Raisin in place of merlot.
-const RAISIN = "bg-[#392b2d]";
-// Velvet cloak in place of merlot.
-const VELVET_CLOAK = "bg-[#382930]";
-
 // Per-page themes for the logo test pages; others use the default.
 const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
-  "2": LOGO_2_THEME,
-  "2.1": withSectionBackground(LOGO_2_THEME, WENGE_MERLOT),
-  "2.2": withSectionBackground(LOGO_2_THEME, WENGE),
-  "2.3": withSectionBackground(LOGO_2_THEME, RAISIN),
-  "2.4": withSectionBackground(LOGO_2_THEME, VELVET_CLOAK),
-  "9": LOGO_9_THEME,
-  "9.1": withSectionBackground(LOGO_9_THEME, WENGE_MERLOT),
-  "9.2": withSectionBackground(LOGO_9_THEME, WENGE),
-  "9.3": withSectionBackground(LOGO_9_THEME, RAISIN),
-  "9.4": withSectionBackground(LOGO_9_THEME, VELVET_CLOAK),
+  // Deep brown halfway between wenge and merlot.
+  "2.1": withSectionBackground(LOGO_2_THEME, "bg-[#4a1e28]"),
+  // Raisin.
+  "2.3": withSectionBackground(LOGO_2_THEME, "bg-[#392b2d]"),
+  // Velvet cloak.
+  "2.4": withSectionBackground(LOGO_2_THEME, "bg-[#382930]"),
 };
 
 export function themeForLogo(page: string): SiteTheme {

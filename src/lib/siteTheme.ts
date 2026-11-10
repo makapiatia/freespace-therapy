@@ -85,19 +85,20 @@ const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
   dark: true,
 }));
 
-// Base for the logo #2 pages, which each swap in their own section color.
+// The chosen site coloring (/2.1).
 const LOGO_2_THEME: SiteTheme = {
   // Dark navy text, matching the hero button text.
   textColor: "var(--darkNavy)",
-  // All details use the footer yellow.
+  // Deep brown halfway between wenge and merlot; all details use the footer
+  // yellow.
   quote: {
-    backgroundClassName: "bg-merlot",
+    backgroundClassName: "bg-[#4a1e28]",
     markClassName: "text-yellow",
     dashClassName: "bg-yellow",
     imageTintClassName: DARK_MERLOT_TINT,
   },
   footer: {
-    backgroundClassName: "bg-merlot",
+    backgroundClassName: "bg-[#4a1e28]",
     // Submit button matches the hero button.
     accentColor: "var(--yellow)",
     buttonColor: "var(--gold)",
@@ -115,26 +116,9 @@ const LOGO_2_THEME: SiteTheme = {
   aboutNoTopPadding: true,
 };
 
-// `theme` with a different background for its quote and footer sections.
-function withSectionBackground(
-  theme: SiteTheme,
-  backgroundClassName: string,
-): SiteTheme {
-  return {
-    ...theme,
-    quote: { ...theme.quote, backgroundClassName },
-    footer: { ...theme.footer, backgroundClassName },
-  };
-}
-
 // Per-page themes for the logo test pages; others use the default.
 const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
-  // Deep brown halfway between wenge and merlot.
-  "2.1": withSectionBackground(LOGO_2_THEME, "bg-[#4a1e28]"),
-  // Raisin.
-  "2.3": withSectionBackground(LOGO_2_THEME, "bg-[#392b2d]"),
-  // Velvet cloak.
-  "2.4": withSectionBackground(LOGO_2_THEME, "bg-[#382930]"),
+  "2.1": LOGO_2_THEME,
 };
 
 export function themeForLogo(page: string): SiteTheme {

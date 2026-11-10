@@ -7,7 +7,7 @@ import About from "@/components/About";
 import Contact from "@/components/Footer/Contact";
 import ContactForm from "@/components/Footer/ContactForm";
 import SiteFooter from "@/components/Footer/SiteFooter";
-import LogoOptionsNav, { logoOptionUrl } from "@/components/LogoOptionsNav";
+import { logoOptionUrl } from "@/lib/logoOptions";
 import { themeForLogo, type FooterTheme } from "@/lib/siteTheme";
 import { getFooterSection, type FooterContent } from "@/lib/content/footer";
 
@@ -93,7 +93,6 @@ export default function HomePage({ page }: { page: string }) {
           : undefined
       }
     >
-      <LogoOptionsNav current={page} />
       <div className="flex min-h-dvh flex-col md:block md:min-h-0">
         <Hero
           logoUrl={logoUrl}

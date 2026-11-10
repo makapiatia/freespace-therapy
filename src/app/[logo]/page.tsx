@@ -1,5 +1,5 @@
 import HomePage from "@/components/HomePage";
-import { PAGE_OPTIONS } from "@/components/LogoOptionsNav";
+import { PAGE_OPTIONS } from "@/lib/logoOptions";
 
 // Logo test pages: /<option> renders the full site with one of the logo
 // options in public/logos/LogoOptions swapped into the hero and footer.

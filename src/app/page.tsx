@@ -1,5 +1,5 @@
 import HomePage from "@/components/HomePage";
-import { PAGE_OPTIONS } from "@/components/LogoOptionsNav";
+import { PAGE_OPTIONS } from "@/lib/logoOptions";
 
 // Re-fetch Contentful data at most once per minute instead of baking it
 // into the page permanently at build time, so CMS edits show up without

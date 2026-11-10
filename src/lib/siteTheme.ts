@@ -39,6 +39,10 @@ export interface SiteTheme {
   highlightPillClassName: string;
   /** Text section cards, applied in order and cycled. */
   cards: CardTheme[];
+  /** "Meet Megan" background; omit to use the Contentful color. */
+  aboutBackgroundColor?: string;
+  /** Drop "Meet Megan"'s top padding. */
+  aboutNoTopPadding?: boolean;
 }
 
 const MERLOT_QUOTE: QuoteTheme = {
@@ -77,6 +81,8 @@ const oliveGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
 
 // Finalized: a full theme (not overrides) so default changes can't affect it.
 const LOGO_9_THEME: SiteTheme = {
+  // Same dark navy text as /2.
+  textColor: "var(--darkNavy)",
   quote: {
     backgroundClassName: "bg-merlot",
     // Same yellow as the footer details.
@@ -91,8 +97,13 @@ const LOGO_9_THEME: SiteTheme = {
     buttonTextColor: "var(--darkNavy)",
   },
   buttonClassName: "bg-gold text-darkNavy",
+  // A bit darker than Contentful's grass green (#2a8b23).
+  taglineColor: "#237a1d",
   highlightPillClassName: "bg-[#4e8244] text-white",
   cards: oliveGradientCards,
+  // "Meet Megan" on cream with no top padding, like /2.2.
+  aboutBackgroundColor: "var(--cream)",
+  aboutNoTopPadding: true,
 };
 
 // Deep seafoam greens (from logo #2's seafoam), stepping darker to lighter
@@ -128,7 +139,7 @@ const LOGO_7_THEME: SiteTheme = {
   buttonClassName: "bg-[#43795e] text-white",
   // Same deep teal tagline as /2.
   taglineColor: "#006059",
-  // Same lighter seafoam pills as /2.
+  // Lighter seafoam pills (about 4:1 with white text).
   highlightPillClassName: "bg-[#528a6e] text-white",
   cards: seafoamGradientCards,
 };
@@ -154,8 +165,8 @@ const LOGO_2_THEME: SiteTheme = {
   buttonClassName: "bg-gold text-darkNavy",
   // Deep teal from logo #2's swoosh.
   taglineColor: "#006059",
-  // Lighter seafoam pills (about 4:1 with white text).
-  highlightPillClassName: "bg-[#528a6e] text-white",
+  // Light seafoam pills (about 3.5:1 with white text).
+  highlightPillClassName: "bg-[#5a9376] text-white",
   // /7's seafoam gradient with yellow dashes.
   cards: seafoamGradientCards.map((card) => ({
     ...card,
@@ -180,6 +191,12 @@ const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   "2": LOGO_2_THEME,
   // Reddish brown (same as /9.1) in place of brick.
   "2.1": withSectionBackground(LOGO_2_THEME, "bg-[#7f4332]"),
+  // Same merlot as /9, with "Meet Megan" on cream with no top padding.
+  "2.2": {
+    ...withSectionBackground(LOGO_2_THEME, "bg-merlot"),
+    aboutBackgroundColor: "var(--cream)",
+    aboutNoTopPadding: true,
+  },
   "7": LOGO_7_THEME,
   // Same brick red as /2.
   "7.1": withSectionBackground(LOGO_7_THEME, "bg-[#802820]"),

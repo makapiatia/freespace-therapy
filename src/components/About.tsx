@@ -8,15 +8,27 @@ import {
   renderRichTextInline,
 } from "@/lib/content/richText";
 
-
-export default async function About() {
+export default async function About({
+  backgroundColor,
+  noTopPadding = false,
+}: {
+  /** Overrides the Contentful background color. */
+  backgroundColor?: string;
+  noTopPadding?: boolean;
+}) {
   const content = await getAboutSection();
 
   return (
     <section
       id="about"
-      className="px-8 py-10 md:py-12"
-      style={{ backgroundColor: content?.backgroundColor ?? "#f6e2b3" }}
+      className={classNames(
+        "px-8 pb-10 md:pb-12",
+        !noTopPadding && "pt-10 md:pt-12",
+      )}
+      style={{
+        backgroundColor:
+          backgroundColor ?? content?.backgroundColor ?? "#f6e2b3",
+      }}
     >
       <div
         className={classNames(

@@ -103,7 +103,10 @@ export default function HomePage({ page }: { page: string }) {
         <Quote theme={theme.quote} />
       </div>
       <Services theme={theme} />
-      <About />
+      <About
+        backgroundColor={theme.aboutBackgroundColor}
+        noTopPadding={theme.aboutNoTopPadding}
+      />
       <SiteFooterSection
         footerPromise={footerPromise}
         logoUrl={logoUrl}

@@ -91,7 +91,7 @@ const LOGO_9_THEME: SiteTheme = {
     buttonTextColor: "var(--darkNavy)",
   },
   buttonClassName: "bg-gold text-darkNavy",
-  highlightPillClassName: "bg-[#42713a] text-white",
+  highlightPillClassName: "bg-[#4e8244] text-white",
   cards: oliveGradientCards,
 };
 
@@ -162,22 +162,27 @@ const LOGO_2_THEME: SiteTheme = {
   })),
 };
 
-// /2 with a warm brown in place of the brick quote and footer sections.
-function logo2BrownTheme(backgroundClassName: string): SiteTheme {
+// `theme` with a different background for its quote and footer sections.
+function withSectionBackground(
+  theme: SiteTheme,
+  backgroundClassName: string,
+): SiteTheme {
   return {
-    ...LOGO_2_THEME,
-    quote: { ...LOGO_2_THEME.quote, backgroundClassName },
-    footer: { ...LOGO_2_THEME.footer, backgroundClassName },
+    ...theme,
+    quote: { ...theme.quote, backgroundClassName },
+    footer: { ...theme.footer, backgroundClassName },
   };
 }
 
 // Per-page themes for the logo test pages; others use the default.
 const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   "2": LOGO_2_THEME,
-  // Cinnamon brown.
-  "2.1": logo2BrownTheme("bg-[#7e5236]"),
+  // Cinnamon brown in place of brick.
+  "2.1": withSectionBackground(LOGO_2_THEME, "bg-[#7e5236]"),
   "7": LOGO_7_THEME,
   "9": LOGO_9_THEME,
+  // Same cinnamon brown as /2.1, in place of merlot.
+  "9.1": withSectionBackground(LOGO_9_THEME, "bg-[#7e5236]"),
 };
 
 export function themeForLogo(page: string): SiteTheme {

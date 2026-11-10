@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 // Logo test pages. A decimal page (e.g. 2.1) is a color variant that reuses
 // the whole-number logo.
-export const PAGE_OPTIONS = ["2", "2.1", "2.2", "7", "7.1", "9", "9.1"];
+export const PAGE_OPTIONS = ["2", "2.1", "7", "7.1", "9", "9.1"];
 
 export function logoOptionUrl(page: string) {
   return `/logos/LogoOptions/LogoOption${page.split(".")[0]}.svg`;

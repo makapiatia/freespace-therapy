@@ -101,7 +101,7 @@ const LOGO_9_THEME: SiteTheme = {
   taglineColor: "#237a1d",
   highlightPillClassName: "bg-[#4e8244] text-white",
   cards: oliveGradientCards,
-  // "Meet Megan" on cream with no top padding, like /2.2.
+  // "Meet Megan" on cream with no top padding, like /2.1.
   aboutBackgroundColor: "var(--cream)",
   aboutNoTopPadding: true,
 };
@@ -189,10 +189,8 @@ function withSectionBackground(
 // Per-page themes for the logo test pages; others use the default.
 const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   "2": LOGO_2_THEME,
-  // Reddish brown (same as /9.1) in place of brick.
-  "2.1": withSectionBackground(LOGO_2_THEME, "bg-[#7f4332]"),
   // Same merlot as /9, with "Meet Megan" on cream with no top padding.
-  "2.2": {
+  "2.1": {
     ...withSectionBackground(LOGO_2_THEME, "bg-merlot"),
     aboutBackgroundColor: "var(--cream)",
     aboutNoTopPadding: true,
@@ -201,7 +199,7 @@ const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   // Same brick red as /2.
   "7.1": withSectionBackground(LOGO_7_THEME, "bg-[#802820]"),
   "9": LOGO_9_THEME,
-  // Same reddish brown as /2.1, in place of merlot.
+  // Reddish brown in place of merlot.
   "9.1": withSectionBackground(LOGO_9_THEME, "bg-[#7f4332]"),
 };
 

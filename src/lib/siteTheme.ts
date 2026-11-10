@@ -120,41 +120,14 @@ const SEAFOAM_STEPS = ["#3a6e54", "#3f765a", "#43795e", "#478063"];
 const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
   background: `linear-gradient(90deg, ${SEAFOAM_STEPS[i]}, ${SEAFOAM_STEPS[i + 1]})`,
   textColor: "#ffffff",
-  // Same light orange as the /7 quote and footer accents.
-  detailColor: "#f5a762",
+  detailColor: "var(--yellow)",
   dark: true,
 }));
-
-const LOGO_7_THEME: SiteTheme = {
-  quote: {
-    // Same merlot as /9 (and logo #7's background circle), with brighter
-    // take on the logo's orange for accents.
-    backgroundClassName: "bg-merlot",
-    markClassName: "text-[#f5a762]",
-    dashClassName: "bg-[#f5a762]",
-  },
-  // Matches the quote section; submit button uses logo #7's orange sun,
-  // with cream text.
-  footer: {
-    backgroundClassName: "bg-merlot",
-    accentColor: "#f5a762",
-    buttonColor: "#c06327",
-    buttonTextColor: "var(--cream)",
-  },
-  // Deeper take on logo #2's seafoam green.
-  buttonClassName: "bg-[#43795e] text-white",
-  // Same deep teal tagline as /2.
-  taglineColor: "#006059",
-  // Lighter seafoam pills (about 4:1 with white text).
-  highlightPillClassName: "bg-[#528a6e] text-white",
-  cards: seafoamGradientCards,
-};
 
 const LOGO_2_THEME: SiteTheme = {
   // Dark navy text, matching the hero button text.
   textColor: "var(--darkNavy)",
-  // Brick sections (from logo #7's swoosh); cards follow /7; all details
-  // use the footer yellow.
+  // Brick sections; all details use the footer yellow.
   quote: {
     backgroundClassName: "bg-[#802820]",
     markClassName: "text-yellow",
@@ -173,11 +146,7 @@ const LOGO_2_THEME: SiteTheme = {
   taglineColor: "#006059",
   // Light seafoam pills (about 3.5:1 with white text).
   highlightPillClassName: "bg-[#5a9376] text-white",
-  // /7's seafoam gradient with yellow dashes.
-  cards: seafoamGradientCards.map((card) => ({
-    ...card,
-    detailColor: "var(--yellow)",
-  })),
+  cards: seafoamGradientCards,
 };
 
 // `theme` with a different background for its quote and footer sections.
@@ -192,10 +161,10 @@ function withSectionBackground(
   };
 }
 
-// `theme` with a different featured image tint (undefined for the default).
+// `theme` with a different featured image tint.
 function withImageTint(
   theme: SiteTheme,
-  imageTintClassName: string | undefined,
+  imageTintClassName: string,
 ): SiteTheme {
   return { ...theme, quote: { ...theme.quote, imageTintClassName } };
 }
@@ -213,15 +182,7 @@ const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
     aboutBackgroundColor: "var(--cream)",
     aboutNoTopPadding: true,
   },
-  "7": LOGO_7_THEME,
-  // Same brick red as /2.
-  "7.1": withSectionBackground(LOGO_7_THEME, "bg-[#802820]"),
   "9": LOGO_9_THEME,
-  // Reddish brown in place of merlot, with the default green image tint.
-  "9.1": withImageTint(
-    withSectionBackground(LOGO_9_THEME, "bg-[#7f4332]"),
-    undefined,
-  ),
 };
 
 export function themeForLogo(page: string): SiteTheme {

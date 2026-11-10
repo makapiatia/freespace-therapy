@@ -110,16 +110,16 @@ const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
 
 const LOGO_7_THEME: SiteTheme = {
   quote: {
-    // A touch lighter than the merlot of logo #7's background circle, with
-    // brighter take on the logo's orange for accents.
-    backgroundClassName: "bg-[#661630]",
+    // Same merlot as /9 (and logo #7's background circle), with brighter
+    // take on the logo's orange for accents.
+    backgroundClassName: "bg-merlot",
     markClassName: "text-[#f5a762]",
     dashClassName: "bg-[#f5a762]",
   },
   // Matches the quote section; submit button uses logo #7's orange sun,
   // with cream text.
   footer: {
-    backgroundClassName: "bg-[#661630]",
+    backgroundClassName: "bg-merlot",
     accentColor: "#f5a762",
     buttonColor: "#c06327",
     buttonTextColor: "var(--cream)",
@@ -128,7 +128,8 @@ const LOGO_7_THEME: SiteTheme = {
   buttonClassName: "bg-[#43795e] text-white",
   // Same deep teal tagline as /2.
   taglineColor: "#006059",
-  highlightPillClassName: "bg-[#43795e] text-white",
+  // Same lighter seafoam pills as /2.
+  highlightPillClassName: "bg-[#528a6e] text-white",
   cards: seafoamGradientCards,
 };
 
@@ -153,7 +154,7 @@ const LOGO_2_THEME: SiteTheme = {
   buttonClassName: "bg-gold text-darkNavy",
   // Deep teal from logo #2's swoosh.
   taglineColor: "#006059",
-  // Lighter than /7's pills (about 4:1 with white text).
+  // Lighter seafoam pills (about 4:1 with white text).
   highlightPillClassName: "bg-[#528a6e] text-white",
   // /7's seafoam gradient with yellow dashes.
   cards: seafoamGradientCards.map((card) => ({
@@ -180,6 +181,8 @@ const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   // Reddish brown (same as /9.1) in place of brick.
   "2.1": withSectionBackground(LOGO_2_THEME, "bg-[#7f4332]"),
   "7": LOGO_7_THEME,
+  // Same brick red as /2.
+  "7.1": withSectionBackground(LOGO_7_THEME, "bg-[#802820]"),
   "9": LOGO_9_THEME,
   // Same reddish brown as /2.1, in place of merlot.
   "9.1": withSectionBackground(LOGO_9_THEME, "bg-[#7f4332]"),

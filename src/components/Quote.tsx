@@ -75,7 +75,10 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
             />
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 bg-darkGreen opacity-25 mix-blend-screen"
+              className={classNames(
+                "pointer-events-none absolute inset-0 mix-blend-screen",
+                theme.imageTintClassName ?? "bg-darkGreen opacity-25",
+              )}
             />
           </div>
           <p

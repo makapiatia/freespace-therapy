@@ -14,7 +14,12 @@ export interface QuoteTheme {
   markClassName: string;
   /** Divider dash color between the quote and image. */
   dashClassName: string;
+  /** Featured image tint color and strength; defaults to dark green. */
+  imageTintClassName?: string;
 }
+
+// Near-black merlot featured image tint.
+const DARK_MERLOT_TINT = "bg-[#240511] opacity-35";
 
 export interface FooterTheme {
   backgroundClassName: string;
@@ -88,6 +93,7 @@ const LOGO_9_THEME: SiteTheme = {
     // Same yellow as the footer details.
     markClassName: "text-yellow",
     dashClassName: "bg-yellow",
+    imageTintClassName: DARK_MERLOT_TINT,
   },
   footer: {
     backgroundClassName: "bg-merlot",
@@ -186,12 +192,24 @@ function withSectionBackground(
   };
 }
 
+// `theme` with a different featured image tint (undefined for the default).
+function withImageTint(
+  theme: SiteTheme,
+  imageTintClassName: string | undefined,
+): SiteTheme {
+  return { ...theme, quote: { ...theme.quote, imageTintClassName } };
+}
+
 // Per-page themes for the logo test pages; others use the default.
 const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   "2": LOGO_2_THEME,
-  // Same merlot as /9, with "Meet Megan" on cream with no top padding.
+  // Same merlot and image tint as /9, with "Meet Megan" on cream with no top
+  // padding.
   "2.1": {
-    ...withSectionBackground(LOGO_2_THEME, "bg-merlot"),
+    ...withImageTint(
+      withSectionBackground(LOGO_2_THEME, "bg-merlot"),
+      DARK_MERLOT_TINT,
+    ),
     aboutBackgroundColor: "var(--cream)",
     aboutNoTopPadding: true,
   },
@@ -199,8 +217,11 @@ const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   // Same brick red as /2.
   "7.1": withSectionBackground(LOGO_7_THEME, "bg-[#802820]"),
   "9": LOGO_9_THEME,
-  // Reddish brown in place of merlot.
-  "9.1": withSectionBackground(LOGO_9_THEME, "bg-[#7f4332]"),
+  // Reddish brown in place of merlot, with the default green image tint.
+  "9.1": withImageTint(
+    withSectionBackground(LOGO_9_THEME, "bg-[#7f4332]"),
+    undefined,
+  ),
 };
 
 export function themeForLogo(page: string): SiteTheme {

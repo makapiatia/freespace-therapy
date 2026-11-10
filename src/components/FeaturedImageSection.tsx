@@ -37,8 +37,8 @@ export default async function FeaturedImageSection() {
         </div>
         <p
           className={classNames(
-            "author-text mt-2 text-center tracking-wide text-cream/70",
-            "font-work-sans text-[9px] md:text-[11px] font-semibold",
+            "author-text mt-3 text-center tracking-wide text-cream/70",
+            "font-work-sans text-xs font-semibold",
           )}
           style={
             content?.descriptionColor

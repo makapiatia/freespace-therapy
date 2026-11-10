@@ -78,10 +78,10 @@ export default function ContactForm({
           "bg-cream/5 p-8 text-center",
         )}
       >
-        <p className="font-aileron-semibold text-lg text-cream">
+        <p className="font-aileron-semibold text-lg text-cream md:text-xl">
           Thank you for reaching out.
         </p>
-        <p className="font-aileron mt-2 text-sm text-cream/80">
+        <p className="font-aileron mt-2 text-sm text-cream/80 md:text-base">
           We&rsquo;ll be in touch soon.
         </p>
       </div>

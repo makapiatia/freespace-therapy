@@ -18,7 +18,7 @@ export default function Community({
         )}
       >
         <div className="p-4">
-          <h3 className="font-aileron-semibold text-md md:text-lg text-cream">
+          <h3 className="font-aileron-semibold text-base md:text-xl text-cream">
             {header
               ? renderRichTextHeading(header)
               : "Resources for Clients & Therapists"}

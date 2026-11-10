@@ -22,7 +22,7 @@ export default function Contact({
       </h2>
       <span className="mt-2 block h-1 w-12 rounded-full bg-(--footer-accent)" />
       <div
-        className="font-aileron mt-3 space-y-4 text-md text-cream/85 md:text-lg"
+        className="font-aileron mt-3 space-y-4 text-sm text-cream/85 md:text-base"
         style={textColor ? { color: withOpacity(textColor, 85) } : undefined}
       >
         {body ? (

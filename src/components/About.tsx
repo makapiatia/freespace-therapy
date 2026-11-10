@@ -74,7 +74,7 @@ export default async function About({
             {content?.header ? renderRichTextHeading(content.header) : "Meet Megan"}
           </h2>
           <p
-            className="font-aileron-semibold text-xl text-darkTeal"
+            className="font-aileron-semibold text-lg text-darkTeal md:text-xl"
             style={content?.textColor ? { color: content.textColor } : undefined}
           >
             {content?.subtext
@@ -85,7 +85,7 @@ export default async function About({
 
         <div className="col-span-2 row-start-2 md:col-span-1 md:col-start-2">
           <div
-            className="font-aileron space-y-4 text-sm text-darkTeal/80 md:text-md"
+            className="font-aileron space-y-4 text-sm text-darkTeal/80 md:text-base"
             style={content?.textColor ? { color: content.textColor } : undefined}
           >
             {content?.body ? (

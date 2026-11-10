@@ -44,7 +44,7 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
               : "Not everything that is faced can be changed, but nothing can be changed until it is faced."}
           </blockquote>
           <cite
-            className="font-aileron mt-2 md:mt-4 block text-base text-cream/85 not-italic"
+            className="font-aileron mt-2 md:mt-4 block text-sm text-cream/85 not-italic md:text-base"
             style={
               content?.quoteTextColor
                 ? { color: withOpacity(content.quoteTextColor, 85) }
@@ -94,8 +94,8 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
           </div>
           <p
             className={classNames(
-              "author-text mt-2 text-center tracking-wide text-cream/70",
-              "font-work-sans text-[9px] md:text-[11px] font-semibold",
+              "author-text mt-3 text-center tracking-wide text-cream/70",
+              "font-work-sans text-xs font-semibold",
             )}
             style={
               image?.descriptionColor

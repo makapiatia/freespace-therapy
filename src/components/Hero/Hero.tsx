@@ -7,11 +7,16 @@ import { renderRichTextInline } from "@/lib/content/richText";
 export default async function Hero({
   logoUrl,
   buttonClassName,
+  taglineColor,
 }: {
   logoUrl?: string;
   buttonClassName: string;
+  /** Overrides the Contentful tagline color. */
+  taglineColor?: string;
 }) {
-  const content = await getHeroSection();
+  const cmsContent = await getHeroSection();
+  const content =
+    cmsContent && taglineColor ? { ...cmsContent, taglineColor } : cmsContent;
   const logo = logoUrl ?? content?.logoUrl;
 
   return (

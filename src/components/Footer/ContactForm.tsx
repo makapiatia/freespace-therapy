@@ -7,7 +7,7 @@ import type { ContactFormContent } from "@/lib/content/footer";
 const inputClasses = classNames(
   "w-full rounded-lg border border-cream/30 bg-cream px-4 py-2.5",
   "font-work-sans text-sm text-darkTeal placeholder:text-darkTeal/40",
-  "outline-none transition-colors focus:border-yellow",
+  "outline-none transition-colors focus:border-(--footer-accent)",
 );
 
 const FORMSUBMIT_ENDPOINT =
@@ -186,8 +186,8 @@ export default function ContactForm({
         type="submit"
         disabled={submitting}
         className={classNames(
-          "mt-2 rounded-full bg-yellow px-8 py-3 font-work-sans text-sm",
-          "font-bold text-darkTeal transition-[filter] hover:brightness-90",
+          "mt-2 rounded-full bg-(--footer-button) px-8 py-3 font-work-sans text-sm",
+          "font-bold text-(--footer-button-text) transition-[filter] hover:brightness-90",
           "disabled:cursor-not-allowed disabled:opacity-60",
         )}
       >

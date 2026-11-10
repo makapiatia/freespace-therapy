@@ -13,8 +13,8 @@ export default function LogoOptionsNav({ current }: { current: number }) {
     <nav
       aria-label="Logo options"
       className={classNames(
-        "flex flex-wrap items-center justify-center gap-1.5 bg-cream px-4 pt-3",
-        "font-work-sans text-sm text-darkTeal",
+        "flex flex-wrap items-center justify-center gap-1 bg-cream px-4 pt-2",
+        "font-work-sans text-xs text-darkTeal",
       )}
     >
       {LOGO_OPTIONS.map((option) => (
@@ -23,11 +23,12 @@ export default function LogoOptionsNav({ current }: { current: number }) {
           href={`/${option}`}
           aria-current={option === current ? "page" : undefined}
           className={classNames(
-            "flex size-10 items-center justify-center rounded-full border",
+            "flex size-8 items-center justify-center rounded-full",
             "transition-colors",
+            // Warm darker creams so the bar blends into the cream header.
             option === current
-              ? "border-darkTeal bg-darkTeal font-semibold text-cream"
-              : "border-darkTeal/20 hover:border-darkTeal/50 hover:bg-darkTeal/5",
+              ? "bg-[#efe4d0] font-semibold text-[#a8936a]"
+              : "text-[#d3c3a2] hover:text-[#a8936a]",
           )}
         >
           {option}

@@ -1,8 +1,8 @@
 import type { Asset, AssetFile, Entry } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
 import { contentfulClient } from "@/lib/contentful";
+import { colorValue } from "@/lib/content/colors";
 import type {
-  ColorToken,
   ImageSectionSkeleton,
   PageSkeleton,
 } from "@/lib/content/types";
@@ -14,10 +14,6 @@ export interface FeaturedImageContent {
   description?: Document;
   descriptionColor?: string;
   overlayColor?: string;
-}
-
-function colorValue(token: unknown): string | undefined {
-  return (token as ColorToken | undefined)?.value;
 }
 
 function objectPositionFromFocalPoint(

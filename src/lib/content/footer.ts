@@ -1,8 +1,8 @@
 import type { Asset, AssetFile, Entry } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
 import { contentfulClient } from "@/lib/contentful";
+import { colorValue } from "@/lib/content/colors";
 import type {
-  ColorToken,
   ContactFormSkeleton,
   ContactSectionSkeleton,
   FooterSkeleton,
@@ -36,10 +36,6 @@ export interface FooterContent {
   referencesHeader?: Document;
   referencesBody?: Document;
   form: ContactFormContent | null;
-}
-
-function colorValue(token: unknown): string | undefined {
-  return (token as ColorToken | undefined)?.value;
 }
 
 export async function getFooterSection(): Promise<FooterContent | null> {

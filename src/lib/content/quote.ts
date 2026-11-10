@@ -1,6 +1,7 @@
 import type { Document } from "@contentful/rich-text-types";
 import { contentfulClient } from "@/lib/contentful";
-import type { ColorToken, QuoteSectionSkeleton } from "@/lib/content/types";
+import { colorValue } from "@/lib/content/colors";
+import type { QuoteSectionSkeleton } from "@/lib/content/types";
 
 export interface QuoteContent {
   quoteText: Document;
@@ -8,10 +9,6 @@ export interface QuoteContent {
   quoteAuthor: string;
   quoteMarkColor?: string;
   backgroundColor?: string;
-}
-
-function colorValue(token: unknown): string | undefined {
-  return (token as ColorToken | undefined)?.value;
 }
 
 export async function getQuoteSection(): Promise<QuoteContent | null> {

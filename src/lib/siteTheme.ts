@@ -3,6 +3,8 @@ export interface CardTheme {
   detailColor: string;
   /** Use cream text for a dark background. */
   dark: boolean;
+  /** Overrides the card's heading and body text color. */
+  textColor?: string;
 }
 
 export interface QuoteTheme {
@@ -14,10 +16,25 @@ export interface QuoteTheme {
   dashClassName: string;
 }
 
+export interface FooterTheme {
+  backgroundClassName: string;
+  /** Accent bar, link hovers, input focus and submit button color. */
+  accentColor: string;
+  /** Submit button background; defaults to `accentColor`. */
+  buttonColor?: string;
+  /** Submit button text color; defaults to dark teal. */
+  buttonTextColor?: string;
+}
+
 export interface SiteTheme {
+  /** Replaces dark teal text across the page (including Contentful's). */
+  textColor?: string;
   quote: QuoteTheme;
+  footer: FooterTheme;
   /** Colors for the hero "Get in Touch" button. */
   buttonClassName: string;
+  /** Hero tagline color; omit to use the Contentful color. */
+  taglineColor?: string;
   /** Colors for the highlighted specialty pills. */
   highlightPillClassName: string;
   /** Text section cards, applied in order and cycled. */
@@ -30,8 +47,14 @@ const MERLOT_QUOTE: QuoteTheme = {
   dashClassName: "bg-lightYellow",
 };
 
+const MERLOT_FOOTER: FooterTheme = {
+  backgroundClassName: "bg-merlot",
+  accentColor: "var(--yellow)",
+};
+
 const DEFAULT_THEME: SiteTheme = {
   quote: MERLOT_QUOTE,
+  footer: MERLOT_FOOTER,
   buttonClassName: "bg-brick text-cream",
   highlightPillClassName: "bg-seaGreen text-darkNavy",
   cards: [
@@ -56,29 +79,87 @@ const oliveGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
 const LOGO_9_THEME: SiteTheme = {
   quote: {
     backgroundClassName: "bg-merlot",
-    markClassName: "text-lightYellow",
-    dashClassName: "bg-lightYellow",
+    // Same yellow as the footer details.
+    markClassName: "text-yellow",
+    dashClassName: "bg-yellow",
+  },
+  footer: {
+    backgroundClassName: "bg-merlot",
+    accentColor: "var(--yellow)",
+    buttonTextColor: "var(--merlot)",
   },
   buttonClassName: "bg-gold text-darkNavy",
   highlightPillClassName: "bg-[#42713a] text-white",
   cards: oliveGradientCards,
 };
 
+// Deep seafoam greens (from logo #2's seafoam), stepping darker to lighter
+// across the cards like the /9 olive gradient.
+// The lightest step still passes 4.5:1 with white text.
+const SEAFOAM_STEPS = ["#3a6e54", "#3f765a", "#43795e", "#478063"];
+
+const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
+  background: `linear-gradient(90deg, ${SEAFOAM_STEPS[i]}, ${SEAFOAM_STEPS[i + 1]})`,
+  textColor: "#ffffff",
+  // Same light orange as the /7 quote and footer accents.
+  detailColor: "#f5a762",
+  dark: true,
+}));
+
 const LOGO_7_THEME: SiteTheme = {
   quote: {
     // Brick red from the right side of logo #7's swoosh, with brighter
     // take on the logo's orange for accents.
     backgroundClassName: "bg-[#802820]",
-    markClassName: "text-[#f39a4c]",
-    dashClassName: "bg-[#f39a4c]",
+    markClassName: "text-[#f5a762]",
+    dashClassName: "bg-[#f5a762]",
   },
-  buttonClassName: "bg-[#42713a] text-cream",
-  highlightPillClassName: "bg-[#42713a] text-white",
-  cards: oliveGradientCards,
+  // Matches the quote section, with merlot submit button text.
+  footer: {
+    backgroundClassName: "bg-[#802820]",
+    accentColor: "#f5a762",
+    buttonTextColor: "var(--merlot)",
+  },
+  // Deeper take on logo #2's seafoam green.
+  buttonClassName: "bg-[#43795e] text-white",
+  // Same deep teal tagline as /2.
+  taglineColor: "#006059",
+  highlightPillClassName: "bg-[#43795e] text-white",
+  cards: seafoamGradientCards,
+};
+
+const LOGO_2_THEME: SiteTheme = {
+  // Dark navy text, matching the hero button text.
+  textColor: "var(--darkNavy)",
+  // Brick sections, pills and cards follow /7; all details use the footer
+  // yellow.
+  quote: {
+    backgroundClassName: "bg-[#802820]",
+    markClassName: "text-yellow",
+    dashClassName: "bg-yellow",
+  },
+  footer: {
+    backgroundClassName: "bg-[#802820]",
+    // Same yellow as the /9 footer; submit button matches the hero button.
+    accentColor: "var(--yellow)",
+    buttonColor: "var(--gold)",
+    buttonTextColor: "var(--darkNavy)",
+  },
+  // Same marigold button as /9.
+  buttonClassName: "bg-gold text-darkNavy",
+  // Deep teal from logo #2's swoosh.
+  taglineColor: "#006059",
+  highlightPillClassName: "bg-[#43795e] text-white",
+  // /7's seafoam gradient with yellow dashes.
+  cards: seafoamGradientCards.map((card) => ({
+    ...card,
+    detailColor: "var(--yellow)",
+  })),
 };
 
 // Per-logo themes for the logo test pages; others use the default.
 const LOGO_THEMES: Partial<Record<number, SiteTheme>> = {
+  2: LOGO_2_THEME,
   7: LOGO_7_THEME,
   9: LOGO_9_THEME,
 };

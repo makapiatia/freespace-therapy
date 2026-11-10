@@ -8,7 +8,7 @@ import Contact from "@/components/Footer/Contact";
 import ContactForm from "@/components/Footer/ContactForm";
 import SiteFooter from "@/components/Footer/SiteFooter";
 import LogoOptionsNav, { logoOptionUrl } from "@/components/LogoOptionsNav";
-import { themeForLogo } from "@/lib/siteTheme";
+import { themeForLogo, type FooterTheme } from "@/lib/siteTheme";
 import { getFooterSection, type FooterContent } from "@/lib/content/footer";
 
 // Awaits the already-in-flight footer fetch rather than blocking on it at
@@ -18,14 +18,28 @@ import { getFooterSection, type FooterContent } from "@/lib/content/footer";
 async function SiteFooterSection({
   footerPromise,
   logoUrl,
+  theme,
 }: {
   footerPromise: Promise<FooterContent | null>;
   logoUrl?: string;
+  theme: FooterTheme;
 }) {
   const footer = await footerPromise;
 
   return (
-    <footer className="bg-merlot pt-10 pb-6 md:pt-12 md:pb-6">
+    <footer
+      className={classNames(
+        "pt-10 pb-6 md:pt-12 md:pb-6",
+        theme.backgroundClassName,
+      )}
+      style={
+        {
+          "--footer-accent": theme.accentColor,
+          "--footer-button": theme.buttonColor ?? theme.accentColor,
+          "--footer-button-text": theme.buttonTextColor ?? "var(--darkTeal)",
+        } as React.CSSProperties
+      }
+    >
       <div
         className={classNames(
           "mx-auto grid max-w-5xl gap-8 px-8",
@@ -70,15 +84,30 @@ export default function HomePage({ logoOption }: { logoOption: number }) {
   const footerPromise = getFooterSection();
 
   return (
-    <div className="flex flex-1 flex-col bg-cream">
+    <div
+      className="flex flex-1 flex-col bg-cream"
+      style={
+        theme.textColor
+          ? ({ "--darkTeal": theme.textColor } as React.CSSProperties)
+          : undefined
+      }
+    >
       <LogoOptionsNav current={logoOption} />
       <div className="flex min-h-dvh flex-col md:block md:min-h-0">
-        <Hero logoUrl={logoUrl} buttonClassName={theme.buttonClassName} />
+        <Hero
+          logoUrl={logoUrl}
+          buttonClassName={theme.buttonClassName}
+          taglineColor={theme.taglineColor}
+        />
         <Quote theme={theme.quote} />
       </div>
       <Services theme={theme} />
       <About />
-      <SiteFooterSection footerPromise={footerPromise} logoUrl={logoUrl} />
+      <SiteFooterSection
+        footerPromise={footerPromise}
+        logoUrl={logoUrl}
+        theme={theme.footer}
+      />
     </div>
   );
 }

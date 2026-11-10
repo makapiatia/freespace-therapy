@@ -11,6 +11,7 @@ export default function TextSectionCard({
   background,
   detailColor,
   dark,
+  textColor,
   className,
 }: {
   header?: TextBlockContent["header"];
@@ -20,6 +21,8 @@ export default function TextSectionCard({
   detailColor?: string;
   /** Use cream text for a dark background. */
   dark?: boolean;
+  /** Overrides the heading and body text color. */
+  textColor?: string;
   className?: string;
 }) {
   return (
@@ -41,6 +44,7 @@ export default function TextSectionCard({
             "font-aileron-semibold mt-4 text-lg md:text-xl",
             dark ? "text-cream" : "text-darkNavy",
           )}
+          style={textColor ? { color: textColor } : undefined}
         >
           {renderRichTextHeading(header)}
         </h3>
@@ -51,6 +55,7 @@ export default function TextSectionCard({
             "mt-3 space-y-3 font-aileron text-sm md:text-base",
             dark ? "text-cream/85" : "text-darkNavy",
           )}
+          style={textColor ? { color: textColor } : undefined}
         >
           {renderRichTextBody(body)}
         </div>

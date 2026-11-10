@@ -1,9 +1,9 @@
 import type { Asset, AssetFile, Entry } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
 import { contentfulClient } from "@/lib/contentful";
+import { colorValue } from "@/lib/content/colors";
 import type {
   AboutSectionSkeleton,
-  ColorToken,
   ImageSectionSkeleton,
   ServiceListSectionSkeleton,
   TextSectionSkeleton,
@@ -24,10 +24,6 @@ export interface AboutContent {
   bulletPointColor?: string;
   backgroundColor?: string;
   detailsColor?: string;
-}
-
-function colorValue(token: unknown): string | undefined {
-  return (token as ColorToken | undefined)?.value;
 }
 
 function objectPositionFromFocalPoint(

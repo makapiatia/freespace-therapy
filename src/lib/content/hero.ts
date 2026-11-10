@@ -1,8 +1,8 @@
 import type { Asset, Entry } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
 import { contentfulClient } from "@/lib/contentful";
+import { colorValue } from "@/lib/content/colors";
 import type {
-  ColorToken,
   HeroSectionSkeleton,
   ImageSectionSkeleton,
   LinkButtonSkeleton,
@@ -22,10 +22,6 @@ export interface HeroContent {
   buttonBackgroundColor?: string;
   logoUrl: string;
   logoAlt: string;
-}
-
-function colorValue(token: unknown): string | undefined {
-  return (token as ColorToken | undefined)?.value;
 }
 
 export async function getHeroSection(): Promise<HeroContent | null> {

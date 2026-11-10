@@ -1,7 +1,7 @@
 import type { Document } from "@contentful/rich-text-types";
 import { contentfulClient } from "@/lib/contentful";
+import { colorValue } from "@/lib/content/colors";
 import type {
-  ColorToken,
   ServiceListSectionSkeleton,
   ServicesSectionSkeleton,
   TextSectionSkeleton,
@@ -31,10 +31,6 @@ export interface TextBlockContent {
 export interface ServicesContent {
   lists: TextListContent[];
   blocks: TextBlockContent[];
-}
-
-function colorValue(token: unknown): string | undefined {
-  return (token as ColorToken | undefined)?.value;
 }
 
 export async function getServicesSection(): Promise<ServicesContent | null> {

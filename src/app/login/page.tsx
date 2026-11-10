@@ -2,6 +2,7 @@ import Image from "next/image";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import classNames from "classnames";
+import { logoOptionUrl, PAGE_OPTIONS } from "@/lib/logoOptions";
 
 export default async function LoginPage({
   searchParams,
@@ -43,7 +44,7 @@ export default async function LoginPage({
     <main className="flex min-h-dvh flex-col items-center justify-center bg-cream px-8 text-center">
       <span className="relative block h-28 w-28 shrink-0 overflow-hidden rounded-full">
         <Image
-          src="/logos/NewLogoOct30.png"
+          src={logoOptionUrl(PAGE_OPTIONS[0])}
           alt="Freespace Therapy"
           fill
           sizes="120px"
@@ -52,10 +53,10 @@ export default async function LoginPage({
         />
       </span>
 
-      <h1 className="font-diamond mt-6 text-3xl text-darkTeal">
+      <h1 className="font-diamond mt-6 text-3xl text-darkNavy">
         Free Space
       </h1>
-      <p className="font-aileron mt-2 max-w-xs text-sm text-darkTeal/70">
+      <p className="font-aileron mt-2 max-w-xs text-sm text-darkNavy/70">
         This site is password protected. Please enter the password to
         continue.
       </p>
@@ -72,9 +73,9 @@ export default async function LoginPage({
           autoFocus
           placeholder="Password"
           className={classNames(
-            "w-full rounded-lg border border-darkTeal/20 bg-white px-4 py-2.5",
-            "font-work-sans text-sm text-darkTeal outline-none",
-            "transition-colors focus:border-logoGreen",
+            "w-full rounded-lg border border-darkNavy/20 bg-white px-4 py-2.5",
+            "font-work-sans text-sm text-darkNavy outline-none",
+            "placeholder:text-darkNavy/40 transition-colors focus:border-gold",
           )}
         />
 
@@ -87,8 +88,9 @@ export default async function LoginPage({
         <button
           type="submit"
           className={classNames(
-            "rounded-full bg-gold/90 px-6 py-3 font-work-sans text-sm font-bold",
-            "text-darkGreen transition-colors hover:bg-gold/85",
+            // Matches the hero "Get in Touch" button.
+            "rounded-full bg-gold px-6 py-3 font-work-sans text-sm font-bold",
+            "text-darkNavy transition-[filter] hover:brightness-90",
           )}
         >
           Enter

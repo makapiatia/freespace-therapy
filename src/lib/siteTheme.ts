@@ -107,7 +107,7 @@ const LOGO_9_THEME: SiteTheme = {
   taglineColor: "#237a1d",
   highlightPillClassName: "bg-[#4e8244] text-white",
   cards: oliveGradientCards,
-  // "Meet Megan" on cream with no top padding, like /2.1.
+  // "Meet Megan" on cream with no top padding, like /2.
   aboutBackgroundColor: "var(--cream)",
   aboutNoTopPadding: true,
 };
@@ -127,14 +127,16 @@ const seafoamGradientCards: CardTheme[] = [0, 1, 2].map((i) => ({
 const LOGO_2_THEME: SiteTheme = {
   // Dark navy text, matching the hero button text.
   textColor: "var(--darkNavy)",
-  // Brick sections; all details use the footer yellow.
+  // Same merlot sections and image tint as /9; all details use the footer
+  // yellow.
   quote: {
-    backgroundClassName: "bg-[#802820]",
+    backgroundClassName: "bg-merlot",
     markClassName: "text-yellow",
     dashClassName: "bg-yellow",
+    imageTintClassName: DARK_MERLOT_TINT,
   },
   footer: {
-    backgroundClassName: "bg-[#802820]",
+    backgroundClassName: "bg-merlot",
     // Same yellow as the /9 footer; submit button matches the hero button.
     accentColor: "var(--yellow)",
     buttonColor: "var(--gold)",
@@ -147,6 +149,9 @@ const LOGO_2_THEME: SiteTheme = {
   // Light seafoam pills (about 3.5:1 with white text).
   highlightPillClassName: "bg-[#5a9376] text-white",
   cards: seafoamGradientCards,
+  // "Meet Megan" on cream with no top padding, like /9.
+  aboutBackgroundColor: "var(--cream)",
+  aboutNoTopPadding: true,
 };
 
 // `theme` with a different background for its quote and footer sections.
@@ -161,28 +166,19 @@ function withSectionBackground(
   };
 }
 
-// `theme` with a different featured image tint.
-function withImageTint(
-  theme: SiteTheme,
-  imageTintClassName: string,
-): SiteTheme {
-  return { ...theme, quote: { ...theme.quote, imageTintClassName } };
-}
+// Deep brown halfway between wenge and merlot, in place of merlot.
+const WENGE_MERLOT = "bg-[#4a1e28]";
+// Wenge brown in place of merlot.
+const WENGE = "bg-[#3c2d2b]";
 
 // Per-page themes for the logo test pages; others use the default.
 const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   "2": LOGO_2_THEME,
-  // Same merlot and image tint as /9, with "Meet Megan" on cream with no top
-  // padding.
-  "2.1": {
-    ...withImageTint(
-      withSectionBackground(LOGO_2_THEME, "bg-merlot"),
-      DARK_MERLOT_TINT,
-    ),
-    aboutBackgroundColor: "var(--cream)",
-    aboutNoTopPadding: true,
-  },
+  "2.1": withSectionBackground(LOGO_2_THEME, WENGE_MERLOT),
+  "2.2": withSectionBackground(LOGO_2_THEME, WENGE),
   "9": LOGO_9_THEME,
+  "9.1": withSectionBackground(LOGO_9_THEME, WENGE_MERLOT),
+  "9.2": withSectionBackground(LOGO_9_THEME, WENGE),
 };
 
 export function themeForLogo(page: string): SiteTheme {

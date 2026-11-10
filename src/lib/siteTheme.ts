@@ -153,7 +153,8 @@ const LOGO_2_THEME: SiteTheme = {
   buttonClassName: "bg-gold text-darkNavy",
   // Deep teal from logo #2's swoosh.
   taglineColor: "#006059",
-  highlightPillClassName: "bg-[#43795e] text-white",
+  // Lighter than /7's pills (about 4:1 with white text).
+  highlightPillClassName: "bg-[#528a6e] text-white",
   // /7's seafoam gradient with yellow dashes.
   cards: seafoamGradientCards.map((card) => ({
     ...card,

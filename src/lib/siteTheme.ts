@@ -86,7 +86,9 @@ const LOGO_9_THEME: SiteTheme = {
   footer: {
     backgroundClassName: "bg-merlot",
     accentColor: "var(--yellow)",
-    buttonTextColor: "var(--merlot)",
+    // Submit button matches the hero button, like /2.
+    buttonColor: "var(--gold)",
+    buttonTextColor: "var(--darkNavy)",
   },
   buttonClassName: "bg-gold text-darkNavy",
   highlightPillClassName: "bg-[#42713a] text-white",
@@ -114,11 +116,13 @@ const LOGO_7_THEME: SiteTheme = {
     markClassName: "text-[#f5a762]",
     dashClassName: "bg-[#f5a762]",
   },
-  // Matches the quote section, with merlot submit button text.
+  // Matches the quote section; submit button uses logo #7's orange sun,
+  // with cream text.
   footer: {
     backgroundClassName: "bg-[#802820]",
     accentColor: "#f5a762",
-    buttonTextColor: "var(--merlot)",
+    buttonColor: "#c06327",
+    buttonTextColor: "var(--cream)",
   },
   // Deeper take on logo #2's seafoam green.
   buttonClassName: "bg-[#43795e] text-white",

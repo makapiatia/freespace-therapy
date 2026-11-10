@@ -181,8 +181,8 @@ const LOGO_THEMES: Partial<Record<string, SiteTheme>> = {
   "2.1": withSectionBackground(LOGO_2_THEME, "bg-[#7e5236]"),
   "7": LOGO_7_THEME,
   "9": LOGO_9_THEME,
-  // Same cinnamon brown as /2.1, in place of merlot.
-  "9.1": withSectionBackground(LOGO_9_THEME, "bg-[#7e5236]"),
+  // Redder take on the /2.1 brown, in place of merlot.
+  "9.1": withSectionBackground(LOGO_9_THEME, "bg-[#7f4332]"),
 };
 
 export function themeForLogo(page: string): SiteTheme {

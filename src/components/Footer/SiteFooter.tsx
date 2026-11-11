@@ -14,12 +14,42 @@ export default function SiteFooter({
   logoAlt?: string;
 }) {
   return (
-    <div className="flex items-center gap-3 px-8 pt-8 md:gap-6">
-      <div className="flex flex-1 items-center gap-3 md:gap-5">
+    <div
+      className={classNames(
+        "mx-8 mt-8 flex items-center gap-3 border-t border-cream/15 pt-6",
+        "md:mt-0 md:gap-6 md:border-t-0 md:pt-8",
+      )}
+    >
+      <a
+        href="https://github.com/makapiatia"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classNames(
+          "flex shrink-0 flex-col items-center justify-center gap-1",
+          "font-work-sans text-[11px] text-cream/60",
+        )}
+      >
+        Site by
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cream/90 max-[390px]:h-9 max-[390px]:w-9 md:h-12 md:w-12">
+          <Image
+            src="/photos/trex-icon.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-7.5 w-7.5 max-[390px]:h-6.5 max-[390px]:w-6.5 md:h-9 md:w-9"
+          />
+        </span>
+      </a>
+      <div className="flex flex-1 items-center justify-end gap-2 md:gap-4">
+        <p className="text-right font-work-sans text-[11px] text-cream/60">
+          {copyrightText
+            ? renderRichTextInline(copyrightText)
+            : "© 2026 Free Space Psychotherapy LLC. All rights reserved."}
+        </p>
         <a
           href="#"
           aria-label="Back to top"
-          className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full"
+          className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-full max-[390px]:h-12 max-[390px]:w-12"
         >
           <Image
             src={logoUrl ?? LOGO_URL}
@@ -29,32 +59,7 @@ export default function SiteFooter({
             className="object-cover"
           />
         </a>
-        <p className="font-work-sans text-xs text-cream/60">
-          {copyrightText
-            ? renderRichTextInline(copyrightText)
-            : "© 2026 Free Space Psychotherapy LLC. All rights reserved."}
-        </p>
       </div>
-      <a
-        href="https://github.com/makapiatia"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={classNames(
-          "flex shrink-0 flex-col items-center justify-center gap-2 self-stretch border-l border-cream/15 pl-3 md:border-l-0 md:pl-0",
-          "font-work-sans text-xs text-cream/60",
-        )}
-      >
-        Site by
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cream/90 md:h-12 md:w-12">
-          <Image
-            src="/photos/trex-icon.png"
-            alt=""
-            width={36}
-            height={36}
-            className="h-7.5 w-7.5 md:h-9 md:w-9"
-          />
-        </span>
-      </a>
     </div>
   );
 }

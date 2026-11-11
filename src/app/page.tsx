@@ -1,14 +1,13 @@
 import HomePage from "@/components/HomePage";
 import { LOGO_URL } from "@/lib/logo";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  ADDRESS_MAP_URL,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 
 export const revalidate = 60;
-
-const city = (name: string) => ({
-  "@type": "City",
-  name,
-  containedInPlace: { "@type": "State", name: "New Jersey" },
-});
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -22,7 +21,20 @@ const jsonLd = {
   description: SITE_DESCRIPTION,
   telephone: "+1-862-229-2270",
   email: "megan@freespace-therapy.com",
-  areaServed: [city("Paterson"), city("Montclair")],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "96 Park Street",
+    addressLocality: "Montclair",
+    addressRegion: "NJ",
+    postalCode: "07042",
+    addressCountry: "US",
+  },
+  hasMap: ADDRESS_MAP_URL,
+  areaServed: {
+    "@type": "City",
+    name: "Montclair",
+    containedInPlace: { "@type": "State", name: "New Jersey" },
+  },
   knowsAbout: [
     "Psychotherapy",
     "Anxiety",

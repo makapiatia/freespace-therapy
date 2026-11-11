@@ -1,6 +1,7 @@
 import type { Document } from "@contentful/rich-text-types";
 import { renderRichTextBody, renderRichTextHeading } from "@/lib/content/richText";
 import { withOpacity } from "@/lib/content/colors";
+import { ADDRESS, ADDRESS_MAP_URL } from "@/lib/site";
 
 export default function Contact({
   header,
@@ -25,7 +26,10 @@ export default function Contact({
         style={textColor ? { color: withOpacity(textColor, 85) } : undefined}
       >
         {body ? (
-          renderRichTextBody(body, { linkClassName: "hover:text-(--footer-accent)" })
+          renderRichTextBody(body, {
+            linkClassName: "hover:text-(--footer-accent)",
+            textLinks: { [ADDRESS]: ADDRESS_MAP_URL },
+          })
         ) : (
           <>
             <p>
@@ -33,6 +37,15 @@ export default function Contact({
               we&rsquo;ll follow up soon.
             </p>
             <p>
+              <a
+                href={ADDRESS_MAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-(--footer-accent)"
+              >
+                {ADDRESS}
+              </a>
+              <br />
               <a href="tel:+18622292270" className="hover:text-(--footer-accent)">
                 (862) 229-2270
               </a>

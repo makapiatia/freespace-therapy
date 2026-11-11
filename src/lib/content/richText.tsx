@@ -9,12 +9,41 @@ import type {
   Text,
 } from "@contentful/rich-text-types";
 
-const renderText: Options["renderText"] = (text) =>
+const splitLines = (text: string, keyPrefix = "") =>
   text
     .split("\n")
     .flatMap((segment, i) =>
-      i === 0 ? [segment] : [<br key={`br-${i}`} />, segment],
+      i === 0 ? [segment] : [<br key={`${keyPrefix}br-${i}`} />, segment],
     );
+
+const renderText: Options["renderText"] = (text) => splitLines(text);
+
+function linkText(
+  text: string,
+  links: Record<string, string>,
+  className?: string,
+) {
+  const escaped = Object.keys(links).map((key) =>
+    key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+  );
+  return text
+    .split(new RegExp(`(${escaped.join("|")})`))
+    .flatMap((part, i) =>
+      links[part] ? (
+        <a
+          key={`link-${i}`}
+          href={links[part]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={className}
+        >
+          {part}
+        </a>
+      ) : (
+        splitLines(part, `${i}-`)
+      ),
+    );
+}
 
 function documentToPlainText(node: Node): string {
   return "value" in node
@@ -47,11 +76,14 @@ export function renderRichTextHeading(document: Document) {
 
 export function renderRichTextBody(
   document: Document,
-  options?: { linkClassName?: string },
+  options?: { linkClassName?: string; textLinks?: Record<string, string> },
 ) {
   const linkClassName = options?.linkClassName;
+  const textLinks = options?.textLinks;
   return documentToReactComponents(document, {
-    renderText,
+    renderText: textLinks
+      ? (text) => linkText(text, textLinks, linkClassName)
+      : renderText,
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) =>
         documentToPlainText(node) ? <p>{children}</p> : null,

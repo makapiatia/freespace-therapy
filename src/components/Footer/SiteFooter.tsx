@@ -26,7 +26,7 @@ export default function SiteFooter({
         rel="noopener noreferrer"
         className={classNames(
           "flex shrink-0 flex-col items-center justify-center gap-0.5",
-          "font-work-sans text-[11px] text-cream/60",
+          "font-work-sans text-[10px] text-cream/60 md:text-[11px]",
         )}
       >
         Site by

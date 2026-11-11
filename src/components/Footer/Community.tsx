@@ -9,6 +9,8 @@ export default function Community({
   header?: Document;
   body?: Document;
 }) {
+  if (!header && !body) return null;
+
   return (
     <div id="community">
       <div
@@ -18,22 +20,16 @@ export default function Community({
         )}
       >
         <div className="p-4">
-          <h3 className="font-aileron-semibold text-base md:text-xl text-cream">
-            {header
-              ? renderRichTextHeading(header)
-              : "Resources for Clients & Therapists"}
-          </h3>
-          <div className="font-aileron text-sm md:text-base text-cream/80">
-            {body ? (
-              renderRichTextBody(body)
-            ) : (
-              <p>
-                Community resources for clients and therapists are on the
-                way, hoping to include guidance on Medicaid and Medicare
-                coverage.
-              </p>
-            )}
-          </div>
+          {header && (
+            <h3 className="font-aileron-semibold text-base md:text-xl text-cream">
+              {renderRichTextHeading(header)}
+            </h3>
+          )}
+          {body && (
+            <div className="font-aileron text-sm md:text-base text-cream/80">
+              {renderRichTextBody(body)}
+            </div>
+          )}
         </div>
       </div>
     </div>

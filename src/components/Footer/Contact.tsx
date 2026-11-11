@@ -3,6 +3,8 @@ import { renderRichTextBody, renderRichTextHeading } from "@/lib/content/richTex
 import { withOpacity } from "@/lib/content/colors";
 import { ADDRESS, ADDRESS_MAP_URL } from "@/lib/site";
 
+const CARD_CLASS_NAME = "rounded-2xl border border-cream/15 bg-cream/5 p-4";
+
 export default function Contact({
   header,
   body,
@@ -29,6 +31,7 @@ export default function Contact({
           renderRichTextBody(body, {
             linkClassName: "hover:text-(--footer-accent)",
             textLinks: { [ADDRESS]: ADDRESS_MAP_URL },
+            linkParagraphClassName: CARD_CLASS_NAME,
           })
         ) : (
           <>
@@ -36,7 +39,7 @@ export default function Contact({
               Have questions or ready to schedule? Send a message, and
               we&rsquo;ll follow up soon.
             </p>
-            <p>
+            <p className={CARD_CLASS_NAME}>
               <a
                 href={ADDRESS_MAP_URL}
                 target="_blank"

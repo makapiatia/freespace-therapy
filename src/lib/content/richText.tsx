@@ -51,6 +51,13 @@ function documentToPlainText(node: Node): string {
     : ((node as Block | Inline).content ?? []).map(documentToPlainText).join("");
 }
 
+function hasLink(node: Node): boolean {
+  return (
+    node.nodeType === INLINES.HYPERLINK ||
+    ((node as Block | Inline).content ?? []).some(hasLink)
+  );
+}
+
 export function renderRichTextInline(document: Document) {
   return documentToReactComponents(document, {
     renderText,
@@ -76,17 +83,26 @@ export function renderRichTextHeading(document: Document) {
 
 export function renderRichTextBody(
   document: Document,
-  options?: { linkClassName?: string; textLinks?: Record<string, string> },
+  options?: {
+    linkClassName?: string;
+    textLinks?: Record<string, string>;
+    linkParagraphClassName?: string;
+  },
 ) {
   const linkClassName = options?.linkClassName;
   const textLinks = options?.textLinks;
+  const linkParagraphClassName = options?.linkParagraphClassName;
   return documentToReactComponents(document, {
     renderText: textLinks
       ? (text) => linkText(text, textLinks, linkClassName)
       : renderText,
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) =>
-        documentToPlainText(node) ? <p>{children}</p> : null,
+        documentToPlainText(node) ? (
+          <p className={hasLink(node) ? linkParagraphClassName : undefined}>
+            {children}
+          </p>
+        ) : null,
       ...(linkClassName && {
         [INLINES.HYPERLINK]: (node, children) => (
           <a

@@ -45,6 +45,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
+        <div
+          hidden
+          dangerouslySetInnerHTML={{
+            __html:
+              "<!-- Designed and built by Tia Rexine (https://github.com/makapiatia) -->",
+          }}
+        />
         {children}
       </body>
     </html>

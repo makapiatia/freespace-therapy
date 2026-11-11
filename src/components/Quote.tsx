@@ -94,7 +94,7 @@ export default async function Quote({ theme }: { theme: QuoteTheme }) {
           <p
             className={classNames(
               "author-text mt-3 text-center tracking-wide text-cream/70",
-              "font-work-sans text-xs font-semibold",
+              "font-work-sans text-[11px] font-semibold sm:text-xs",
             )}
             style={
               image?.descriptionColor

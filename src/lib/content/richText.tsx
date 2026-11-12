@@ -1,5 +1,6 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { NodeRenderer, Options } from "@contentful/rich-text-react-renderer";
+import type { ReactNode } from "react";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import type {
   Block,
@@ -22,6 +23,7 @@ function linkText(
   text: string,
   links: Record<string, string>,
   className?: string,
+  icon?: (href: string) => ReactNode,
 ) {
   const escaped = Object.keys(links).map((key) =>
     key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
@@ -37,6 +39,7 @@ function linkText(
           rel="noopener noreferrer"
           className={className}
         >
+          {icon?.(links[part])}
           {part}
         </a>
       ) : (
@@ -49,13 +52,6 @@ function documentToPlainText(node: Node): string {
   return "value" in node
     ? (node as Text).value
     : ((node as Block | Inline).content ?? []).map(documentToPlainText).join("");
-}
-
-function hasLink(node: Node): boolean {
-  return (
-    node.nodeType === INLINES.HYPERLINK ||
-    ((node as Block | Inline).content ?? []).some(hasLink)
-  );
 }
 
 export function renderRichTextInline(document: Document) {
@@ -86,32 +82,29 @@ export function renderRichTextBody(
   options?: {
     linkClassName?: string;
     textLinks?: Record<string, string>;
-    linkParagraphClassName?: string;
+    linkIcon?: (href: string) => ReactNode;
   },
 ) {
   const linkClassName = options?.linkClassName;
   const textLinks = options?.textLinks;
-  const linkParagraphClassName = options?.linkParagraphClassName;
+  const linkIcon = options?.linkIcon;
   return documentToReactComponents(document, {
     renderText: textLinks
-      ? (text) => linkText(text, textLinks, linkClassName)
+      ? (text) => linkText(text, textLinks, linkClassName, linkIcon)
       : renderText,
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) =>
-        documentToPlainText(node) ? (
-          <p className={hasLink(node) ? linkParagraphClassName : undefined}>
-            {children}
-          </p>
-        ) : null,
+        documentToPlainText(node) ? <p>{children}</p> : null,
       ...(linkClassName && {
-        [INLINES.HYPERLINK]: (node, children) => (
-          <a
-            href={(node.data as { uri: string }).uri}
-            className={linkClassName}
-          >
-            {children}
-          </a>
-        ),
+        [INLINES.HYPERLINK]: (node, children) => {
+          const href = (node.data as { uri: string }).uri;
+          return (
+            <a href={href} className={linkClassName}>
+              {linkIcon?.(href)}
+              {children}
+            </a>
+          );
+        },
       }),
     },
   });

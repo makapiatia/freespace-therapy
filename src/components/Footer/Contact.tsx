@@ -2,8 +2,10 @@ import type { Document } from "@contentful/rich-text-types";
 import { renderRichTextBody, renderRichTextHeading } from "@/lib/content/richText";
 import { withOpacity } from "@/lib/content/colors";
 import { ADDRESS, ADDRESS_MAP_URL } from "@/lib/site";
+import ContactIcon from "./ContactIcon";
 
-const CARD_CLASS_NAME = "rounded-2xl border border-cream/15 bg-cream/5 p-4";
+const LINK_CLASS_NAME =
+  "inline-flex items-center gap-2 hover:text-(--footer-accent)";
 
 export default function Contact({
   header,
@@ -29,9 +31,9 @@ export default function Contact({
       >
         {body ? (
           renderRichTextBody(body, {
-            linkClassName: "hover:text-(--footer-accent)",
+            linkClassName: LINK_CLASS_NAME,
             textLinks: { [ADDRESS]: ADDRESS_MAP_URL },
-            linkParagraphClassName: CARD_CLASS_NAME,
+            linkIcon: (href) => <ContactIcon href={href} />,
           })
         ) : (
           <>
@@ -39,24 +41,27 @@ export default function Contact({
               Have questions or ready to schedule? Send a message, and
               we&rsquo;ll follow up soon.
             </p>
-            <p className={CARD_CLASS_NAME}>
+            <p>
               <a
                 href={ADDRESS_MAP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-(--footer-accent)"
+                className={LINK_CLASS_NAME}
               >
+                <ContactIcon href={ADDRESS_MAP_URL} />
                 {ADDRESS}
               </a>
               <br />
-              <a href="tel:+18622292270" className="hover:text-(--footer-accent)">
+              <a href="tel:+18622292270" className={LINK_CLASS_NAME}>
+                <ContactIcon href="tel:+18622292270" />
                 (862) 229-2270
               </a>
               <br />
               <a
                 href="mailto:megan@freespace-therapy.com"
-                className="hover:text-(--footer-accent)"
+                className={LINK_CLASS_NAME}
               >
+                <ContactIcon href="mailto:megan@freespace-therapy.com" />
                 megan@freespace-therapy.com
               </a>
             </p>

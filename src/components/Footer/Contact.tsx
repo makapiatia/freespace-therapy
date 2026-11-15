@@ -5,7 +5,7 @@ import { ADDRESS, ADDRESS_MAP_URL } from "@/lib/site";
 import ContactIcon from "./ContactIcon";
 
 const LINK_CLASS_NAME =
-  "inline-flex max-w-full items-center gap-2 hover:text-(--footer-accent)";
+  "inline-flex max-w-full items-center gap-2 py-0.5 hover:text-(--footer-accent)";
 
 export default function Contact({
   header,

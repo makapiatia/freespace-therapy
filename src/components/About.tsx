@@ -48,14 +48,14 @@ export default async function About({
             fill
             sizes="144px"
             style={{ objectPosition: content?.objectPosition ?? "50% 50%" }}
-            className="object-cover"
+            className="-rotate-4 object-cover"
           />
         </span>
 
         <div
           className={classNames(
             "about-header col-start-2 row-start-1 flex h-full flex-col",
-            "justify-center",
+            "justify-center pt-2 md:pt-0",
           )}
         >
           <h2
@@ -65,7 +65,7 @@ export default async function About({
             {content?.header ? renderRichTextHeading(content.header) : "Meet Megan"}
           </h2>
           <p
-            className="font-aileron-semibold text-lg text-darkTeal md:text-xl"
+            className="font-aileron-semibold -mt-1 text-base text-darkTeal md:mt-0 md:text-xl"
             style={content?.textColor ? { color: content.textColor } : undefined}
           >
             {content?.subtext

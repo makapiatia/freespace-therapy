@@ -98,10 +98,13 @@ export function renderRichTextBody(
       ...(linkClassName && {
         [INLINES.HYPERLINK]: (node, children) => {
           const href = (node.data as { uri: string }).uri;
+          if (!href || !documentToPlainText(node).trim()) return null;
           return (
             <a href={href} className={linkClassName}>
               {linkIcon?.(href)}
-              {children}
+              <span className="min-w-0 [overflow-wrap:anywhere]">
+                {children}
+              </span>
             </a>
           );
         },

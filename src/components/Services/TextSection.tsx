@@ -15,11 +15,40 @@ function textLength(node: Block | Inline | Text | undefined): number {
   );
 }
 
+const SHORT_LINE_LENGTH = 50;
+
+function plainText(node: Block | Inline | Text): string {
+  if (node.nodeType === "text") return (node as Text).value;
+  return (node as Block | Inline).content
+    .map((child) => plainText(child as Block | Inline | Text))
+    .join("");
+}
+
+function paragraphs(node: Block | Inline | Text): string[] {
+  if (node.nodeType === "paragraph") return [plainText(node)];
+  if (node.nodeType === "text") return [];
+  return (node as Block | Inline).content.flatMap((child) =>
+    paragraphs(child as Block | Inline | Text),
+  );
+}
+
+function hasOnlyShortLines(body: Block | undefined): boolean {
+  if (!body) return false;
+  const lines = paragraphs(body)
+    .flatMap((text) => text.split("\n"))
+    .filter((line) => line.trim());
+  return (
+    lines.length > 1 &&
+    lines.every((line) => line.length <= SHORT_LINE_LENGTH)
+  );
+}
+
 function columnTemplate(blocks: TextBlockContent[], minWidth: string) {
   return blocks
     .map((block) => {
       const weight = Math.sqrt(Math.max(textLength(block.body), 1));
-      return `minmax(${minWidth},${weight.toFixed(2)}fr)`;
+      const min = hasOnlyShortLines(block.body) ? "max-content" : minWidth;
+      return `minmax(${min},${weight.toFixed(2)}fr)`;
     })
     .join(" ");
 }

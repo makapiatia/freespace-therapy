@@ -5,7 +5,7 @@ import { ADDRESS, ADDRESS_MAP_URL } from "@/lib/site";
 import ContactIcon from "./ContactIcon";
 
 const LINK_CLASS_NAME =
-  "inline-flex items-center gap-2 hover:text-(--footer-accent)";
+  "inline-flex max-w-full items-center gap-2 hover:text-(--footer-accent)";
 
 export default function Contact({
   header,
@@ -26,7 +26,7 @@ export default function Contact({
       </h2>
       <span className="mt-2 block h-1 w-12 rounded-full bg-(--footer-accent)" />
       <div
-        className="font-aileron mt-3 space-y-4 text-sm text-cream/85 md:text-base"
+        className="font-aileron mt-3 space-y-4 text-sm text-cream/85 max-[396px]:text-[13px] md:text-base"
         style={textColor ? { color: withOpacity(textColor, 85) } : undefined}
       >
         {body ? (

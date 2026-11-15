@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import classNames from "classnames";
 import "./globals.css";
-import {
-  SITE_DESCRIPTION,
-  SITE_NAME,
-  SITE_TITLE,
-  SITE_URL,
-} from "@/lib/site";
+import { getSiteDescription } from "@/lib/content/siteDescription";
+import { SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
 
 const diamondGrotesk = localFont({
   src: "../../public/fonts/DiamondGrotesk-VF.ttf",
@@ -33,25 +29,29 @@ const aileronSemiBold = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: SITE_TITLE,
-  description: SITE_DESCRIPTION,
-  alternates: { canonical: "/" },
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const description = await getSiteDescription();
+
+  return {
+    metadataBase: new URL(SITE_URL),
     title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    url: "/",
-    siteName: SITE_NAME,
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-  },
-};
+    description,
+    alternates: { canonical: "/" },
+    openGraph: {
+      title: SITE_TITLE,
+      description,
+      url: "/",
+      siteName: SITE_NAME,
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: SITE_TITLE,
+      description,
+    },
+  };
+}
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

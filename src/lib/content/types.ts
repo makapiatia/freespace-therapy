@@ -142,6 +142,7 @@ export interface PageSkeleton extends EntrySkeletonType {
   fields: {
     internalTitle: EntryFieldTypes.Symbol;
     imageSection: EntryFieldTypes.EntryLink<ImageSectionSkeleton>;
+    siteDescription: EntryFieldTypes.Text;
   };
 }
 

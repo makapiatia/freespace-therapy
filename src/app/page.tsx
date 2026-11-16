@@ -1,5 +1,5 @@
 import HomePage from "@/components/HomePage";
-import { getSiteDescription } from "@/lib/content/siteDescription";
+import { getSiteMetadata } from "@/lib/content/siteMetadata";
 import { LOGO_URL } from "@/lib/logo";
 import { ADDRESS_MAP_URL, SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -54,7 +54,7 @@ function jsonLd(description: string) {
 }
 
 export default async function Home() {
-  const description = await getSiteDescription();
+  const { description } = await getSiteMetadata();
 
   return (
     <>

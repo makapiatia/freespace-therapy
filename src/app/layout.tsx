@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import classNames from "classnames";
 import "./globals.css";
-import { getSiteDescription } from "@/lib/content/siteDescription";
-import { SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
+import { getSiteMetadata } from "@/lib/content/siteMetadata";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 const diamondGrotesk = localFont({
   src: "../../public/fonts/DiamondGrotesk-VF.ttf",
@@ -30,15 +30,15 @@ const aileronSemiBold = localFont({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const description = await getSiteDescription();
+  const { title, description } = await getSiteMetadata();
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: SITE_TITLE,
+    title,
     description,
     alternates: { canonical: "/" },
     openGraph: {
-      title: SITE_TITLE,
+      title,
       description,
       url: "/",
       siteName: SITE_NAME,
@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: SITE_TITLE,
+      title,
       description,
     },
   };

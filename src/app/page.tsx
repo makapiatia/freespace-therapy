@@ -27,11 +27,11 @@ function jsonLd(description: string) {
       addressCountry: "US",
     },
     hasMap: ADDRESS_MAP_URL,
-    areaServed: {
-      "@type": "City",
-      name: "Montclair",
+    areaServed: ["Essex County", "Passaic County"].map((name) => ({
+      "@type": "AdministrativeArea",
+      name,
       containedInPlace: { "@type": "State", name: "New Jersey" },
-    },
+    })),
     knowsAbout: [
       "Psychotherapy",
       "Anxiety",
